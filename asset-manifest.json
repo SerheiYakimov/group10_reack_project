@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/group10_reack_project/static/css/main.e6c13ad2.css",
+    "main.js": "/group10_reack_project/static/js/main.c50c7308.js",
+    "index.html": "/group10_reack_project/index.html",
+    "main.e6c13ad2.css.map": "/group10_reack_project/static/css/main.e6c13ad2.css.map",
+    "main.c50c7308.js.map": "/group10_reack_project/static/js/main.c50c7308.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.c50c7308.js"
+  ]
+}
