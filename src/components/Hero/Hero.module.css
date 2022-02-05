@@ -1,0 +1,42 @@
+.hero {
+  padding: 86px 0 0 49px;
+  background-image: url('../../images/bg-cabbage-elements/bg-top-left.png'),
+    url('../../images/bg-cabbage-elements/bg-top-right.png'),
+    url('../../images/bg-cabbage-elements/bg-bottom-right.png'),
+    url('../../images/bg-cabbage-elements/bg-bottom-left.png');
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  /* background-size: 83px, 83px, 83px, 83px, cover; */
+  background-position: top 91px left 10px, top 28px left 140px,
+    top 177px left 152px, top 28px left 389px;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    padding: 90px 0 0 171px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hero {
+    padding: 308px 0 0 230px;
+  }
+}
+
+.heroLogo {
+  width: 183px;
+  height: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .heroLogo {
+    width: 306px;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .heroLogo {
+    width: 377px;
+    height: auto;
+  }
+}

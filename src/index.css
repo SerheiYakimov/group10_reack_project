@@ -5,6 +5,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(255, 255, 255);
+  background-image: url('./images/mobile/bg-mob.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url('./images/tablet/bg-tab.png');
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    background-image: url('./images/desktop/bg-desk.png');
+  }
 }
 
 code {
