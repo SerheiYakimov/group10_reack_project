@@ -3,12 +3,53 @@
   background-image: url('../../images/bg-cabbage-elements/bg-top-left.png'),
     url('../../images/bg-cabbage-elements/bg-top-right.png'),
     url('../../images/bg-cabbage-elements/bg-bottom-right.png'),
-    url('../../images/bg-cabbage-elements/bg-bottom-left.png');
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  /* background-size: 83px, 83px, 83px, 83px, cover; */
+    url('../../images/bg-cabbage-elements/bg-bottom-left.png'),
+    url('../../images/bg-cabbage-elements/bg-top-left.png'),
+    url('../../images/bg-cabbage-elements/bg-bottom-left.png'),
+    url('../../images/bg-cabbage-elements/bg-top-left.png'),
+    url('../../images/bg-cabbage-elements/bg-top-right.png'),
+    url('../../images/bg-cabbage-elements/bg-top-left.png'),
+    url('../../images/bg-cabbage-elements/bg-bottom-left.png'),
+    url('../../images/bg-cabbage-elements/bg-top-left.png'),
+    url('../../images/bg-cabbage-elements/bg-top-left.png'),
+    url('../../images/bg-cabbage-elements/bg-top-right.png'),
+    url('../../images/bg-cabbage-elements/bg-top-left.png');
+  background-repeat: no-repeat;
+  background-size: 83px, 83px, 83px, 83px, 83px, 83px, 83px, 83px, 83px, 83px,
+    83px, 83px, 83px, 83px, cover;
   background-position: top 91px left 10px, top 28px left 140px,
-    top 177px left 152px, top 28px left 389px;
+    top 177px left 152px, top 28px left 389px, top 91px left 259px,
+    top 28px left 389px, top 91px left 508px, top 28px left 638px,
+    top 91px left 757px, top 28px left 887px, top 91px left 1006px,
+    top 165px left 1128px, top 28px left 1136px, top 91px left 1255px;
+  /* animation: test 2s forwards ease-in-out; */
 }
+
+/* .bgTopLeft {
+  position: absolute;
+  top: 91px;
+  width: 86px;
+  background-image: url('../../images/bg-cabbage-elements/bg-top-left.png');
+  background-size: 83px;
+  background-repeat: no-repeat;
+  background-position: top 0px left 10px;
+  animation: test 2s forwards ease-in-out;
+} */
+/* 
+@keyframes test {
+  from {
+    margin-top: 25%;
+    margin-left: 50%;
+    width: 0vw;
+    height: 0vh;
+  }
+  to {
+    margin-top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+} */
 
 @media screen and (min-width: 768px) {
   .hero {
