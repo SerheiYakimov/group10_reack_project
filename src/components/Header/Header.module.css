@@ -1,0 +1,10 @@
+.header {
+  padding: 12px 19px 13px 19px;
+  background-color: rgb(255, 255, 255);
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 12px 26px 13px 26px;
+  }
+}
