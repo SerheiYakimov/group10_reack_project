@@ -1,7 +1,7 @@
-import { Navigate } from 'react-router';
+// import { Navigate } from 'react-router';
 
-const isAuth = false;
+// const isAuth = false;
 
-export const PublicRoute = ({ component: Component }) => {
-  return <>{isAuth ? <Navigate to="/transactions" /> : <Component />}</>;
-};
+// export const PublicRoute = ({ component: Component }) => {
+//   return <>{isAuth ? <Navigate to="/transactions" /> : <Component />}</>;
+// };

@@ -1,6 +1,7 @@
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 
-export const PrivateRoute = ({ component: Component }) => {
-  const isAuth = true;
-  return <>{isAuth ? <Component /> : <Navigate to="/" />}</>;
-};
+// const isAuth = false;
+
+// export const PrivateRoute = ({ component: Component }) => {
+//   return <>{isAuth ? <Component /> : <Navigate to="/" />}</>;
+// };
