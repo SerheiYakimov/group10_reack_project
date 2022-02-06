@@ -25,7 +25,7 @@ export default function AccessForm() {
         />
       </div>
       <div className={s.btnWrapper}>
-        <Button type="submit" name="Войти" />
+        <Button type="submit" name="Войти" isPrimary />
         <Button type="button" name="Регистрация" />
       </div>
     </form>

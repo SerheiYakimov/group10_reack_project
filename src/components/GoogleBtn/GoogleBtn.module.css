@@ -16,4 +16,5 @@
 .googleBtn:hover,
 .googleBtn:focus {
   background-color: #e6e4e4;
+  filter: drop-shadow(1px 7px 5px rgba(82, 85, 95, 0.315));
 }

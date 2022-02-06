@@ -14,7 +14,18 @@
 
 .button:hover,
 .button:focus {
+  background-color: #e6e4e4;
+  filter: drop-shadow(1px 8px 5px rgba(82, 85, 95, 0.315));
+}
+
+.primary {
   background-color: #ff751d;
   color: #ffffff;
-  outline: #ff751d;
+  filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
+}
+
+.primary:hover,
+.primary:focus {
+  background-color: #ff751d;
+  filter: drop-shadow(1px 8px 5px rgba(255, 107, 8, 0.637));
 }
