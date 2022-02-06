@@ -231,5 +231,9 @@
                 </clipPath>
             </defs>
         </symbol>
+        <symbol id="close" viewBox="0 0 32 32">
+<path fill="none" stroke="#52555f" style="stroke: var(--color1, #52555f)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="4.5714" d="M2.286 2.286l27.429 27.429"></path>
+<path fill="none" stroke="#52555f" style="stroke: var(--color1, #52555f)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="4.5714" d="M2.286 29.714l27.429-27.429"></path>
+</symbol>
     </defs>
 </svg>

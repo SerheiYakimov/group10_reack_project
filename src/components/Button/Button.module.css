@@ -1,0 +1,31 @@
+.button {
+  width: 125px;
+  height: 44px;
+  padding: 12px 15px;
+  border-radius: 16px;
+  border: none;
+  background-color: #f6f7fb;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.17;
+  filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+}
+
+.button:hover,
+.button:focus {
+  background-color: #e6e4e4;
+  filter: drop-shadow(1px 8px 5px rgba(82, 85, 95, 0.315));
+}
+
+.primary {
+  background-color: #ff751d;
+  color: #ffffff;
+  filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
+}
+
+.primary:hover,
+.primary:focus {
+  background-color: #ff751d;
+  filter: drop-shadow(1px 8px 5px rgba(255, 107, 8, 0.637));
+}
