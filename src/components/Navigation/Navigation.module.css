@@ -1,0 +1,42 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+}
+
+.logoutButtonMob {
+  padding: 0;
+  margin-left: 15px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logoutButtonTabDesk {
+  padding: 0;
+  margin-left: 20px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* .logoutButtonTabDesk::before {
+  content: url('../../images/nav-decor-line.png');
+  margin-right: 20px;
+} */
+
+.userName {
+  display: flex;
+  align-items: center;
+}
+
+.userName::after {
+  content: url('../../images/nav-decor-line.png');
+  margin-left: 20px;
+}
+
+.avatar {
+  margin-right: 10px;
+}

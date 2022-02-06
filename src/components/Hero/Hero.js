@@ -1,12 +1,26 @@
-import HeroLogo from '../../images/hero-logo.svg';
+import Media from 'react-media';
+import heroLogoMob from '../../images/mobile/hero-logo-mob.png';
+import heroLogoTab from '../../images/tablet/hero-logo-tab.png';
+import heroLogoDesk from '../../images/desktop/hero-logo-desk.png';
 import s from './Hero.module.css';
 
 const Hero = () => {
   return (
     <section className={s.hero}>
       {/* <div className={s.bgTopLeft}></div> */}
-      <img className={s.heroLogo} src={HeroLogo} alt="hero-logo"></img>
-      <p>smart finance</p>
+      <Media
+        query="(max-width: 767.98px)"
+        render={() => <img src={heroLogoMob} alt="hero-logo"></img>}
+      />
+      <Media
+        query="(min-width: 768px) and (max-width: 1279.98px)"
+        render={() => <img src={heroLogoTab} alt="hero-logo"></img>}
+      />
+      <Media
+        query="(min-width: 1280px)"
+        render={() => <img src={heroLogoDesk} alt="hero-logo"></img>}
+      />
+      <h1>smart finance</h1>
     </section>
   );
 };
