@@ -3,6 +3,9 @@ import { useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import { HomePage } from './pages/HomePage/HomePage';
+
+import ReportPage from './pages/ReportPage/ReportPage';
+
 import Modal from './components/Modal/Modal';
 
 function App() {
@@ -13,7 +16,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
       </Routes>
-
+      <Routes>
+        <Route path="/report" element={<ReportPage />} />
+      </Routes>
       <Modal active={modalActive} setActive={setModalActive}>
         <p></p>
       </Modal>
