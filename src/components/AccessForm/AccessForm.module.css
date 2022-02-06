@@ -1,0 +1,21 @@
+.accessForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputWrapper {
+  padding-left: 11px;
+}
+
+.btnWrapper {
+  display: flex;
+  width: 265px;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .inputWrapper {
+    padding-left: 0;
+  }
+}
