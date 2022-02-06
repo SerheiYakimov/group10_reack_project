@@ -11,13 +11,25 @@ body {
   background-size: cover;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+}
+
 @media screen and (min-width: 768px) {
   body {
     background-image: url('./images/tablet/bg-tab.png');
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   body {
     background-image: url('./images/desktop/bg-desk.png');
   }

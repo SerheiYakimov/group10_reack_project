@@ -2,11 +2,10 @@ import { Routes, Route } from 'react-router';
 import { useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import { HomePage } from './pages/HomePage/HomePage';
-
+import HomePage from './pages/HomePage/HomePage';
 import ReportPage from './pages/ReportPage/ReportPage';
-
 import Modal from './components/Modal/Modal';
+import BalancePage from './pages/BalancePage/BalancePage';
 
 function App() {
   const [modalActive, setModalActive] = useState(false);
@@ -15,15 +14,14 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-      </Routes>
-      <Routes>
+        <Route path="/balance" element={<BalancePage />} />
         <Route path="/report" element={<ReportPage />} />
       </Routes>
       <Modal active={modalActive} setActive={setModalActive}>
         <p></p>
       </Modal>
       {/* Для проверки модалки */}
-      {/* <button type='button' onClick={() => setModalActive(true)}></button> */}
+      {/* <button type="button" onClick={() => setModalActive(true)}></button> */}
     </div>
   );
 }
