@@ -55,15 +55,6 @@
   color: #ffffff;
   border: none;
 }
-/* .button_yes:hover{
-border: 2px solid #F5F6FB;
-background-color: transparent;
-}
-
-.button_yes:hover .button_text{
-     color: #52555F;
-
-} */
 
 .button_no {
   border: 2px solid #f5f6fb;
@@ -71,14 +62,6 @@ background-color: transparent;
   background-color: transparent;
   color: #52555f;
 }
-/* .button_no:hover{
-background: #FF751D;
-border: 2px solid ;
-}
-.button_no:hover .button_text{
-     color: #FFFFFF;
-
-} */
 
 .close_btn {
   top: 12px;
@@ -106,6 +89,3 @@ border: 2px solid ;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
-/* .button_text:hover{
-   color: #52555F;
-} */
