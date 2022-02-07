@@ -1,3 +1,8 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
 .modal {
   position: fixed;
   position: relative;
@@ -15,7 +20,8 @@
 }
 @media screen and (max-width: 767px) {
   .modal {
-    zoom: 85%;
+    max-width: 767px;
+    zoom: 80%;
   }
 }
 
@@ -47,42 +53,26 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  width: 265px;
+  justify-content: space-between;
 }
-
+/* 
 .button_yes {
   background: #ff751d;
   margin-right: 15px;
   color: #ffffff;
   border: none;
-}
-/* .button_yes:hover{
-border: 2px solid #F5F6FB;
-background-color: transparent;
-}
-
-.button_yes:hover .button_text{
-     color: #52555F;
-
 } */
 
-.button_no {
+/* .button_no {
   border: 2px solid #f5f6fb;
   box-sizing: border-box;
   background-color: transparent;
   color: #52555f;
-}
-/* .button_no:hover{
-background: #FF751D;
-border: 2px solid ;
-}
-.button_no:hover .button_text{
-     color: #FFFFFF;
-
 } */
-
 .close_btn {
-  top: 12px;
-  right: -89px;
+  top: 15px;
+  right: 15px;
   display: flex;
   background-repeat: no-repeat;
   background-position: center;

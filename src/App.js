@@ -17,11 +17,8 @@ function App() {
         <Route path="/balance" element={<BalancePage />} />
         <Route path="/report" element={<ReportPage />} />
       </Routes>
-      <Modal active={modalActive} setActive={setModalActive}>
-        <p></p>
-      </Modal>
-      {/* Для проверки модалки */}
-      {/* <button type="button" onClick={() => setModalActive(true)}></button> */}
+      <Modal active={modalActive} setActive={setModalActive}></Modal>
+      {/* <button type="button" onClick={() => setModalActive(true)}>Open modal</button> */}
     </div>
   );
 }
