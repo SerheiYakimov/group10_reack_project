@@ -2,7 +2,7 @@ import sprite from '../../svg/sprite.svg';
 import Navigation from '../Navigation/Navigation';
 import s from './Header.module.css';
 
-const isAuth = true; //Навигация в хедере рендерится когда пользователь залогинен, пока нет привязки к бэкенду isAuth захардкожен
+const isAuth = false; //Навигация в хедере рендерится когда пользователь залогинен, пока нет привязки к бэкенду isAuth захардкожен
 
 const Header = () => {
   return (

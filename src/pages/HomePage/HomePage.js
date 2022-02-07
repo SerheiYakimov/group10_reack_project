@@ -1,13 +1,13 @@
 import Hero from '../../components/Hero/Hero';
 import AccessForm from '../../components/AuthMenu/AuthMenu';
-import s from './HomePage.module.css';
+import BgWrapper from '../../components/BgWrapper/BgWrapper';
 
 const HomePage = () => {
   return (
-    <section className={s.homePage}>
+    <BgWrapper>
       <Hero />
       <AccessForm />
-    </section>
+    </BgWrapper>
   );
 };
 
