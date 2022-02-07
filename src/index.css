@@ -5,10 +5,22 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffff;
   background-image: url('./images/mobile/bg-mob.png');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-size: 100% 768px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  body {
+    background-size: 100% 582px;
+  }
 }
 
 h1,

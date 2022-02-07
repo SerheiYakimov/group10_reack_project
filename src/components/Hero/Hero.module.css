@@ -1,6 +1,6 @@
 .hero {
   padding: 86px 0 0 49px;
-  background-image: url('../../images/bg-cabbage-elements/bg-top-left.png'),
+  /* background-image: url('../../images/bg-cabbage-elements/bg-top-left.png'),
     url('../../images/bg-cabbage-elements/bg-top-right.png'),
     url('../../images/bg-cabbage-elements/bg-bottom-right.png'),
     url('../../images/bg-cabbage-elements/bg-bottom-left.png'),
@@ -21,8 +21,34 @@
     top 177px left 152px, top 28px left 389px, top 91px left 259px,
     top 28px left 389px, top 91px left 508px, top 28px left 638px,
     top 91px left 757px, top 28px left 887px, top 91px left 1006px,
-    top 165px left 1128px, top 28px left 1136px, top 91px left 1255px;
+    top 165px left 1128px, top 28px left 1136px, top 91px left 1255px; */
   /* animation: test 2s forwards ease-in-out; */
+}
+
+.heroTitle {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: #52555f;
+}
+
+@media screen and (min-width: 768px) {
+  .heroTitle {
+    margin-left: 55px;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.18em;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .heroTitle {
+    margin-left: 70px;
+  }
 }
 
 /* .bgTopLeft {
