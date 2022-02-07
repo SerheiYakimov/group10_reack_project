@@ -56,20 +56,9 @@
   width: 265px;
   justify-content: space-between;
 }
-/* 
-.button_yes {
-  background: #ff751d;
-  margin-right: 15px;
-  color: #ffffff;
-  border: none;
-} */
 
-/* .button_no {
-  border: 2px solid #f5f6fb;
-  box-sizing: border-box;
-  background-color: transparent;
-  color: #52555f;
-} */
+
+
 .close_btn {
   top: 15px;
   right: 15px;
@@ -96,6 +85,3 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
-/* .button_text:hover{
-   color: #52555F;
-} */
