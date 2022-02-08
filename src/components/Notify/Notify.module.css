@@ -1,0 +1,35 @@
+.container {
+  /* position: absolute; */
+  width: 282px;
+  padding: 41px 25px 31px 25px;
+  background-image: url('../../images/mobile/bg-blue-notify.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 282px 163px;
+  background-color: transparent;
+}
+
+.invitation {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.warning {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 292px;
+    padding: 41px 30px 31px 30px;
+    background-image: url('../../images/desktop/bg-blue-notify.png');
+    background-size: 292px 163px;
+  }
+}
