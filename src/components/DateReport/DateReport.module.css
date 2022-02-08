@@ -1,0 +1,78 @@
+.navigationWrapper {
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reportMonth {
+  font-size: 11px;
+  line-height: 1.16;
+}
+
+.title {
+  color: rgba(82, 85, 95, 0.7);
+  margin-bottom: 5px;
+  letter-spacing: 0.04em;
+}
+
+.reportMonthTitle {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.142;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+
+  color: var(--black-text-color);
+}
+
+.btnL {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+
+  border: none;
+  color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: url('../../svg/arrow-left.svg');
+  background-repeat: no-repeat;
+  background-position: center bottom 1px;
+}
+
+.btnR {
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+
+  border: none;
+  color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: url('../../svg/arrow-right.svg');
+  background-repeat: no-repeat;
+  background-position: center bottom 1px;
+}
+
+.btnWrapper {
+  width: 155px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .navigationWrapper {
+    display: flex;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 59px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .navigationWrapper {
+    margin-left: 245px;
+  }
+}
