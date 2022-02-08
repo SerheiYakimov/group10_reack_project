@@ -4,9 +4,6 @@ import GoogleBtn from '../GoogleBtn/GoogleBtn';
 import s from './AuthMenu.module.css';
 
 export default function AuthMenu() {
-  //   const [email, setEmail] = useState('');
-  //   const [password, setPassword] = useState('');
-
   return (
     <div className={s.container}>
       <p className={s.descriptionGoogle}>
