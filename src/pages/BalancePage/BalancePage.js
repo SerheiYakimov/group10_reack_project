@@ -1,5 +1,11 @@
-const BalancePage = () => {
-  return <h1>Balance page</h1>;
-};
+// import React from 'react';
+// import Balance from '../../components/Balance/Balance';
 
-export default BalancePage;
+// const BalancePage = () => {
+//   return (
+//     <Balance />
+
+//   );
+// };
+
+// export default BalancePage;
