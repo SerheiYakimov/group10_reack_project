@@ -1,0 +1,147 @@
+@media screen and (min-width: 320px) {
+  .container {
+    width: 248px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+    position: relative;
+    /* top: 86px;  */
+  }
+
+  body {
+    position: relative;
+  }
+
+  .report-link-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      transition-duration: 500ms;
+    }
+  }
+
+  .report-link {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.667;
+    letter-spacing: 0.04em;
+    color: var(--color-grey);
+    margin-right: 15px;
+
+    &:hover,
+    &:focus {
+      color: var(--black-color);
+      transition-duration: 500ms;
+    }
+  }
+
+  .balance-name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.667;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--color-grey);
+
+    margin-bottom: 6px;
+  }
+  .balance-case {
+    display: flex;
+    justify-content: center;
+  }
+  .balance-sum {
+    font-weight: bold;
+    color: var(--black-color);
+    border-radius: 22px 0px 0px 22px;
+    padding: 15px 17px 15px 23px;
+  }
+
+  .balance-buton {
+    font-weight: normal;
+    color: var(--color-grey);
+    border-radius: 0px 22px 22px 0px;
+    padding: 12px 6px 12px 17px;
+  }
+
+  .balance-buton:hover {
+    cursor: pointer;
+  }
+
+  .balance-buton:active {
+    transition-duration: 500ms;
+    color: var(--white-color);
+    background-color: var(--accent-color);
+  }
+
+  .balance-buton:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+    color: var(--main-color-grey);
+    background: #f6f7fb;
+  }
+
+  .balance-sum,
+  .balance-buton {
+    width: 122px;
+    font-size: 12px;
+    line-height: 1.667;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    background: var(--light-color-gray);
+    border: 2px solid var(--white-color);
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    width: 634px;
+    padding-left: 40px;
+    margin-bottom: 58px;
+  }
+
+  .balance-container {
+    display: flex;
+  }
+
+  .balance-name {
+    padding: 12px 0px;
+    margin: 0 21px 0 0;
+  }
+
+  .report-link-container {
+    margin-bottom: 0px;
+  }
+
+  .report-link {
+    width: 115px;
+  }
+
+  .balance-sum {
+    border-radius: 16px;
+    padding: 12px 20px 12px;
+    margin-right: 15px;
+  }
+
+  .balance-buton {
+    border-radius: 16px;
+    padding: 12px 6px 12px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    align-items: center;
+    width: 1050px;
+    padding-left: 374px;
+    margin-bottom: 9px;
+  }
+}

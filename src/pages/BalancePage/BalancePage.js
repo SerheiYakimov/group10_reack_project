@@ -1,11 +1,8 @@
-// import React from 'react';
-// import Balance from '../../components/Balance/Balance';
+import React from 'react';
+import Balance from '../../components/Balance/Balance';
 
-// const BalancePage = () => {
-//   return (
-//     <Balance />
+const BalancePage = () => {
+  return <Balance />;
+};
 
-//   );
-// };
-
-// export default BalancePage;
+export default BalancePage;
