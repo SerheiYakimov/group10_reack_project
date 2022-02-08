@@ -6,6 +6,26 @@
 
 .inputWrapper {
   padding-left: 11px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.authLabel {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
+
+.authInput {
+  display: block;
+  width: 253px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  padding: 17px 20px 17px 20px;
+  background-color: #f6f7fb;
+  margin-top: 12px;
 }
 
 .btnWrapper {
@@ -14,8 +34,36 @@
   justify-content: space-between;
 }
 
+.disabledBtnWrapper {
+  display: flex;
+  width: 265px;
+  justify-content: space-between;
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.error {
+  position: absolute;
+  color: #eb5757;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
 @media screen and (min-width: 768px) {
   .inputWrapper {
     padding-left: 0;
+  }
+
+  .authInput {
+    width: 265px;
+    margin-top: 10px;
+  }
+
+  .authLabel {
+    font-size: 12px;
+    line-height: 1.7;
   }
 }
