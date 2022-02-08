@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* html {
+  height: 100%;
+} */
+
 body {
+  /* height: 100%; */
   margin: 0;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffff;
   background-image: url('./images/mobile/bg-mob.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 342px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-size: 100% 582px;
+  }
 }
 
 h1,
