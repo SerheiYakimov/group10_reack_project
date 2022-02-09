@@ -7,7 +7,6 @@ import s from './Hero.module.css';
 const Hero = () => {
   return (
     <section className={s.hero}>
-      {/* <div className={s.bgTopLeft}></div> */}
       <Media
         query="(max-width: 767.98px)"
         render={() => <img src={heroLogoMob} alt="hero-logo"></img>}
@@ -20,7 +19,7 @@ const Hero = () => {
         query="(min-width: 1280px)"
         render={() => <img src={heroLogoDesk} alt="hero-logo"></img>}
       />
-      <h1>smart finance</h1>
+      <h1 className={s.heroTitle}>smart finance</h1>
     </section>
   );
 };
