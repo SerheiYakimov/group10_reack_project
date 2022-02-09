@@ -1,12 +1,12 @@
 import React from 'react';
 import Button from '../Button/Button';
-import s from './ProductSelection.module.css';
+import s from './IncomeSelection.module.css';
 import sprite from '../../svg/sprite.svg';
 import Media from 'react-media';
 import FormDatePicker from '../../components/DatePicker/DatePicker';
 import Selector from '../Selector/Selector';
 
-const ProductSelection = () => {
+const IncomeSelection = () => {
   return (
     <div className={s.container}>
       <div className={s.outcomes_div}>
@@ -14,7 +14,7 @@ const ProductSelection = () => {
           {matches => (matches.small ? <></> : <FormDatePicker />)}
         </Media>
         <form className={s.form}>
-          <Selector>Категория товара</Selector>
+          <Selector>Категория дохода</Selector>
           <div className={s.currency_div}>
             <Media queries={{ small: { maxWidth: 767 } }}>
               {matches =>
@@ -63,4 +63,4 @@ const ProductSelection = () => {
   );
 };
 
-export default ProductSelection;
+export default IncomeSelection;
