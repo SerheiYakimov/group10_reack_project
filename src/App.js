@@ -22,9 +22,9 @@ function App() {
         <Route path="/report" element={<ReportPage />} />
       </Routes>
       <Modal active={modalActive} setActive={setModalActive}></Modal>
-      {/* <button type="button" onClick={() => setModalActive(true)}>
+      <button type="button" onClick={() => setModalActive(true)}>
         Open modal
-      </button> */}
+      </button>
     </div>
   );
 }
