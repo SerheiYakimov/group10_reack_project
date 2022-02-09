@@ -1,0 +1,20 @@
+.summary {
+  padding: 86px 0 0 49px;
+}
+
+.summaryTitle {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: #52555f;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1280px) {
+}
