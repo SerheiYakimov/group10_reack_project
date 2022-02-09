@@ -19,7 +19,7 @@
     margin-top: 33px;
   }
 }
-.input {
+/* .input {
   background-color: transparent;
   display: block;
   width: 282px;
@@ -63,9 +63,9 @@
 
   color: #c7ccdc;
   margin-left: 20px;
-}
+} */
 
-.select {
+/* .select {
   background-color: transparent;
   display: block;
   width: 282px;
@@ -88,9 +88,9 @@
   .select {
     width: 188px;
   }
-}
+} */
 
-.option {
+/* .option {
   position: absolute;
   width: 104px;
   height: 40px;
@@ -107,7 +107,7 @@
   letter-spacing: 0.02em;
 
   color: #c7ccdc;
-}
+} */
 
 .input_price {
   position: relative;
@@ -200,6 +200,7 @@
 }
 @media screen and (min-width: 1279px) {
   .form {
+    margin-top: 0;
     width: 600px;
   }
 }
@@ -222,11 +223,23 @@
   .date {
     width: 104px;
     margin-right: 33px;
-    margin-bottom: 30px;
   }
 }
 @media screen and (min-width: 1279px) {
   .date {
     margin-right: 23px;
+    margin-bottom: 30px;
   }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type='number']:hover,
+input[type='number']:focus {
+  appearance: none;
+  -moz-appearance: textfield;
 }
