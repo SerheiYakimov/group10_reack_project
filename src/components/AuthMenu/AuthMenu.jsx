@@ -9,7 +9,7 @@ export default function AuthMenu() {
       <p className={s.descriptionGoogle}>
         Вы можете авторизоваться с помощью Google Account:
       </p>
-      <GoogleBtn href="http://localhost:3001/auth/google" />
+      <GoogleBtn href="http://localhost:3001/api/auth/google" />
 
       <p className={s.descriptionSignup}>
         Или зайти с помощью e-mail и пароля, предварительно зарегистрировавшись:
