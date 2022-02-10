@@ -7,6 +7,7 @@ const OutcomesPage = () => {
     <>
       <div className={s.container}>
         <ProductSelection></ProductSelection>
+        <Summary />
       </div>
     </>
   );

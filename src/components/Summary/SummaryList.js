@@ -15,7 +15,7 @@ export default function SummaryList() {
   return (
     <div>
       {summaryData && (
-        <ul>
+        <ul className={s.summaryList}>
           {summaryData.map(summary => (
             <SummaryListItem summary={summary} />
           ))}
