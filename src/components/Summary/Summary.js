@@ -5,7 +5,7 @@ import SummaryList from './SummaryList';
 
 const Summary = () => {
   return (
-    <section>
+    <section className={s.summarySection}>
       <SummaryTitle />
       <SummaryList />
     </section>

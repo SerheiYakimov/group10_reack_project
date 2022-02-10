@@ -8,7 +8,11 @@ const OutcomesPage = () => {
     <>
       <div className={s.container}>
         <ProductSelection></ProductSelection>
+
         <Table></Table>
+
+        <Summary />
+
       </div>
     </>
   );
