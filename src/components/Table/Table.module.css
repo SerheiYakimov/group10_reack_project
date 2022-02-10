@@ -1,0 +1,62 @@
+/* .date_collumn{ */
+/* background: #F5F6FB; */
+/* color: black;
+      font-weight: bold;
+         border-bottom: none;*/
+/* border-color: red;  */
+/* } */
+
+@media screen and (min-width: 767px) {
+  .data_rows {
+    width: 38px;
+    padding: 10px;
+    border-bottom: 2px solid #f5f6fb;
+  }
+}
+
+/* @media screen and (min-width: 1279px) {
+  .data_rows {
+ 
+  }
+} */
+
+.row {
+  background: #ffffff;
+}
+
+@media screen and (min-width: 767px) {
+  .table {
+    background: #f5f6fb;
+    margin-left: auto;
+    margin-right: auto;
+    width: 605px;
+    margin-top: 48px;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+@media screen and (min-width: 1279px) {
+  .table {
+    width: 760px;
+    margin-top: 59px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .table_head {
+    height: 38px;
+    /* background: #F5F6FB; */
+    /* border-color:   #F5F6FB; */
+  }
+}
+
+/* @media screen and (min-width: 1279px) {
+  .table_head {
+   
+  }} */
+
+/* 
+.thead{
+  
+    border-radius: 20px 20px 0 0;
+} */
