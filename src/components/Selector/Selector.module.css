@@ -17,18 +17,47 @@
   color: #c7ccdc;
 }
 
+.option:hover {
+  background-color: #f5f6fb;
+}
+
 .select {
   background-color: transparent;
   display: block;
   width: 282px;
   height: 44px;
-  left: 19px;
-  top: 110px;
 
   border: 2px solid #ffffff;
   box-sizing: border-box;
   border-radius: 0 0 16px 0;
+
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  font-size: 12px;
+  line-height: 14px;
+  align-items: center;
+  letter-spacing: 0.02em;
+
+  color: #c7ccdc;
+  padding-left: 20px;
 }
+.select::after {
+  border-color: 2px solid red;
+}
+
+.select:not([multiple]) {
+  padding-right: 1.2em;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) 18px;
+  /* background-size: 0.85em auto; */
+  background-image: url(../../svg/Vector.svg);
+}
+
 @media screen and (min-width: 767px) {
   .select {
     width: 171px;
@@ -53,6 +82,8 @@
   border: 2px solid #ffffff;
   box-sizing: border-box;
   border-radius: 16px 16px 0 0;
+  padding-left: 20px;
+  color: #c7ccdc;
 }
 @media screen and (min-width: 767px) {
   .input {
@@ -85,5 +116,4 @@
   letter-spacing: 0.02em;
 
   color: #c7ccdc;
-  margin-left: 20px;
 }

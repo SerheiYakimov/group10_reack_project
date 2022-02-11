@@ -30,9 +30,11 @@
   box-sizing: border-box;
   border-radius: 22px 0px 0px 22px;
 
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
+  padding-left: 20px;
+  color: #c7ccdc;
 }
 @media screen and (min-width: 767px) {
   .input_price {
@@ -48,6 +50,26 @@
   }
 }
 
+.input_price::placeholder {
+  font-size: 12px;
+  line-height: 1.16;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  padding-right: 15px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+@media screen and (min-width: 767px) {
+  .input_price::placeholder {
+    padding-right: 45px;
+
+    color: #c7ccdc;
+  }
+}
+
 .culculator {
   position: absolute;
   width: 20px;
@@ -58,14 +80,14 @@
 }
 @media screen and (min-width: 767px) {
   .culculator {
-    left: 646px;
-    top: 278px;
+    left: 598px;
+    top: 38px;
   }
 }
 @media screen and (min-width: 1279px) {
   .culculator {
-    left: 646px;
-    top: 278px;
+    left: 720px;
+    top: 45px;
   }
 }
 
