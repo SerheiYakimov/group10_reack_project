@@ -8,7 +8,7 @@ const summaryData = [
   { id: '3', month: 'Март ', amount: '999999.99' },
   { id: '4', month: 'Апрель', amount: '99999.99' },
   { id: '5', month: 'Май', amount: '9999.99' },
-  { id: '6', month: 'Июнь', amount: '- 999999999.99' },
+  { id: '6', month: 'Июнь', amount: '- 9999999.99' },
 ];
 
 export default function SummaryList() {
