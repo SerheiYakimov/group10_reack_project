@@ -29,7 +29,12 @@ const ProductSelection = () => {
                       min="0,01"
                     />
                     <div className={s.culc_div}>
-                      <svg className={s.culculator} width="20" height="20">
+                      <svg
+                        className={s.culculator}
+                        fill=" #52555F"
+                        width="20"
+                        height="20"
+                      >
                         <use href={`${sprite}#calculator`}></use>
                       </svg>
                     </div>
@@ -44,9 +49,14 @@ const ProductSelection = () => {
                       step="0.01"
                       min="0,00000001"
                     ></input>
-                    {/* <svg className={s.culculator} width="20" height="20">
-                                                <use href={`${sprite}#calculator`}></use>
-                                                </svg> */}
+                    <svg
+                      className={s.culculator}
+                      fill=" #52555F"
+                      width="20"
+                      height="20"
+                    >
+                      <use href={`${sprite}#calculator`}></use>
+                    </svg>
                   </>
                 )
               }
