@@ -1,6 +1,8 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
+import authOperations from '../../redux/auth/operations';
 import Button from '../Button/Button';
 import s from './AccessForm.module.css';
 
@@ -8,7 +10,7 @@ const signInSchema = Yup.object().shape({
   email: Yup.string().email().required('Это обязательное поле'),
   password: Yup.string()
     .required('Это обязательное поле')
-    .min(4, 'Пароль слишком короткий - должен содержать минимум 4 символа'),
+    .min(8, 'Пароль должен быть минимум 8 символов'),
 });
 
 const initialValues = {
@@ -18,6 +20,8 @@ const initialValues = {
 };
 
 export default function AccessForm() {
+  const dispatch = useDispatch();
+
   return (
     <Formik
       initialValues={initialValues}
@@ -25,15 +29,16 @@ export default function AccessForm() {
       onSubmit={(values, actions) => {
         const { email, password, isSecondButton } = values;
         if (!isSecondButton) {
-          console.log('login: ', email, password);
+          dispatch(authOperations.logIn({ email, password }));
         } else {
-          console.log('register: ', email, password);
+          dispatch(authOperations.register({ email, password }));
         }
         actions.setSubmitting(false);
         actions.resetForm({
           values: {
             email: '',
             password: '',
+            isSecondButton: false,
           },
         });
       }}
