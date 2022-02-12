@@ -17,8 +17,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/balance" element={<BalancePage />} />
-        <Route path="/balance:outcomes" element={<OutcomesPage />} />
-        <Route path="/balance:incomes" element={<IncomesPage />} />
+
+        {/* <Route path="/balance/:incomes" exact element={<IncomesPage />} /> */}
+        <Route path="/balance/:outcomes" exact element={<OutcomesPage />} />
         <Route path="/report" element={<ReportPage />} />
       </Routes>
       <Modal active={modalActive} setActive={setModalActive}></Modal>
