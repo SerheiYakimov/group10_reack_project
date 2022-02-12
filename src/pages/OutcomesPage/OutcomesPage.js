@@ -12,7 +12,6 @@ const OutcomesPage = () => {
         <Table></Table>
 
         <Summary />
-
       </div>
     </>
   );

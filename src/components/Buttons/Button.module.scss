@@ -1,0 +1,33 @@
+.form_button {
+  width: 125px;
+  height: 44px;
+  text-align: center;
+  display: inline-block;
+  border: 2px solid #ffffff;
+  border-radius: 0 50px 50px 0;
+  background-color: #f5f6fb;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 14px;
+  font-style: normal;
+  text-transform: uppercase;
+  color: rgba(82, 85, 95, 0.7);
+  transition: background-color 300ms linear;
+  margin-left: 210px;
+
+  @media screen and (min-width: 768px) {
+    border-radius: 16px;
+    margin-left: 15px;
+  }
+
+  &:hover {
+    background-color: #ff751d;
+    border: 0;
+  }
+
+  &:focus {
+    transform: scale(0.9) 250ms linear;
+  }
+}
