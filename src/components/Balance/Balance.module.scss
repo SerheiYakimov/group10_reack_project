@@ -1,98 +1,98 @@
 .BalanceHome {
-    @media screen and (max-width: 767px) {
-        display: flex;
-        flex-direction: column-reverse;
-        width: 248px;
-        height: 134px;
-        margin-top: 30px;
-        margin-bottom: 40px;
-        margin-left: 35px;
-        margin-right: 37px;
-    }
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 248px;
+    height: 134px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-left: 35px;
+    margin-right: 37px;
+  }
 
-    @media screen and (min-width: 768px) {
-        display: flex;
-        align-items: center;
-        width: 634px;
-        height: 44px;
-        margin-top: 40px;
-        margin-bottom: 30px;
-        margin-left: 82px;
-        margin-right: 52px;
-    }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    width: 634px;
+    height: 44px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 82px;
+    margin-right: 52px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        width: 728px;
-        margin-bottom: 9px;
-        margin-left: 442px;
-        margin-right: 110px;
-    }
+  @media screen and (min-width: 1280px) {
+    width: 369px;
+    margin-bottom: 9px;
+    margin-left: 110px;
+    // margin-right: 110px;
+  }
 }
 
-// .balance_form {
-//     margin-top: 40px;
+.balance_form {
+  margin-top: 40px;
 
-//     @media screen and (min-width: 768px) {
-//         margin-top: 0;
-//         width: 369px;
-//         height: 44px;
-//     }
-// }
-// .form_label {
-//     display: flex;
-//     align-items: center;
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
+    // width: 369px;
+    height: 44px;
+  }
+}
+.form_label {
+  display: flex;
+  align-items: center;
 
-//     @media screen and (max-width: 767px) {
-//         flex-direction: column;
-//         margin-bottom: 6px;
-//     }
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    margin-bottom: 6px;
+  }
 
-//     @media screen and (min-width: 768px) {
-//         align-items: center;
-//     }
-// }
+  @media screen and (min-width: 768px) {
+    align-items: center;
+  }
+}
 
-// .input_box {
-//     @media screen and (max-width: 767px) {
-//         display: flex;
-//         align-items: center;
-//         margin-top: 6px;
-//     }
-// }
+.input_box {
+  @media screen and (max-width: 767px) {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+  }
+}
 
 // .form_title {
-//     width: 83px;
-//     height: 14px;
-//     font-size: 12px;
-//     font-weight: 500;
-//     line-height: 14px;
-//     color: rgba(82, 85, 95, 0.7);
-//     text-align: center;
+//   width: 83px;
+//   height: 14px;
+//   font-size: 12px;
+//   font-weight: 500;
+//   line-height: 14px;
+//   color: --color-grey;
+//   text-align: center;
 
-//     @media screen and (min-width: 768px) {
-//         padding-right: 21px;
-//         text-align: right;
-//     }
-// }
-
-// .input {
-//     box-sizing: border-box;
-//     width: 125px;
-//     height: 44px;
-//     padding-right: 17px;
-//     display: inline-block;
-//     border: 2px solid #ffffff;
-//     border-radius: 50px 0 0 50px;
-//     background-color: #f5f6fb;
-//     font-family: inherit;
-//     font-size: 12px;
-//     line-height: 14px;
-//     font-style: normal;
-//     font-weight: 700;
+//   @media screen and (min-width: 768px) {
+//     padding-right: 21px;
 //     text-align: right;
-//     text-transform: uppercase;
-
-//     @media screen and (min-width: 768px) {
-//         border-radius: 16px;
-//     }
+//   }
 // }
+
+// // .input {
+// //   box-sizing: border-box;
+// //   width: 125px;
+// //   height: 44px;
+// //   padding-right: 17px;
+// //   display: inline-block;
+// //   border: 2px solid --white-color;
+// //   border-radius: 50px 0 0 50px;
+// //   background-color: --light-color-gray;
+// //   font-family: inherit;
+// //   font-size: 12px;
+// //   line-height: 14px;
+// //   font-style: normal;
+// //   font-weight: 700;
+// //   text-align: right;
+// //   text-transform: uppercase;
+
+// //   @media screen and (min-width: 768px) {
+// //     border-radius: 16px;
+// //   }
+// // }

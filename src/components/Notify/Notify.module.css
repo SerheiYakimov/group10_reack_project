@@ -1,5 +1,6 @@
 .container {
-  /* position: absolute; */
+  position: absolute;
+  margin-top: 18px;
   width: 282px;
   padding: 41px 25px 31px 25px;
   background-image: url('../../images/mobile/bg-blue-notify.png');
@@ -27,6 +28,8 @@
 
 @media screen and (min-width: 1280px) {
   .container {
+    margin-top: 210px;
+    margin-left: 230px;
     width: 292px;
     padding: 41px 30px 31px 30px;
     background-image: url('../../images/desktop/bg-blue-notify.png');

@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import balanceOperetion from '../../redux/balance/balance-operations';
-// import balanceSelector from '../../redux/balance/balance-selectors';
+
 import styles from './BalanceString.module.scss';
 
 export default function BalanceString() {
-  // const currentBalance = useSelector(balanceSelector.getBalance);
-  // const dispatch = useDispatch();
   const [balance, setBalance] = useState('');
 
   const handleChange = evt => {
@@ -17,7 +13,7 @@ export default function BalanceString() {
   const handleSubmit = evt => {
     evt.preventDefault();
     console.log(`получен баланс ${balance}`);
-    // dispatch(balanceOperetion.addBalance(+balance));
+
     setBalance('');
   };
 
@@ -29,7 +25,6 @@ export default function BalanceString() {
           <input
             className={styles.input}
             type="text"
-            // placeholder={`${currentBalance} ГРН`}
             value={balance}
             name="balance"
             onChange={handleChange}
