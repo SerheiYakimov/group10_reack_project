@@ -99,6 +99,18 @@ const userFromGoogleAuth = createAsyncThunk(
   },
 );
 
+export const setUserBalance = createAsyncThunk(
+  '/users/setUserBalance',
+  async (newBalance, { rejectWithValue }) => {
+    try {
+      const res = await axios.post('/users/', newBalance);
+      return res.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  },
+);
+
 export const getUserBalance = createAsyncThunk(
   '/users/getUserBalance',
   async (_, { rejectWithValue }) => {
