@@ -3,6 +3,7 @@ import Container from '../../components/Container/Container';
 import ArrowToGoBack from '../../components/ArrowToGoBack/ArrowToGoBack';
 import BalanceReport from '../../components/BalanceReport/BalanceReport';
 import DateReport from '../../components/DateReport/DateReport';
+import ReportSwitch from '../../components/ReportSwitch/ReportSwitch';
 import ExpensesIncome from '../../components/ExpensesIncome/ExpensesIncome';
 
 import s from './ReportPage.module.css';
@@ -19,6 +20,7 @@ const ReportPage = () => {
           </div>
         </div>
         <ExpensesIncome />
+        <ReportSwitch />
       </Container>
     </section>
   );

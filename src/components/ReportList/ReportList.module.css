@@ -1,0 +1,157 @@
+.reportList {
+  display: grid;
+  max-width: calc(100vw - 48px);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-gap: 16px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reportListItem {
+  display: block;
+  max-width: 106px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.reportListItemCard {
+  display: block;
+}
+
+.reportListItemTextAmount {
+  margin-top: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #52555f;
+}
+
+.reportListIcon {
+  margin-top: 5px;
+  width: 60px;
+  height: 60px;
+  /* background: #f5f6fb;
+  border-radius: 20px; */
+}
+
+.reportListIcon:hover {
+  fill: #ff751d;
+  background: #ffdac0;
+  transform: scale(1.01);
+}
+
+.reportListItemTextTitle {
+  margin-top: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #52555f;
+}
+
+/* ========================= */
+
+.summaryList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryListItem {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 2px;
+  background-color: #f5f6fb;
+  width: 230px;
+  height: 38px;
+}
+
+.summaryListItem:last-child {
+  border-radius: 0 0 20px 0;
+}
+
+.summaryListItemTextMonth {
+  margin-left: 20px;
+}
+
+.summaryListItemTextAmount {
+  margin-right: 22px;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1280px) {
+}
+
+.moviesList-container {
+  margin-bottom: 60px;
+}
+
+.moviesList-link {
+  text-decoration: none;
+}
+
+.moviesList-list {
+  display: grid;
+  max-width: calc(100vw - 48px);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-gap: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+.moviesList-item {
+  display: block;
+  max-width: 220px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: silver;
+}
+.moviesList-item:hover {
+  transform: scale(1.01);
+}
+.moviesList-image {
+  display: block;
+  max-width: 200px;
+}
+.moviesList-title,
+.moviesList-date {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: medium;
+  font-weight: bold;
+  color: black;
+}
+.moviesList-reviw {
+}
