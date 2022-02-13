@@ -52,10 +52,10 @@ const transactionsSlice = createSlice({
       state.items = state.items.filter(({ _id }) => _id !== action.payload);
     },
     [transactionsOps.getAllExpenses.fulfilled]: (state, action) => {
-      state.monthlyExp = [...action.payload];
+      state.monthExpenses = [...action.payload];
     },
     [transactionsOps.getAllIncome.fulfilled]: (state, action) => {
-      state.monthlyInc = [...action.payload];
+      state.monthIncome = [...action.payload];
     },
   },
 });
