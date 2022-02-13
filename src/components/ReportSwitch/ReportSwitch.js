@@ -30,7 +30,6 @@ const ReportSwitch = () => {
             className={s.reportButtonRight}
             onClick={onHandleClickRight}
           ></button>
-          {/* <ReportListSection ReportSwitchIncomes={ReportSwitchIncomes} /> */}
         </div>
       </div>
       <ReportListSection ReportSwitchIncomes={ReportSwitchIncomes} />

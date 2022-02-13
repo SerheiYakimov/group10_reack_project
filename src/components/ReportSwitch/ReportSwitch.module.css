@@ -5,10 +5,19 @@
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+
+  background: #ffffff;
+
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  border-radius: 30px;
 }
 
 .reportSwitch {
-  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 11px;
   line-height: 1.16;
 }
@@ -20,13 +29,18 @@
 }
 
 .reportSwitchTitle {
-  font-weight: 700;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
   font-size: 14px;
-  line-height: 1.142;
-  text-transform: uppercase;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
   letter-spacing: 0.02em;
+  text-transform: uppercase;
 
-  color: var(--black-text-color);
+  color: #000000;
 }
 
 .reportButtonLeft {
