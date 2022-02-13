@@ -7,7 +7,7 @@ const OutcomesPage = () => {
   return (
     <>
       <div className={s.container}>
-        <ProductSelection></ProductSelection>
+        <ProductSelection />
 
         <Table></Table>
 
