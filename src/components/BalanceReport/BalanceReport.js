@@ -1,9 +1,9 @@
-// import { useSelector } from 'react-redux';
-// import { getUserBalance } from '../../redux/auth/selectors';
+import { useSelector } from 'react-redux';
+import { getUserBalance } from '../../redux/auth/selectors';
 import s from './BalanceReport.module.css';
 
 export default function BalanceReport() {
-  // const Balance = useSelector(getUserBalance);
+  const Balance = useSelector(getUserBalance);
 
   return (
     <div className={s.wrapper}>
@@ -13,7 +13,7 @@ export default function BalanceReport() {
         type="text"
         name="balance"
         maxLength="10"
-        // placeholder={Balance ? `${Balance} UAH` : `00.00 UAH`}
+        placeholder={Balance ? `${Balance} UAH` : `00.00 UAH`}
         className={s.balanceInput}
         autoComplete="off"
         disabled
