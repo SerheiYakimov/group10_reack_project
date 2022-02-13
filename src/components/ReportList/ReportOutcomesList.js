@@ -6,9 +6,9 @@ const reportOutcomesData = [
     id: '1',
     category: 'продукты',
     icon: 'icon-products',
-    amount: '9999999.99',
+    amount: '99999.99',
   },
-  { id: '2', category: 'алкоголь', icon: 'icon-alcohol', amount: '999999.99' },
+  { id: '2', category: 'алкоголь', icon: 'icon-alcohol', amount: '99999.99' },
   {
     id: '3',
     category: 'развлечения',
@@ -23,7 +23,7 @@ const reportOutcomesData = [
     icon: 'icon-homeware',
     amount: '99999.99',
   },
-  { id: '7', category: 'техника', icon: 'icon-technics', amount: '9999999.99' },
+  { id: '7', category: 'техника', icon: 'icon-technics', amount: '999.99' },
   { id: '8', category: 'коммуналка', icon: 'icon-invoices', amount: '9999.99' },
   {
     id: '9',
