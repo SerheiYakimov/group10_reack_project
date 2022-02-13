@@ -21,6 +21,7 @@ const Selector = ({ children }) => {
         name="name"
         placeholder="Описание товара"
       />
+
       <select
         name="select-category"
         id=""

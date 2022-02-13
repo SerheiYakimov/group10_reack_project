@@ -19,95 +19,6 @@
     margin-top: 33px;
   }
 }
-/* .input {
-  background-color: transparent;
-  display: block;
-  width: 282px;
-  height: 44px;
-  left: 19px;
-  top: 110px;
-
-  border: 2px solid #ffffff;
-  box-sizing: border-box;
-  border-radius: 16px 16px 0 0;
-}
-@media screen and (min-width: 767px) {
-  .input {
-    width: 192px;
-    border-radius: 16px 0 0 0;
-    border-right: none;
-    border-color: #f5f6fb;
-  }
-}
-@media screen and (min-width: 1279px) {
-  .input {
-    width: 289px;
-  }
-}
-
-.input::placeholder {
-  display: block;
-  width: 155px;
-  height: 40px;
-  left: 39px;
-  top: 112px;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 1.16;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.02em;
-
-  color: #c7ccdc;
-  margin-left: 20px;
-} */
-
-/* .select {
-  background-color: transparent;
-  display: block;
-  width: 282px;
-  height: 44px;
-  left: 19px;
-  top: 110px;
-
-  border: 2px solid #ffffff;
-  box-sizing: border-box;
-  border-radius: 0 0 16px 0;
-}
-@media screen and (min-width: 767px) {
-  .select {
-    width: 171px;
-    border-radius: 0;
-    border-color: #f5f6fb;
-  }
-}
-@media screen and (min-width: 1279px) {
-  .select {
-    width: 188px;
-  }
-} */
-
-/* .option {
-  position: absolute;
-  width: 104px;
-  height: 40px;
-  left: 40px;
-  top: 154px;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 1.16;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.02em;
-
-  color: #c7ccdc;
-} */
 
 .input_price {
   position: relative;
@@ -119,9 +30,11 @@
   box-sizing: border-box;
   border-radius: 22px 0px 0px 22px;
 
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
+  padding-left: 20px;
+  color: #c7ccdc;
 }
 @media screen and (min-width: 767px) {
   .input_price {
@@ -137,6 +50,26 @@
   }
 }
 
+.input_price::placeholder {
+  font-size: 12px;
+  line-height: 1.16;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  padding-right: 15px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+@media screen and (min-width: 767px) {
+  .input_price::placeholder {
+    padding-right: 45px;
+
+    color: #c7ccdc;
+  }
+}
+
 .culculator {
   position: absolute;
   width: 20px;
@@ -147,14 +80,14 @@
 }
 @media screen and (min-width: 767px) {
   .culculator {
-    left: 646px;
-    top: 278px;
+    left: 598px;
+    top: 38px;
   }
 }
 @media screen and (min-width: 1279px) {
   .culculator {
-    left: 646px;
-    top: 278px;
+    left: 720px;
+    top: 45px;
   }
 }
 
