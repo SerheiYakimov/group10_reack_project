@@ -74,9 +74,14 @@ const IncomeSelection = () => {
                       step="0.01"
                       min="0,00000001"
                     ></input>
-                    {/* <svg className={s.culculator} width="20" height="20">
-                                                <use href={`${sprite}#calculator`}></use>
-                                                </svg> */}
+                    <svg
+                      className={s.culculator}
+                      fill=" #52555F"
+                      width="20"
+                      height="20"
+                    >
+                      <use href={`${sprite}#calculator`}></use>
+                    </svg>
                   </>
                 )
               }

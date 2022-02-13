@@ -39,7 +39,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/balance" element={<BalancePage />} />
 
-            <Route path="/balance/:incomes" exact element={<IncomesPage />} />
+            {/* <Route path="/balance/:incomes" exact element={<IncomesPage />} /> */}
             <Route path="/balance/:outcomes" exact element={<OutcomesPage />} />
             <Route path="/report" element={<ReportPage />} />
           </Routes>
