@@ -1,0 +1,81 @@
+.summary {
+  padding: 0 0 0 0;
+}
+
+.summarySection {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 230px;
+}
+
+.summaryTitleSectiom {
+  display: flex;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  background-color: #f5f6fb;
+  width: 230px;
+  height: 38px;
+  border-radius: 20px 20px 0 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.summaryTitle {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14.06px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #000000;
+  text-align: center;
+}
+
+.summaryListItemText {
+  display: flex;
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.06px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #000000;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.summaryList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryListItem {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 2px;
+  background-color: #f5f6fb;
+  width: 230px;
+  height: 38px;
+}
+
+.summaryListItem:last-child {
+  border-radius: 0 0 20px 0;
+}
+
+.summaryListItemTextMonth {
+  margin-left: 20px;
+}
+
+.summaryListItemTextAmount {
+  margin-right: 22px;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1280px) {
+}

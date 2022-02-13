@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReportListSection from '../ReportList/ReportListSection';
 import s from './ReportSwitch.module.css';
 
 const ReportSwitch = () => {
@@ -29,8 +30,10 @@ const ReportSwitch = () => {
             className={s.reportButtonRight}
             onClick={onHandleClickRight}
           ></button>
+          {/* <ReportListSection ReportSwitchIncomes={ReportSwitchIncomes} /> */}
         </div>
       </div>
+      <ReportListSection ReportSwitchIncomes={ReportSwitchIncomes} />
     </div>
   );
 };
