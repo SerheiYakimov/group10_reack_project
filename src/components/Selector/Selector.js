@@ -5,16 +5,16 @@ import s from './Selector.module.css';
 
 import { addExpenses } from '../../redux/transactions/operations';
 import { useSelector, useDispatch } from 'react-redux';
-import { getTypeTransaction } from '../../redux/transactions/typeTransaction/typeTransaction-selector';
-import { changeTypeTransaction } from '../../redux/transactions/typeTransaction/typeTransaction-slice';
+// import { getTypeTransaction } from '../../redux/transactions/typeTransaction/typeTransaction-selector';
+// import { changeTypeTransaction } from '../../redux/transactions/typeTransaction/typeTransaction-slice';
 
 const Selector = ({ children }) => {
   const [value, setValue] = useState('');
   // console.log(value)
 
-  const transaction = useSelector(getTypeTransaction);
+  // const transaction = useSelector(getTypeTransaction);
   const dispatch = useDispatch();
-  console.log(transaction);
+  // console.log(transaction);
 
   // if (changeTypeTransaction === true) {
   //   const types = categories.map(({ id, category }) => {
