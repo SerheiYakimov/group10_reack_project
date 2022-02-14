@@ -21,7 +21,7 @@
 }
 
 .input_price {
-  /* position: relative; */
+  position: relative;
   width: 125px;
   height: 44px;
   background-color: transparent;
@@ -61,6 +61,7 @@
   line-height: 1.16;
   text-align: right;
   padding-right: 15px;
+  padding-left: 15px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 
@@ -84,14 +85,14 @@
 }
 @media screen and (min-width: 767px) {
   .culculator {
-    left: 598px;
-    top: 38px;
+    left: 13px;
+    top: -8px;
   }
 }
 @media screen and (min-width: 1279px) {
   .culculator {
-    left: 720px;
-    top: 45px;
+    left: 20px;
+    top: -7px;
   }
 }
 
@@ -104,6 +105,14 @@
   border-radius: 22px 0px 0px 22px;
   transform: matrix(-1, 0, 0, 1, 0, 0);
 }
+@media screen and (min-width: 767px) {
+  .culc_div {
+    border: none;
+    width: 0px;
+    height: 4px;
+  }
+}
+
 .outcomes_div {
   padding-top: 54px;
   display: flex;

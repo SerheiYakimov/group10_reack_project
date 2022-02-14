@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import s from './IncomeSelection.module.css';
 import Media from 'react-media';
 import FormDatePicker from '../../components/DatePicker/DatePicker';
-import {
-  InputCurrency,
-  InputCurrencyMobile,
-} from '../ProductSelection/InputCurrency';
+import { InputCurrency } from '../ProductSelection/InputCurrency';
 import ProductSelectionButtons from '../ProductSelection/ProductSelectionButtons';
 import incomes from '../../json/incomes.json';
 
@@ -45,14 +42,18 @@ const IncomeSelection = () => {
               {types}
             </select>
           </>
-          {/* <Selector>Категория дохода</Selector> */}
-
-          <Media queries={{ small: { maxWidth: 767 } }}>
-            {matches =>
-              matches.small ? <InputCurrencyMobile /> : <InputCurrency />
-            }
-          </Media>
         </form>
+        {/* <Selector>Категория дохода</Selector> */}
+
+        <Media queries={{ small: { maxWidth: 767 } }}>
+          {matches =>
+            matches.small ? (
+              <InputCurrency> 00.00 UAH</InputCurrency>
+            ) : (
+              <InputCurrency>00.00</InputCurrency>
+            )
+          }
+        </Media>
       </div>
 
       <ProductSelectionButtons />

@@ -16,14 +16,14 @@ const TableHead = () => {
     () => [
       {
         date: '05.09.2019',
-        description: 'Бананы22222222 ',
+        description: 'Бананы',
         category: 'Транспорт',
         sum: '- 50.00 грн.',
         delete: del_btn(),
       },
       {
         date: '05.09.2019',
-        description: 'Бананы111122222222',
+        description: 'Бананы',
         category: 'Транспорт',
         sum: '- 50.00 грн.',
         delete: del_btn(),
@@ -129,5 +129,4 @@ const TableHead = () => {
     </table>
   );
 };
-
 export default TableHead;

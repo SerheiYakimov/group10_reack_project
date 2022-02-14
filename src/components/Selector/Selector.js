@@ -1,21 +1,38 @@
 import categories from '../../json/category.json';
+import types from '../../json/incomes.json';
 import React, { useState } from 'react';
 import s from './Selector.module.css';
 
 import { addExpenses } from '../../redux/transactions/operations';
 import { useSelector, useDispatch } from 'react-redux';
-
-const dateNow = new Date();
-
-const dateInfo = {
-  year: dateNow.getFullYear(),
-  month: dateNow.getUTCMonth() + 1,
-  day: dateNow.getDate(),
-};
+import { getTypeTransaction } from '../../redux/transactions/typeTransaction/typeTransaction-selector';
+import { changeTypeTransaction } from '../../redux/transactions/typeTransaction/typeTransaction-slice';
 
 const Selector = ({ children }) => {
   const [value, setValue] = useState('');
   // console.log(value)
+
+  const transaction = useSelector(getTypeTransaction);
+  const dispatch = useDispatch();
+  console.log(transaction);
+
+  // if (changeTypeTransaction === true) {
+  //   const types = categories.map(({ id, category }) => {
+  //     return (
+  //       <option className={s.option} key={id} value={category}>
+  //         {category}
+  //       </option>
+  //     );
+  //   });
+  // } else {
+  //   const elements = categories.map(({ id, category }) => {
+  //     return (
+  //       <option className={s.option} key={id} value={category}>
+  //         {category}
+  //       </option>
+  //     );
+  //   });
+  // }
   const elements = categories.map(({ id, category }) => {
     return (
       <option className={s.option} key={id} value={category}>
@@ -24,55 +41,38 @@ const Selector = ({ children }) => {
     );
   });
 
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
-  const [active] = useState(false);
-  const dispatch = useDispatch();
-
-  const handleChange = e => {
-    const { name, value } = e.target;
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
-      case 'number':
-        setNumber(value);
-        break;
-      default:
-        console.warn(`Field - ${name} is under constraction`);
-    }
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    const cont = {
-      name: name,
-      number: number,
-      id: '123',
-    };
-    dispatch(addExpenses(cont));
-    resetForm();
-  };
-  console.log(name);
-
-  const resetForm = () => {
-    setName('');
-    setNumber('');
-  };
-
   return (
     <>
       <input
-        onSubmit={handleSubmit}
+        // onSubmit={handleSubmit}
         className={s.input}
         id="js-keyword-input"
         type="text"
         name="name"
-        value={name}
+        // value={desc}
         placeholder="Описание товара"
-        onChange={handleChange}
+        // placeholder={
+        //   type === "expense" ? "Описание товара" : "Описание дохода"
+        // }
+        // onChange={handleChange}
         required
       />
+
+      {/* {transaction
+        ? types.map((id, category) => {
+          return (
+            <option className={s.option} key={types.id} value={types.category}>
+              {types.category}
+            </option>
+          );
+        })
+        : elements.map((id, category) => {
+          return (
+            <option className={s.option} key={elements.id} value={elements.category}>
+              {elements.category}
+            </option>
+          );
+        })} */}
 
       <select
         name="select-category"
