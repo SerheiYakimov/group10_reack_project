@@ -29,7 +29,7 @@
 }
 
 .select:not([multiple]) {
-  padding-right: 1.2em;
+  padding-right: 35px;
   background-repeat: no-repeat;
   background-position: calc(100% - 20px) 18px;
   background-image: url(../../svg/Vector.svg);
