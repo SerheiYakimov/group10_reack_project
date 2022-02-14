@@ -68,7 +68,7 @@ const getCurrentUser = createAsyncThunk(
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     console.log(state);
-    const persistedToken = state.auth.token;
+    const persistedToken = state.auth.user.token;
     console.log(persistedToken);
 
     try {

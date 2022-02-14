@@ -20,7 +20,7 @@ async function register(newUser) {
 async function logIn(user) {
   const { data } = await axios.post('/auth/login', user);
   console.log(`data in auth-api`, data);
-  token.set(data.data.token);
+  token.set(data.data.user.token);
   return data;
 }
 
