@@ -22,9 +22,7 @@ const ReportPage = () => {
         </div>
         <ExpensesIncome />
         <ReportSwitch />
-        <div>
-          <Charts />
-        </div>
+        <Charts />
       </Container>
     </section>
   );
