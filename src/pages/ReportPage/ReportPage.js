@@ -4,6 +4,7 @@ import ArrowToGoBack from '../../components/ArrowToGoBack/ArrowToGoBack';
 import BalanceReport from '../../components/BalanceReport/BalanceReport';
 import DateReport from '../../components/DateReport/DateReport';
 import ExpensesIncome from '../../components/ExpensesIncome/ExpensesIncome';
+import Charts from '../../components/Charts/Charts';
 
 import s from './ReportPage.module.css';
 
@@ -19,6 +20,9 @@ const ReportPage = () => {
           </div>
         </div>
         <ExpensesIncome />
+        <div>
+          <Charts />
+        </div>
       </Container>
     </section>
   );
