@@ -1,0 +1,94 @@
+.reportListSection {
+}
+
+.reportList {
+  display: grid;
+  max-width: calc(100vw - 5px);
+  grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+  grid-gap: 5px;
+  margin-bottom: 30px;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  justify-items: center;
+}
+
+.reportListItem {
+  display: block;
+  max-width: 106px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.reportListItemCard {
+  /* display: block;
+  background: #f5f6fb;
+  width: 59px;
+  height: 46px;
+  border-radius: 20px; */
+}
+
+.reportListItemTextAmount {
+  margin-top: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #52555f;
+}
+
+.reportListIcon {
+  display: inline-block;
+  margin-top: 5px;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  text-align: center;
+  /* background: #f5f6fb;
+  border-radius: 20px; */
+}
+
+.reportListIcon:hover {
+  fill: #ff751d;
+  /* background: #ffdac0; */
+}
+
+.reportListItemTextTitle {
+  margin-top: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #52555f;
+}
+
+@media screen and (min-width: 768px) {
+  .reportListSection {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 668px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .reportListSection {
+    margin-left: 200px;
+    margin-right: 200px;
+    max-width: 668px;
+  }
+}

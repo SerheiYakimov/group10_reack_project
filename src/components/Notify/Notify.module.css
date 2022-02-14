@@ -1,6 +1,6 @@
 .container {
   position: absolute;
-  margin-top: 18px;
+  margin-top: 300px;
   width: 282px;
   padding: 41px 25px 31px 25px;
   background-image: url('../../images/mobile/bg-blue-notify.png');
@@ -26,10 +26,26 @@
   color: #ffffff;
 }
 
+@media screen and (min-width: 780px) {
+  .container {
+    position: absolute;
+    margin-top: 30px;
+    margin-right: 280px;
+    width: 282px;
+    padding: 41px 25px 31px 25px;
+    background-image: url('../../images/mobile/bg-blue-notify.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 282px 163px;
+    background-color: transparent;
+  }
+}
+
 @media screen and (min-width: 1280px) {
   .container {
-    margin-top: 210px;
-    margin-left: 230px;
+    margin-top: 30px;
+    margin-left: 546x;
+    margin-right: 332px;
     width: 292px;
     padding: 41px 30px 31px 30px;
     background-image: url('../../images/desktop/bg-blue-notify.png');
