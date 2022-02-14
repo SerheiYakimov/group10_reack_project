@@ -5,6 +5,7 @@ import BalanceReport from '../../components/BalanceReport/BalanceReport';
 import DateReport from '../../components/DateReport/DateReport';
 import ReportSwitch from '../../components/ReportSwitch/ReportSwitch';
 import ExpensesIncome from '../../components/ExpensesIncome/ExpensesIncome';
+import Charts from '../../components/Charts/Charts';
 
 import s from './ReportPage.module.css';
 
@@ -21,6 +22,7 @@ const ReportPage = () => {
         </div>
         <ExpensesIncome />
         <ReportSwitch />
+        <Charts />
       </Container>
     </section>
   );
