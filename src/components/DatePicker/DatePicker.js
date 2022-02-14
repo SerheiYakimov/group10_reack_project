@@ -3,8 +3,6 @@ import DatePicker from 'react-datepicker';
 import s from './DatePicker.module.css';
 import sprite from '../../svg/sprite.svg';
 import 'react-datepicker/dist/react-datepicker.css';
-
-// CSS Modules, react-datepicker-cssmodules.css
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 const FormDatePicker = () => {

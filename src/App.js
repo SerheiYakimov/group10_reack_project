@@ -33,7 +33,7 @@ function App() {
       {isUserRefreshing ? (
         <h1>Спинер</h1>
       ) : (
-        <div className="App">
+        <div className="App" id="scrollbar">
           <Header />
           <Routes>
             <Route path="/" element={<HomePage />} />

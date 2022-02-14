@@ -21,7 +21,7 @@
 }
 
 .input_price {
-  position: relative;
+  /* position: relative; */
   width: 125px;
   height: 44px;
   background-color: transparent;
@@ -30,11 +30,15 @@
   box-sizing: border-box;
   border-radius: 22px 0px 0px 22px;
 
-  display: block;
-  align-items: center;
-  justify-content: center;
-  padding-left: 20px;
+  padding-left: 15px;
+
   color: #c7ccdc;
+}
+.input_price:focus {
+  border: 2px solid #ff751d;
+}
+.input_price:hover {
+  border: 2px solid #ff751d;
 }
 @media screen and (min-width: 767px) {
   .input_price {
@@ -42,6 +46,7 @@
     border-radius: 0 16px 16px 0;
     border-left: none;
     border-color: #f5f6fb;
+    padding-right: 40px;
   }
 }
 @media screen and (min-width: 1279px) {
@@ -51,10 +56,9 @@
 }
 
 .input_price::placeholder {
+  font-weight: bold;
   font-size: 12px;
   line-height: 1.16;
-  display: flex;
-  align-items: center;
   text-align: right;
   padding-right: 15px;
   letter-spacing: 0.02em;
@@ -64,7 +68,7 @@
 }
 @media screen and (min-width: 767px) {
   .input_price::placeholder {
-    padding-right: 45px;
+    font-weight: normal;
 
     color: #c7ccdc;
   }
