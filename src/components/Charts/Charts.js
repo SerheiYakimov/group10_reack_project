@@ -24,17 +24,17 @@ const data = [
 
 const Charts = () => {
   return (
-    <section className={s.charts}>
+    <div className={s.charts}>
       <Media
         query="(max-width: 767.98px)"
         render={() => (
-          <VictoryGroup>
+          <VictoryGroup height={550}>
             <VictoryChart domainPadding={10}>
               <VictoryAxis
                 tickLabelComponent={
                   <VictoryLabel
-                    dy={-10}
-                    dx={10}
+                    dy={-18}
+                    dx={11}
                     textAnchor="start"
                     style={{
                       fontSize: 9,
@@ -43,20 +43,17 @@ const Charts = () => {
                     }}
                   />
                 }
-                // width={485}
                 orientation="left"
                 invertAxis={false}
                 style={{
                   axis: { stroke: 'transparent' },
-                  // axisLabel: { fontSize: 10, padding: 30, color: '#52555F' },
-                  // tickLabels: { fontSize: 20, padding: 5 },
                 }}
               />
               <VictoryBar
                 labelComponent={
                   <VictoryLabel
-                    dx={-15}
-                    dy={-10}
+                    dx={-5}
+                    dy={-12}
                     textAnchor="start"
                     verticalAnchor="end"
                   />
@@ -77,7 +74,7 @@ const Charts = () => {
                     width: 15,
                   },
                   labels: {
-                    fontSize: 8,
+                    fontSize: 9,
                     fill: '#52555F',
                     fontFamily: 'Roboto, sans-serif',
                     lineHeight: 14,
@@ -109,7 +106,6 @@ const Charts = () => {
                 orientation="bottom"
                 invertAxis={true}
                 style={{
-                  // grid: { stroke: 'grey' },
                   axis: { stroke: 'transparent' },
                 }}
               />
@@ -182,7 +178,7 @@ const Charts = () => {
           </VictoryGroup>
         )}
       />
-    </section>
+    </div>
   );
 };
 
