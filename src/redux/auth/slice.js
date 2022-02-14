@@ -4,14 +4,13 @@ import authOperations from './operations';
 const initialState = {
   user: {
     email: null,
-    avatar: null,
+    avatarURL: null,
     name: null,
     id: null,
     balance: null,
     verifyToken: null,
     token: null,
   },
-  token: null,
   isVerified: false,
   isLoggedIn: false,
   isSendEmailVerify: false,
@@ -36,7 +35,7 @@ const authSlice = createSlice({
     [authOperations.logIn.fulfilled](state, action) {
       state.user.token = action.payload.data.user.token;
       state.user.name = action.payload.data.user.name;
-      state.user.avatar = action.payload.data.user.avatar;
+      state.user.avatarURL = action.payload.data.user.avatarURL;
       state.isLoggedIn = true;
       state.isAuthenticated = true;
     },
@@ -70,6 +69,16 @@ const authSlice = createSlice({
 
     [authOperations.compliteRegistration.fulfilled](state, action) {
       state.isVerified = action.payload.isVerified;
+    },
+
+    [authOperations.userFromGoogleAuth.fulfilled](state, action) {
+      state.user.name = action.payload.data.user.name;
+      state.user.email = action.payload.data.user.email;
+      state.user.avatarURL = action.payload.data.user.avatarURL;
+      state.user.token = action.payload.token;
+      state.isLoggedIn = true;
+      state.isRefreshingCurrentUser = false;
+      state.isAuthenticated = true;
     },
   },
 });

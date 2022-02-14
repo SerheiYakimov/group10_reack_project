@@ -15,6 +15,7 @@ import BalancePage from './pages/BalancePage/BalancePage';
 import OutcomesPage from './pages/OutcomesPage/OutcomesPage';
 import IncomesPage from './pages/IncomesPage/IncomesPage';
 import EmailVerPage from './pages/EmailVerPage/EmailVerPage';
+import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
 
 function App() {
   const [modalActive, setModalActive] = useState(false);
@@ -48,7 +49,7 @@ function App() {
               element={
                 <PublicRoute
                   isAuth={isAuth}
-                  component={BalancePage}
+                  component={GoogleVerPage}
                   restricted
                 />
               }
