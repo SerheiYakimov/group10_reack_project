@@ -36,25 +36,25 @@ const transactionsSlice = createSlice({
     },
   },
   extraReducers: {
-    [transactionsOps.getExpenses.fulfilled]: (state, action) => {
-      state.items = action.payload;
-    },
-    [transactionsOps.getIncome.fulfilled]: (state, action) => {
-      state.items = action.payload;
-    },
-    [transactionsOps.addExpenses.fulfilled]: (state, action) => {
-      state.items.push(action.payload);
-    },
-    [transactionsOps.addIncome.fulfilled]: (state, action) => {
-      state.items.push(action.payload);
-    },
-    [transactionsOps.removeOperation.fulfilled](state, action) {
-      state.items = state.items.filter(({ _id }) => _id !== action.payload);
-    },
+    // [transactionsOps.getExpenses.fulfilled]: (state, action) => {
+    //   state.items = action.payload;
+    // },
+    // [transactionsOps.getIncome.fulfilled]: (state, action) => {
+    //   state.items = action.payload;
+    // },
+    // [transactionsOps.addExpenses.fulfilled]: (state, action) => {
+    //   state.items.push(action.payload);
+    // },
+    // [transactionsOps.addIncome.fulfilled]: (state, action) => {
+    //   state.items.push(action.payload);
+    // },
+    // [transactionsOps.removeOperation.fulfilled](state, action) {
+    //   state.items = state.items.filter(({ _id }) => _id !== action.payload);
+    // },
     [transactionsOps.getAllExpenses.fulfilled]: (state, action) => {
       state.monthExpenses = [...action.payload];
     },
-    [transactionsOps.getAllIncome.fulfilled]: (state, action) => {
+    [transactionsOps.getAllIncomes.fulfilled]: (state, action) => {
       state.monthIncome = [...action.payload];
     },
   },
