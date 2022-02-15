@@ -6,14 +6,14 @@ import { PublicRoute } from './routes/PublicRoute';
 import { useDispatch, useSelector } from 'react-redux';
 import authOperations from './redux/auth/operations';
 import authSelectors from './redux/auth/selectors';
+import { Oval } from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import './App.css';
 import Header from './components/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
 import ReportPage from './pages/ReportPage/ReportPage';
 import Modal from './components/Modal/Modal';
 import BalancePage from './pages/BalancePage/BalancePage';
-import OutcomesPage from './pages/OutcomesPage/OutcomesPage';
-import IncomesPage from './pages/IncomesPage/IncomesPage';
 import EmailVerPage from './pages/EmailVerPage/EmailVerPage';
 import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
 
@@ -32,7 +32,14 @@ function App() {
   return (
     <>
       {isUserRefreshing ? (
-        <h1>Спинер</h1>
+        <Oval
+          ariaLabel="loading-indicator"
+          height={100}
+          width={100}
+          strokeWidth={5}
+          color="#ff751d"
+          secondaryColor="#52555f"
+        />
       ) : (
         <div className="App" id="scrollbar">
           <Header />
@@ -55,30 +62,12 @@ function App() {
               }
             />
             <Route
-              path="/register"
-              element={
-                <PublicRoute
-                  isAuth={isAuth}
-                  component={EmailVerPage}
-                  restricted
-                />
-              }
+              path="/verify-redirect"
+              element={<PublicRoute isAuth={isAuth} component={EmailVerPage} />}
             />
             <Route
               path="/balance"
               element={<PrivateRoute isAuth={isAuth} component={BalancePage} />}
-            />
-            <Route
-              path="/balance:outcomes"
-              exact
-              element={
-                <PrivateRoute isAuth={isAuth} component={OutcomesPage} />
-              }
-            />
-            <Route
-              path="/balance:incomes"
-              exact
-              element={<PrivateRoute isAuth={isAuth} component={IncomesPage} />}
             />
             <Route
               path="/reports"

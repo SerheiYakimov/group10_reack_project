@@ -1,10 +1,32 @@
-import { useDispatch } from 'react-redux';
-import authOperations from '../../redux/auth/operations';
+import { useNavigate } from 'react-router-dom';
+import Container from '../../components/Container/Container';
+import Button from '../../components/Button/Button';
+import s from './EmailVerPage.module.css';
 
 const EmailVerPage = () => {
-  const dispatch = useDispatch();
-  dispatch(authOperations.compliteRegistration());
+  const history = useNavigate();
 
-  return <p>Подождите, пожалуйста, выполняется вход...</p>;
+  const handleClick = () => {
+    history('/');
+  };
+
+  return (
+    <Container>
+      <div className={s.wrapper}>
+        <p className={s.invitation}>Регистрация подтверждена!</p>
+        <p className={s.invitation}>
+          Для работы с приложением, пожалуйста, авторизируйтесь
+        </p>
+        <div className={s.btnWrapper}>
+          <Button
+            type="button"
+            name="Авторизация"
+            isPrimary
+            onClick={handleClick}
+          />
+        </div>
+      </div>
+    </Container>
+  );
 };
 export default EmailVerPage;
