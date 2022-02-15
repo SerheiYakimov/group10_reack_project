@@ -2,90 +2,93 @@ import categories from '../../json/category.json';
 import types from '../../json/incomes.json';
 import React, { useState } from 'react';
 import s from './Selector.module.css';
+import Select from 'react-select';
+// import styled from 'styled-components';
 
-import { addExpenses } from '../../redux/transactions/operations';
-import { useSelector, useDispatch } from 'react-redux';
-import { getTypeTransaction } from '../../redux/transactions/typeTransaction/typeTransaction-selector';
-import { changeTypeTransaction } from '../../redux/transactions/typeTransaction/typeTransaction-slice';
+const customStyles = {
+  control: () => ({
+    // backgroundColor: '#f5f6fb',
+    // // display: 'block',
+    // width: 282,
+    // height: 44,
+  }),
+  dropdownIndicator: () => ({
+    display: 'none',
+  }),
 
-const Selector = ({ children }) => {
-  const [value, setValue] = useState('');
-  // console.log(value)
+  indicatorSeparator: () => ({
+    display: 'none',
+  }),
+  placeholder: () => ({
+    color: ' #c7ccdc',
+    display: 'flex',
+    alignItems: 'center',
+  }),
+};
 
-  const transaction = useSelector(getTypeTransaction);
-  const dispatch = useDispatch();
-  console.log(transaction);
+const expensesOptions = categories.map(e => ({
+  value: e.id,
+  label: e.category,
+}));
 
-  // if (changeTypeTransaction === true) {
-  //   const types = categories.map(({ id, category }) => {
-  //     return (
-  //       <option className={s.option} key={id} value={category}>
-  //         {category}
-  //       </option>
-  //     );
-  //   });
-  // } else {
-  //   const elements = categories.map(({ id, category }) => {
-  //     return (
-  //       <option className={s.option} key={id} value={category}>
-  //         {category}
-  //       </option>
-  //     );
-  //   });
-  // }
-  const elements = categories.map(({ id, category }) => {
-    return (
-      <option className={s.option} key={id} value={category}>
-        {category}
-      </option>
-    );
-  });
+const incomesOptions = types.map(e => ({
+  value: e.id,
+  label: e.category,
+}));
 
+export const OutcomesSelector = () => {
+  const [selected, setSelected] = useState([]);
+
+  const optionId = selected.value;
+  const optionCategory = selected.label;
+  console.log(optionId, optionCategory);
   return (
     <>
       <input
-        // onSubmit={handleSubmit}
         className={s.input}
         id="js-keyword-input"
         type="text"
         name="name"
-        // value={desc}
         placeholder="Описание товара"
-        // placeholder={
-        //   type === "expense" ? "Описание товара" : "Описание дохода"
-        // }
-        // onChange={handleChange}
         required
       />
-
-      {/* {transaction
-        ? types.map((id, category) => {
-          return (
-            <option className={s.option} key={types.id} value={types.category}>
-              {types.category}
-            </option>
-          );
-        })
-        : elements.map((id, category) => {
-          return (
-            <option className={s.option} key={elements.id} value={elements.category}>
-              {elements.category}
-            </option>
-          );
-        })} */}
-
-      <select
-        name="select-category"
-        id=""
-        className={s.select}
-        value={value}
-        onChange={event => setValue(event.target.value)}
-      >
-        <option className={s.option}>{children}</option>
-        {elements}
-      </select>
+      <Select
+        classNamePrefix="react-select"
+        className={s.control}
+        onChange={setSelected}
+        styles={customStyles}
+        placeholder="Категория товара"
+        options={expensesOptions}
+      />
     </>
   );
 };
 
-export default Selector;
+export const IncomesSelector = () => {
+  const [selected, setSelected] = useState([]);
+
+  const optionId = selected.value;
+  const optionCategory = selected.label;
+  console.log(optionId, optionCategory);
+  return (
+    <>
+      <input
+        className={s.input}
+        id="js-keyword-input"
+        type="text"
+        name="name"
+        placeholder="Описание дохода"
+        required
+      />
+
+      <Select
+        classNamePrefix="react-select"
+        className={s.control}
+        onChange={setSelected}
+        styles={customStyles}
+        placeholder="Категория дохода"
+        options={incomesOptions}
+      />
+    </>
+  );
+};

@@ -65,8 +65,6 @@ a {
 
 button {
   display: block;
-  /* width: 125px;
-  height: 44px;
-  border-radius: 16px; */
+
   cursor: pointer;
 }

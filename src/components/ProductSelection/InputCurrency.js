@@ -1,6 +1,6 @@
 import s from './ProductSelection.module.css';
 import sprite from '../../svg/sprite.svg';
-import React, { useState } from 'react';
+import React from 'react';
 
 export const InputCurrency = ({ children }) => {
   return (

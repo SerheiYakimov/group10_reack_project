@@ -69,7 +69,7 @@ export const removeOperation = createAsyncThunk(
   'transactions/removeOperation',
   async id => {
     try {
-      await axios.delete(`api/transactions/${id}`);
+      await axios.delete(`/transactions/${id}`);
       return id;
     } catch (error) {}
   },

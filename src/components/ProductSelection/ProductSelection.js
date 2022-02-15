@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './ProductSelection.module.css';
 import Media from 'react-media';
+import { useDispatch } from 'react-redux';
 import FormDatePicker from '../../components/DatePicker/DatePicker';
-import Selector from '../Selector/Selector';
+import { OutcomesSelector } from '../Selector/Selector';
 import { InputCurrency } from './InputCurrency';
 import ProductSelectionButtons from './ProductSelectionButtons';
 
 const ProductSelection = () => {
+  const [category, setCategory] = useState('');
+  const [id, setId] = useState('');
+  const [decription, setDecription] = useState('');
+  const [sum, setSum] = useState('');
+  const dispatch = useDispatch();
+
   return (
     <div className={s.container}>
       <div className={s.outcomes_div}>
@@ -14,7 +21,7 @@ const ProductSelection = () => {
           {matches => (matches.small ? <></> : <FormDatePicker />)}
         </Media>
         <form className={s.form}>
-          <Selector>Категория товара</Selector>
+          <OutcomesSelector></OutcomesSelector>
 
           <Media queries={{ small: { maxWidth: 767 } }}>
             {matches =>

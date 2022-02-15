@@ -26,26 +26,26 @@
   height: 44px;
   background-color: transparent;
 
-  border: 2px solid #ffffff;
+  border: 2px solid var(--white-color);
   box-sizing: border-box;
   border-radius: 22px 0px 0px 22px;
 
   padding-left: 15px;
 
-  color: #c7ccdc;
+  color: var(--second-white-color);
 }
 .input_price:focus {
-  border: 2px solid #ff751d;
+  border: 2px solid var(--accent-color);
 }
 .input_price:hover {
-  border: 2px solid #ff751d;
+  border: 2px solid var(--accent-color);
 }
 @media screen and (min-width: 767px) {
   .input_price {
     width: 104px;
     border-radius: 0 16px 16px 0;
     border-left: none;
-    border-color: #f5f6fb;
+    border-color: var(--light-color-gray);
     padding-right: 40px;
   }
 }
@@ -65,13 +65,13 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
 
-  color: #000000;
+  color: var(--black-color);
 }
 @media screen and (min-width: 767px) {
   .input_price::placeholder {
     font-weight: normal;
 
-    color: #c7ccdc;
+    color: var(--second-white-color);
   }
 }
 
@@ -100,7 +100,7 @@
   width: 60px;
   height: 44px;
 
-  border: 2px solid #ffffff;
+  border: 2px solid var(--white-color);
   box-sizing: border-box;
   border-radius: 22px 0px 0px 22px;
   transform: matrix(-1, 0, 0, 1, 0, 0);
@@ -139,7 +139,7 @@
     display: flex;
     width: 467px;
     margin-right: 30px;
-    border: 2px solid #f5f6fb;
+    border: 2px solid var(--light-color-gray);
     box-sizing: border-box;
     border: transparent;
   }
