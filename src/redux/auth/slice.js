@@ -9,8 +9,8 @@ const initialState = {
     id: null,
     balance: null,
     verifyToken: null,
-    token: null,
   },
+  token: null,
   isVerified: false,
   isLoggedIn: false,
   isSendEmailVerify: false,
@@ -33,7 +33,7 @@ const authSlice = createSlice({
     },
 
     [authOperations.logIn.fulfilled](state, action) {
-      state.user.token = action.payload.data.user.token;
+      state.token = action.payload.data.user.token;
       state.user.name = action.payload.data.user.name;
       state.user.avatarURL = action.payload.data.user.avatarURL;
       state.isLoggedIn = true;
@@ -43,7 +43,7 @@ const authSlice = createSlice({
     [authOperations.logOut.fulfilled](state) {
       state.user.email = null;
       state.user.avatarURL = null;
-      state.user.token = null;
+      state.token = null;
       state.isLoggedIn = false;
       state.isAuthenticated = false;
     },
@@ -75,7 +75,7 @@ const authSlice = createSlice({
       state.user.name = action.payload.data.user.name;
       state.user.email = action.payload.data.user.email;
       state.user.avatarURL = action.payload.data.user.avatarURL;
-      state.user.token = action.payload.token;
+      state.token = action.payload.token;
       state.isLoggedIn = true;
       state.isRefreshingCurrentUser = false;
       state.isAuthenticated = true;
