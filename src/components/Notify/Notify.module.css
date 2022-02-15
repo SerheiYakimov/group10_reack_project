@@ -1,6 +1,6 @@
 .container {
   position: absolute;
-  margin-top: 300px;
+  top: 100%;
   width: 282px;
   padding: 41px 25px 31px 25px;
   background-image: url('../../images/mobile/bg-blue-notify.png');
@@ -16,21 +16,19 @@
   font-size: 14px;
   line-height: 1.43;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: var(--white-color);
 }
 
 .warning {
   font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
-  color: #ffffff;
+  color: var(--white-color);
 }
 
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 768px) {
   .container {
-    position: absolute;
-    margin-top: 30px;
-    margin-right: 280px;
+    left: 110px;
     width: 282px;
     padding: 41px 25px 31px 25px;
     background-image: url('../../images/mobile/bg-blue-notify.png');
@@ -43,8 +41,7 @@
 
 @media screen and (min-width: 1280px) {
   .container {
-    margin-top: 30px;
-    margin-left: 546x;
+    left: 436px;
     margin-right: 332px;
     width: 292px;
     padding: 41px 30px 31px 30px;

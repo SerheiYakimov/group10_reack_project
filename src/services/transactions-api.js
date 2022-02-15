@@ -1,15 +1,11 @@
 import axios from 'axios';
+
 axios.defaults.baseURL = 'http://localhost:3001/api';
 
-async function removeOperation(id) {
-  const { data } = await axios.delete(`/transactions/removeOperation/${id}`);
-  console.log(`delete transaction`, data, id);
-
-  return id;
+async function getAllTransactions(id) {
+  const { data } = await axios.get(`/transactions/total-sum-by-month/${id}`);
+  console.log(`data in transactions`, data);
+  return data;
 }
 
-const transactionApi = {
-  removeOperation,
-};
-
-export default transactionApi;
+export default getAllTransactions;
