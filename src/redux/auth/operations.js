@@ -68,7 +68,7 @@ const getCurrentUser = createAsyncThunk(
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     console.log(state);
-    const persistedToken = state.auth.token;
+    const persistedToken = state.auth.user.token;
     console.log(persistedToken);
 
     try {
@@ -87,11 +87,13 @@ const getCurrentUser = createAsyncThunk(
 
 const userFromGoogleAuth = createAsyncThunk(
   '/auth/google',
-  async (email, { rejectWithValue }) => {
+  async (token, { rejectWithValue }) => {
     try {
-      const data = await authAPI.getGoogleUser(email);
+      console.log(`token in auth-operation`, token);
+      const data = await authAPI.getGoogleUser(token);
+      const fullData = { ...data, token };
       console.log(`data in auth-operation`, data);
-      return data;
+      return fullData;
     } catch (error) {
       console.log(`error in auth-operation`, error);
       return rejectWithValue(error.message);

@@ -1,6 +1,6 @@
 import s from './BgWrapper.module.css';
 
-const BgWrapper = ({ children, className }) => {
+const BgWrapper = ({ children }) => {
   return <div className={s.bgWrapper}>{children}</div>;
 };
 

@@ -20,7 +20,7 @@ async function register(newUser) {
 async function logIn(user) {
   const { data } = await axios.post('/auth/login', user);
   console.log(`data in auth-api`, data);
-  token.set(data.data.token);
+  token.set(data.data.user.token);
   return data;
 }
 
@@ -37,10 +37,10 @@ async function getCurrentUser() {
   return data;
 }
 
-async function getGoogleUser() {
-  const { data } = await axios.get('/auth/google');
+async function getGoogleUser(userToken) {
+  token.set(userToken);
+  const { data } = await axios.get('/users/current');
   console.log(`data in auth-api`, data);
-  token.set(data.data.token);
   return data;
 }
 
