@@ -12,8 +12,6 @@ import HomePage from './pages/HomePage/HomePage';
 import ReportPage from './pages/ReportPage/ReportPage';
 import Modal from './components/Modal/Modal';
 import BalancePage from './pages/BalancePage/BalancePage';
-import OutcomesPage from './pages/OutcomesPage/OutcomesPage';
-import IncomesPage from './pages/IncomesPage/IncomesPage';
 import EmailVerPage from './pages/EmailVerPage/EmailVerPage';
 import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
 
@@ -68,18 +66,7 @@ function App() {
               path="/balance"
               element={<PrivateRoute isAuth={isAuth} component={BalancePage} />}
             />
-            <Route
-              path="/balance:outcomes"
-              exact
-              element={
-                <PrivateRoute isAuth={isAuth} component={OutcomesPage} />
-              }
-            />
-            <Route
-              path="/balance:incomes"
-              exact
-              element={<PrivateRoute isAuth={isAuth} component={IncomesPage} />}
-            />
+
             <Route
               path="/reports"
               element={<PrivateRoute isAuth={isAuth} component={ReportPage} />}
