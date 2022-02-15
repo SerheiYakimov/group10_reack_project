@@ -16,7 +16,12 @@ const reportOutcomesData = [
     amount: '99999.99',
   },
   { id: '4', category: 'здоровье', icon: 'icon-health', amount: '99999.99' },
-  { id: '5', category: 'транспорт', icon: 'icon-transport', amount: '9999.99' },
+  {
+    id: '5',
+    category: 'транспорт',
+    icon: 'icon-transport',
+    amount: '9999.99',
+  },
   {
     id: '6',
     category: 'все для дома',
@@ -24,7 +29,12 @@ const reportOutcomesData = [
     amount: '99999.99',
   },
   { id: '7', category: 'техника', icon: 'icon-technics', amount: '999.99' },
-  { id: '8', category: 'коммуналка', icon: 'icon-invoices', amount: '9999.99' },
+  {
+    id: '8',
+    category: 'коммуналка',
+    icon: 'icon-invoices',
+    amount: '9999.99',
+  },
   {
     id: '9',
     category: 'спорт, хобби',
