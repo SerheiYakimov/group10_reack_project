@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
 import authAPI from '../../services/auth-api';
@@ -75,7 +74,7 @@ const getCurrentUser = createAsyncThunk(
       if (persistedToken === null) {
         return thunkAPI.rejectWithValue();
       }
-      authAPI.token.set(persistedToken);
+      authAPI.tokenAPI.set(persistedToken);
       const currentUser = await authAPI.getCurrentUser();
       console.log(`currentUser in auth-operation`, currentUser);
       return currentUser;
@@ -101,28 +100,27 @@ const userFromGoogleAuth = createAsyncThunk(
   },
 );
 
-export const setUserBalance = createAsyncThunk(
-  '/users/setUserBalance',
-  async (newBalance, { rejectWithValue }) => {
-    try {
-      const res = await axios.post('/users/', newBalance);
-      return res.data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  },
-);
+export const setUserBalance = createAsyncThunk();
+// '/users/setUserBalance',
+// async (newBalance, { rejectWithValue }) => {
+//   try {
+//     const res = await axios.post('/users/', newBalance);
+//     return res.data;
+//   } catch (error) {
+//     return rejectWithValue(error.message);
+//   }
+// },
 
 export const getUserBalance = createAsyncThunk(
   '/users/getUserBalance',
-  async (_, { rejectWithValue }) => {
-    try {
-      const res = await axios.get('/users/');
-      return res.data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  },
+  // async (_, { rejectWithValue }) => {
+  //   try {
+  //     const res = await axios.get('/users/');
+  //     return res.data;
+  //   } catch (error) {
+  //     return rejectWithValue(error.message);
+  //   }
+  // },
 );
 
 const authOperations = {

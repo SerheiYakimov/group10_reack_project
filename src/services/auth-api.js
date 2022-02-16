@@ -1,51 +1,42 @@
-import axios from 'axios';
+import { token, axiosServer } from './axios-defaults';
 
-axios.defaults.baseURL = 'http://localhost:3001/api';
-
-const token = {
-  set(token) {
-    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-  },
-  unset() {
-    axios.defaults.headers.common['Authorization'] = '';
-  },
-};
+const tokenAPI = token;
 
 async function register(newUser) {
-  const { data } = await axios.post('/auth/registration', newUser);
+  const { data } = await axiosServer.post('/auth/registration', newUser);
   console.log(`data in auth-api`, data);
   return data;
 }
 
 async function logIn(user) {
-  const { data } = await axios.post('/auth/login', user);
+  const { data } = await axiosServer.post('/auth/login', user);
   console.log(`data in auth-api`, data);
   token.set(data.data.user.token);
   return data;
 }
 
 async function logOut() {
-  const { data } = await axios.post('/auth/logout');
+  const { data } = await axiosServer.post('/auth/logout');
   console.log(`data in auth-api`, data);
   token.unset();
   return data;
 }
 
 async function getCurrentUser() {
-  const { data } = await axios.get('/users/current');
+  const { data } = await axiosServer.get('/users/current');
   console.log(`data in auth-api`, data);
   return data;
 }
 
 async function getGoogleUser(userToken) {
   token.set(userToken);
-  const { data } = await axios.get('/users/current');
+  const { data } = await axiosServer.get('/users/current');
   console.log(`data in auth-api`, data);
   return data;
 }
 
 async function verifyUser() {
-  const { data } = await axios.get('/auth/verify');
+  const { data } = await axiosServer.get('/auth/verify');
   console.log(`data in auth-api`, data);
   token.set(data.data.token);
   return data;
@@ -58,7 +49,7 @@ const authAPI = {
   getCurrentUser,
   getGoogleUser,
   verifyUser,
-  token,
+  tokenAPI,
 };
 
 export default authAPI;

@@ -43,6 +43,8 @@ const authSlice = createSlice({
     [authOperations.logOut.fulfilled](state) {
       state.user.email = null;
       state.user.avatarURL = null;
+      state.user.name = null;
+      state.user.balance = null;
       state.token = null;
       state.isLoggedIn = false;
       state.isAuthenticated = false;
