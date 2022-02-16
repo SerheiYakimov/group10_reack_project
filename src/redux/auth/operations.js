@@ -100,27 +100,18 @@ const userFromGoogleAuth = createAsyncThunk(
   },
 );
 
-export const setUserBalance = createAsyncThunk();
-// '/users/setUserBalance',
-// async (newBalance, { rejectWithValue }) => {
-//   try {
-//     const res = await axios.post('/users/', newBalance);
-//     return res.data;
-//   } catch (error) {
-//     return rejectWithValue(error.message);
-//   }
-// },
-
-export const getUserBalance = createAsyncThunk(
-  '/users/getUserBalance',
-  // async (_, { rejectWithValue }) => {
-  //   try {
-  //     const res = await axios.get('/users/');
-  //     return res.data;
-  //   } catch (error) {
-  //     return rejectWithValue(error.message);
-  //   }
-  // },
+const setUserBalance = createAsyncThunk(
+  '/users/balance',
+  async (newBalance, { rejectWithValue }) => {
+    try {
+      const data = await authAPI.updateUserBalance(newBalance);
+      console.log(`data in auth-operation balance`, data);
+      return data;
+    } catch (error) {
+      console.log(`error.messageInLogOut`, error);
+      return rejectWithValue(error.message);
+    }
+  },
 );
 
 const authOperations = {
@@ -130,6 +121,7 @@ const authOperations = {
   getCurrentUser,
   compliteRegistration,
   userFromGoogleAuth,
+  setUserBalance,
 };
 
 export default authOperations;

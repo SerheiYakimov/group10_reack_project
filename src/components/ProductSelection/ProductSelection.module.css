@@ -81,7 +81,7 @@
   height: 20px;
   left: 19px;
   top: 10px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 @media screen and (min-width: 767px) {
   .culculator {

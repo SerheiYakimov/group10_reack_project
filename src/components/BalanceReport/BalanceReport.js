@@ -1,9 +1,11 @@
 import { useSelector } from 'react-redux';
-import { getUserBalance } from '../../redux/auth/selectors';
+// import { getUserBalance } from '../../redux/auth/selectors';
+import authSelectors from '../../redux/auth/selectors';
 import s from './BalanceReport.module.css';
 
 export default function BalanceReport() {
-  const Balance = useSelector(getUserBalance);
+  // const Balance = useSelector(getUserBalance);
+  const Balance = useSelector(authSelectors.getUserBalance);
 
   return (
     <div className={s.wrapper}>

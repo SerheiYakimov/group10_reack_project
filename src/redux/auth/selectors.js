@@ -1,4 +1,4 @@
-export const getUserBalance = state => state.auth.user.balance;
+const getUserBalance = state => state.auth.user.balance;
 const getIsLoggedIn = state => state.auth.isLoggedIn;
 const getUserEmail = state => state.auth.user.email;
 const getUserName = state => state.auth.user.name;
@@ -10,6 +10,7 @@ const authSelectors = {
   getIsLoggedIn,
   getUserEmail,
   getUserName,
+  getUserBalance,
   getIsRefreshingCurrentUser,
   getUserAvatar,
   getIsAuthenticated,
