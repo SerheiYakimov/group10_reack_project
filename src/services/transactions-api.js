@@ -1,5 +1,4 @@
 import { axiosServer } from './axios-defaults';
-// import axios from 'axios';
 
 axiosServer.baseURL = 'http://localhost:3001/api';
 
