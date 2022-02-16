@@ -83,6 +83,10 @@ const authSlice = createSlice({
       state.isRefreshingCurrentUser = false;
       state.isAuthenticated = true;
     },
+
+    [authOperations.setUserBalance.fulfilled](state, action) {
+      state.user.balance = action.payload.data.balance;
+    },
   },
 });
 

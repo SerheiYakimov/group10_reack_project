@@ -42,6 +42,12 @@ async function verifyUser() {
   return data;
 }
 
+async function updateUserBalance(newBalance) {
+  const { data } = await axiosServer.patch('/users/balance', newBalance);
+  console.log(`data in auth-api balance`, data);
+  return data;
+}
+
 const authAPI = {
   register,
   logIn,
@@ -49,6 +55,7 @@ const authAPI = {
   getCurrentUser,
   getGoogleUser,
   verifyUser,
+  updateUserBalance,
   tokenAPI,
 };
 
