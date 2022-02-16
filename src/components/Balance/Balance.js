@@ -28,25 +28,27 @@
 //   );
 // }
 
-import s from './Balance.module.css';
+import { useSelector, useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
 import GoToReports from '../GoToReports';
 import Notify from '../Notify/Notify';
-import { authSelectors, authOperations } from '../../redux/auth';
-import { useSelector, useDispatch } from 'react-redux';
+// import { authSelectors, authOperations } from '../../redux/auth';
+import authSelectors from '../../redux/auth/selectors';
+import authOperations from '../../redux/auth/operations';
+import s from './Balance.module.css';
 
 export default function Balance() {
-  const getUserBalance = useSelector(authSelectors.getUserBalance);
+  const userBalance = useSelector(authSelectors.getUserBalance);
+  console.log(userBalance);
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
     let balance = e.target.elements.balance.value;
-
+    console.log(balance);
     if (!balance || Number(balance) === 0) {
       return toast.error('Внесите пожалуйста сумму на баланс больше нуля');
     }
-
     const newBalance = Number(balance);
     dispatch(authOperations.setUserBalance({ balance: newBalance }));
     e.target.elements.balance.value = '';
@@ -62,7 +64,7 @@ export default function Balance() {
             type="text"
             name="balance"
             maxLength="10"
-            placeholder={getUserBalance ? `${getUserBalance} UAH` : `00.00 UAH`}
+            placeholder={userBalance ? `${userBalance} UAH` : `00.00 UAH`}
             className={s.balanceInput}
             autoComplete="off"
           />
@@ -71,7 +73,7 @@ export default function Balance() {
           </button>
         </div>
       </form>
-      {Number(getUserBalance) === 0 && <Notify />}
+      {userBalance === null && <Notify />}
     </div>
   );
 }
