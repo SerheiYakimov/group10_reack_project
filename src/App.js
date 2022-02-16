@@ -67,7 +67,7 @@ function App() {
             />
             <Route
               path="/balance"
-              element={<PrivateRoute isAuth={isAuth} component={BalancePage} />}
+              element={<PublicRoute isAuth={isAuth} component={BalancePage} />}
             />
             <Route
               path="/reports"
