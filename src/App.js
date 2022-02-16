@@ -73,6 +73,7 @@ function App() {
               path="/reports"
               element={<PrivateRoute isAuth={isAuth} component={ReportPage} />}
             />
+            {/* <Route path="/reports" element={<ReportPage />} /> */}
           </Routes>
           <Modal active={modalActive} setActive={setModalActive}></Modal>
           {/* <button type="button" onClick={() => setModalActive(true)}>
