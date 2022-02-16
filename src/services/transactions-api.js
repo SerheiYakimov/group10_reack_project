@@ -1,9 +1,13 @@
-import axios from 'axios';
+import { axiosServer } from './axios-defaults';
+// import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3001/api';
+axiosServer.baseURL = 'http://localhost:3001/api';
 
-async function getAllTransactions(id) {
-  const { data } = await axios.get(`/transactions/total-sum-by-month/${id}`);
+async function getAllTransactions(date) {
+  const { data } = await axiosServer.get(
+    `/transactions/total-sum-by-month`,
+    date,
+  );
   console.log(`data in transactions`, data);
   return data;
 }
