@@ -1,8 +1,9 @@
 @media screen and (min-width: 767px) {
   .container {
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 0;
     width: 665px;
     height: 626px;
     background: #ffffff;
@@ -22,3 +23,51 @@
     border-radius: 0px 30px 30px 30px;
   }
 }
+
+/*---------------->*/
+.table_wrapper {
+  /* background-color: green; */
+  position: relative;
+  margin: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .table_wrapper {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1279px) {
+  .table {
+    /* position: relative; */
+    margin-right: 50px;
+    max-width: 760px;
+  }
+}
+
+@media screen and (min-width: 1279px) {
+  .table_month {
+    /* border: 3px solid green; */
+    background-color: #fff;
+    position: absolute;
+    bottom: 140px;
+    right: 20px;
+    margin-left: 50px;
+    /* padding: 60px 30px 160px 20px; */
+    width: 230px;
+    height: 278px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .table_month {
+    margin: 75px 0 0 -400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .table_month {
+    display: none;
+  }
+}
+/*<----------------*/

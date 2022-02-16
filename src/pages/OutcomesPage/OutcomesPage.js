@@ -9,9 +9,13 @@ const OutcomesPage = () => {
       <div className={s.container}>
         <ProductSelection />
 
-        <Table></Table>
-
-        <Summary />
+        <div className={s.table_wrapper}>
+          <div className={s.table}></div>
+          <Table></Table>
+          <div className={s.table_month}>
+            <Summary />
+          </div>
+        </div>
       </div>
     </>
   );
