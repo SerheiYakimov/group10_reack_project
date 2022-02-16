@@ -12,3 +12,5 @@ export const getAllSum = createAsyncThunk(
     }
   },
 );
+
+export const removeOperation = createAsyncThunk();
