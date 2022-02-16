@@ -9,7 +9,7 @@ export default function AuthMenu() {
       <p className={s.descriptionGoogle}>
         Вы можете авторизоваться с помощью Google Account:
       </p>
-      <GoogleBtn href="http://localhost:3001/api/auth/google" />
+      <GoogleBtn href="https://kapusta-api-group10.herokuapp.com/api/auth/google" />
 
       <p className={s.descriptionSignup}>
         Или зайти с помощью e-mail и пароля, предварительно зарегистрировавшись:

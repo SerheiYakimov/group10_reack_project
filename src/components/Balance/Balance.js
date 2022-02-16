@@ -35,12 +35,14 @@ import Notify from '../Notify/Notify';
 // import { authSelectors, authOperations } from '../../redux/auth';
 import authSelectors from '../../redux/auth/selectors';
 import authOperations from '../../redux/auth/operations';
+
 import OutcomesPage from '../../pages/OutcomesPage/OutcomesPage';
 import IncomesPage from '../../pages/IncomesPage/IncomesPage';
 import s from './Balance.module.css';
 
 export default function Balance() {
   const showIncome = Boolean(false);
+
   const userBalance = useSelector(authSelectors.getUserBalance);
   console.log(userBalance);
   const dispatch = useDispatch();
@@ -77,10 +79,12 @@ export default function Balance() {
         </div>
       </form>
       {userBalance === null && <Notify />}
+
       <>
         <OutcomesPage />
         {showIncome && <IncomesPage />}
       </>
+
     </div>
   );
 }

@@ -8,10 +8,6 @@ const transactionsSlice = createSlice({
   name: 'transactions',
   initialState: {
     items: [],
-    error: null,
-    isLoading: false,
-    monthExpenses: [],
-    monthIncome: [],
     date: { month, year },
   },
   reducers: {
@@ -36,26 +32,8 @@ const transactionsSlice = createSlice({
     },
   },
   extraReducers: {
-    // [transactionsOps.getExpenses.fulfilled]: (state, action) => {
-    //   state.items = action.payload;
-    // },
-    // [transactionsOps.getIncome.fulfilled]: (state, action) => {
-    //   state.items = action.payload;
-    // },
-    // [transactionsOps.addExpenses.fulfilled]: (state, action) => {
-    //   state.items.push(action.payload);
-    // },
-    // [transactionsOps.addIncome.fulfilled]: (state, action) => {
-    //   state.items.push(action.payload);
-    // },
-    // [transactionsOps.removeOperation.fulfilled](state, action) {
-    //   state.items = state.items.filter(({ _id }) => _id !== action.payload);
-    // },
-    [transactionsOps.getAllExpenses.fulfilled]: (state, action) => {
-      state.monthExpenses = [...action.payload];
-    },
-    [transactionsOps.getAllIncomes.fulfilled]: (state, action) => {
-      state.monthIncome = [...action.payload];
+    [transactionsOps.getAllSum.fulfilled]: (state, action) => {
+      state.items = [...action.payload];
     },
   },
 });
