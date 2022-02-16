@@ -9,20 +9,7 @@ import {
 import Media from 'react-media';
 import s from './Charts.module.css';
 
-const data = [
-  { quarter: 'Cвинина', earnings: 5000 },
-  { quarter: 'Говядина', earnings: 6500 },
-  { quarter: 'Курица', earnings: 3200 },
-  { quarter: 'Рыба', earnings: 2100 },
-  { quarter: 'Панини', earnings: 1200 },
-  { quarter: 'Кофе', earnings: 867 },
-  { quarter: 'Спагетти', earnings: 1345 },
-  { quarter: 'Молоко', earnings: 400 },
-  { quarter: 'Сыр', earnings: 250 },
-  { quarter: 'Чай', earnings: 1147 },
-];
-
-const Charts = () => {
+const Charts = ({ data }) => {
   return (
     <div className={s.charts}>
       <Media
