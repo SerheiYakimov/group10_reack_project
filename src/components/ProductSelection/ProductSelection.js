@@ -6,6 +6,7 @@ import FormDatePicker from '../../components/DatePicker/DatePicker';
 import { OutcomesSelector } from '../Selector/Selector';
 import { InputCurrency } from './InputCurrency';
 import ProductSelectionButtons from './ProductSelectionButtons';
+// import toast from 'react-hot-toast';
 
 const ProductSelection = () => {
   const [category, setCategory] = useState('');
@@ -14,13 +15,29 @@ const ProductSelection = () => {
   const [sum, setSum] = useState('');
   const dispatch = useDispatch();
 
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    // const transaction = {
+    //     category,
+    //     subcategory,
+    //     sum,
+    //     date,
+    //     transactionType,
+    // }
+
+    // dispatch(addThunkTransaction(transaction));
+    // resetForm();
+    // toast.success('Транзакция успешно добавлена!')
+  };
+
   return (
     <div className={s.container}>
       <div className={s.outcomes_div}>
         <Media queries={{ small: { maxWidth: 767 } }}>
           {matches => (matches.small ? <></> : <FormDatePicker />)}
         </Media>
-        <form className={s.form}>
+        <form className={s.form} onSubmit={handleSubmit}>
           <OutcomesSelector></OutcomesSelector>
 
           <Media queries={{ small: { maxWidth: 767 } }}>
