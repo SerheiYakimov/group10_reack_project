@@ -1,5 +1,5 @@
-.reportListSection {
-}
+/* .reportListSection {
+} */
 
 .reportList {
   display: flex;
@@ -22,7 +22,7 @@
 }
 
 .reportListItemCard {
-  background: #f5f6fb;
+  background: var(--light-color-gray);
   border-radius: 80%;
 }
 .reportListItemCard:hover {
@@ -40,7 +40,7 @@
   text-align: center;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #52555f;
+  color: var(--main-color-grey);
 }
 
 .reportListIcon {
@@ -55,7 +55,7 @@
 }
 
 .reportListIcon:hover {
-  fill: #ff751d;
+  fill: var(--accent-color);
   /* background: #ffdac0; */
 }
 
@@ -71,7 +71,7 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
 
-  color: #52555f;
+  color: var(--main-color-grey);
 }
 
 @media screen and (min-width: 768px) {

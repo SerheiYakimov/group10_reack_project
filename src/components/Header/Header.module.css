@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 12px 19px 13px 19px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--white-color);
 }
 
 @media screen and (min-width: 768px) {

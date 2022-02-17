@@ -28,7 +28,8 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    left: 110px;
+    top: 200%;
+    left: 15%;
     width: 282px;
     padding: 41px 25px 31px 25px;
     background-image: url('../../images/mobile/bg-blue-notify.png');
@@ -41,7 +42,7 @@
 
 @media screen and (min-width: 1280px) {
   .container {
-    left: 436px;
+    left: 35%;
     margin-right: 332px;
     width: 292px;
     padding: 41px 30px 31px 30px;

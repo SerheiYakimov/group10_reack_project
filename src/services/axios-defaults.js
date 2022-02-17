@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const axiosServer = axios.create({
   baseURL: `https://kapusta-api-group10.herokuapp.com/api`,
-  //   baseURL: `http://localhost:3001/api`,
+  // baseURL: `http://localhost:3001/api`,
 });
 
 export const token = {

@@ -1,0 +1,10 @@
+@media screen and (min-width: 1280px) {
+  .bottomBg {
+    width: 100%;
+    height: 100vw;
+    background-image: url('../../images/bg-cabbage-elements/cabbage-group.png');
+    background-repeat: repeat-x;
+    background-position: top 903px left 0;
+    background-size: 1334px;
+  }
+}

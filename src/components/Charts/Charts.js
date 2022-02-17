@@ -39,8 +39,8 @@ const Charts = ({ data }) => {
               <VictoryBar
                 labelComponent={
                   <VictoryLabel
-                    dx={-5}
-                    dy={-12}
+                    dx={0}
+                    dy={-14}
                     textAnchor="start"
                     verticalAnchor="end"
                   />
@@ -78,7 +78,7 @@ const Charts = ({ data }) => {
       <Media
         query="(min-width: 768px)"
         render={() => (
-          <VictoryGroup>
+          <VictoryGroup height={285}>
             <VictoryChart>
               <VictoryAxis
                 tickLabelComponent={
