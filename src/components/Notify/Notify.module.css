@@ -1,0 +1,53 @@
+.container {
+  position: absolute;
+  top: 150px;
+  z-index: 100;
+  width: 282px;
+  padding: 41px 25px 31px 25px;
+  background-image: url('../../images/mobile/bg-blue-notify.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 282px 163px;
+  background-color: transparent;
+}
+
+.invitation {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+  margin-bottom: 20px;
+  color: var(--white-color);
+}
+
+.warning {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--white-color);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    top: 185%;
+    left: 15%;
+    width: 282px;
+    padding: 41px 25px 31px 25px;
+    background-image: url('../../images/mobile/bg-blue-notify.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 282px 163px;
+    background-color: transparent;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    left: 35%;
+    margin-right: 332px;
+    width: 292px;
+    padding: 41px 30px 31px 30px;
+    background-image: url('../../images/desktop/bg-blue-notify.png');
+    background-size: 292px 163px;
+  }
+}

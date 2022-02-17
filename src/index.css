@@ -1,13 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* html {
+  height: 100%;
+} */
+
 body {
+  /* height: 100%; */
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffff;
+  background-image: url('./images/mobile/bg-mob.png');
+  background-repeat: no-repeat;
+  background-size: 100% 342px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-size: 100% 582px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url('./images/tablet/bg-tab.png');
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  body {
+    background-image: url('./images/desktop/bg-desk.png');
+  }
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+button {
+  display: block;
+
+  cursor: pointer;
 }
