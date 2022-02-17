@@ -88,7 +88,6 @@ export default function Balance() {
         <OutcomesPage />
         {showIncome && <IncomesPage />}
       </>
-
     </div>
   );
 }
