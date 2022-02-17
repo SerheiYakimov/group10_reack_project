@@ -3,14 +3,11 @@ import types from '../../json/incomes.json';
 import React, { useState } from 'react';
 import s from './Selector.module.css';
 import Select from 'react-select';
-// import styled from 'styled-components';
 
 const customStyles = {
   control: () => ({
-    // backgroundColor: '#f5f6fb',
-    // // display: 'block',
-    // width: 282,
-    // height: 44,
+    width: 282,
+    height: 44,
   }),
   dropdownIndicator: () => ({
     display: 'none',
@@ -37,11 +34,23 @@ const incomesOptions = types.map(e => ({
 }));
 
 export const OutcomesSelector = () => {
+  const [inputName, setInputName] = useState('');
   const [selected, setSelected] = useState([]);
 
-  // const optionId = selected.value;
-  // const optionCategory = selected.label;
-  // console.log(optionId, optionCategory);
+  const optionId = selected.value;
+  const optionCategory = selected.label;
+  console.log(optionId, optionCategory);
+
+  const handleChange = e => {
+    const { inputName } = e.target;
+    setInputName(inputName);
+  };
+
+  const resetForm = () => {
+    setInputName('');
+    setSelected('');
+  };
+
   return (
     <>
       <input
@@ -49,12 +58,15 @@ export const OutcomesSelector = () => {
         id="js-keyword-input"
         type="text"
         name="name"
+        value={inputName}
+        onChahge={handleChange}
         placeholder="Описание товара"
         required
       />
       <Select
         classNamePrefix="react-select"
         className={s.control}
+        name="selected"
         onChange={setSelected}
         styles={customStyles}
         placeholder="Категория товара"
