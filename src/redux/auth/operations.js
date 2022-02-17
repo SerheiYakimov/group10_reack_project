@@ -9,7 +9,6 @@ const register = createAsyncThunk(
 
     try {
       const data = await authAPI.register(newUser);
-      console.log(`data in auth-operation`, data);
       toast.success(
         `На Ваш email отправлено письмо. Пройдите, пожалуйста, верификацию`,
         { duration: 4000 },
@@ -39,7 +38,6 @@ const logIn = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const data = await authAPI.logIn(user);
-      console.log(`data in auth-operation`, data);
       return data;
     } catch (error) {
       console.log(`error.messageLogIn`, error);
@@ -53,7 +51,6 @@ const logOut = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const data = await authAPI.logOut();
-      console.log(`data in auth-operation`, data);
       return data;
     } catch (error) {
       console.log(`error.messageInLogOut`, error);
@@ -66,9 +63,7 @@ const getCurrentUser = createAsyncThunk(
   '/users/current',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
-    console.log(state);
     const persistedToken = state.auth.token;
-    console.log(persistedToken);
 
     try {
       if (persistedToken === null) {
@@ -76,7 +71,6 @@ const getCurrentUser = createAsyncThunk(
       }
       authAPI.tokenAPI.set(persistedToken);
       const currentUser = await authAPI.getCurrentUser();
-      console.log(`currentUser in auth-operation`, currentUser);
       return currentUser;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -88,10 +82,8 @@ const userFromGoogleAuth = createAsyncThunk(
   '/auth/google',
   async (token, { rejectWithValue }) => {
     try {
-      console.log(`token in auth-operation`, token);
       const data = await authAPI.getGoogleUser(token);
       const fullData = { ...data, token };
-      console.log(`data in auth-operation`, data);
       return fullData;
     } catch (error) {
       console.log(`error in auth-operation`, error);
@@ -105,7 +97,6 @@ const setUserBalance = createAsyncThunk(
   async (newBalance, { rejectWithValue }) => {
     try {
       const data = await authAPI.updateUserBalance(newBalance);
-      console.log(`data in auth-operation balance`, data);
       return data;
     } catch (error) {
       console.log(`error.messageInLogOut`, error);

@@ -13,13 +13,11 @@ export default function Balance() {
   const showIncome = Boolean(false);
 
   const userBalance = useSelector(authSelectors.getUserBalance);
-  console.log(userBalance);
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
     let balance = e.target.elements.balance.value;
-    console.log(balance);
     if (!balance || Number(balance) === 0) {
       return toast.error('Внесите пожалуйста сумму на баланс больше нуля');
     }

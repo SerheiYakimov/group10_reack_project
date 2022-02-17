@@ -17,7 +17,6 @@ const Table = ({ id }) => {
       </svg>
     </button>
   );
-  console.log(removeOperation(id));
 
   const data = React.useMemo(
     () => [

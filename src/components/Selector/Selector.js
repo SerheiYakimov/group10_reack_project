@@ -3,12 +3,9 @@ import types from '../../json/incomes.json';
 import React, { useState } from 'react';
 import s from './Selector.module.css';
 import Select from 'react-select';
-// import { useDispatch } from 'react-redux';
 
 const customStyles = {
   control: () => ({
-    // backgroundColor: '#f5f6fb',
-    // display: 'block',
     width: 282,
     height: 44,
   }),
@@ -39,8 +36,6 @@ const incomesOptions = types.map(e => ({
 export const OutcomesSelector = () => {
   const [inputName, setInputName] = useState('');
   const [selected, setSelected] = useState([]);
-
-  // const dispatch = useDispatch();
 
   const optionId = selected.value;
   const optionCategory = selected.label;
@@ -84,9 +79,9 @@ export const OutcomesSelector = () => {
 export const IncomesSelector = () => {
   const [selected, setSelected] = useState([]);
 
-  const optionId = selected.value;
-  const optionCategory = selected.label;
-  console.log(optionId, optionCategory);
+  // const optionId = selected.value;
+  // const optionCategory = selected.label;
+  // console.log(optionId, optionCategory);
   return (
     <>
       <input

@@ -8,9 +8,7 @@ import s from './GoogleVerPage.module.css';
 
 const GoogleVerPage = () => {
   const location = useLocation();
-  console.log('location :>> ', location.search);
   const { accessToken } = queryString.parse(location.search);
-  console.log('queryParams :>> ', accessToken);
   const dispatch = useDispatch();
 
   useEffect(() => {
