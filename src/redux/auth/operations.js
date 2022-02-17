@@ -82,7 +82,6 @@ const userFromGoogleAuth = createAsyncThunk(
   '/auth/google',
   async (token, { rejectWithValue }) => {
     try {
-      console.log(`token in auth-operation`, token);
       const data = await authAPI.getGoogleUser(token);
       const fullData = { ...data, token };
       return fullData;

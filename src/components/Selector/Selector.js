@@ -5,7 +5,6 @@ import s from './Selector.module.css';
 import Select from 'react-select';
 // import styled from 'styled-components';
 
-
 const customStyles = {
   control: () => ({
     // backgroundColor: '#f5f6fb',
@@ -16,7 +15,6 @@ const customStyles = {
   dropdownIndicator: () => ({
     display: 'none',
   }),
-
 
   indicatorSeparator: () => ({
     display: 'none',
@@ -33,19 +31,17 @@ const expensesOptions = categories.map(e => ({
   label: e.category,
 }));
 
-
 const incomesOptions = types.map(e => ({
   value: e.id,
   label: e.category,
 }));
 
-
 export const OutcomesSelector = () => {
   const [selected, setSelected] = useState([]);
 
-  const optionId = selected.value;
-  const optionCategory = selected.label;
-  console.log(optionId, optionCategory);
+  // const optionId = selected.value;
+  // const optionCategory = selected.label;
+  // console.log(optionId, optionCategory);
   return (
     <>
       <input
@@ -71,9 +67,9 @@ export const OutcomesSelector = () => {
 export const IncomesSelector = () => {
   const [selected, setSelected] = useState([]);
 
-  const optionId = selected.value;
-  const optionCategory = selected.label;
-  console.log(optionId, optionCategory);
+  // const optionId = selected.value;
+  // const optionCategory = selected.label;
+  // console.log(optionId, optionCategory);
   return (
     <>
       <input
