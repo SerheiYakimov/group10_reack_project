@@ -12,7 +12,7 @@
   line-height: 16px;
   letter-spacing: 0.04em;
 
-  background: #ffffff;
+  background: var(--white-color);
 
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
   border-radius: 20px;
@@ -23,10 +23,10 @@
 }
 
 .expenses {
-  color: #e53935;
+  color: var(--balance-minus);
 }
 .incomes {
-  color: #407946;
+  color: var(--balance-plus);
 }
 
 .strip {

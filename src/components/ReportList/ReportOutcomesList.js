@@ -56,7 +56,7 @@ export default function ReportOutcomesList() {
       {reportOutcomesData && (
         <ul className={s.reportList}>
           {reportOutcomesData.map(report => (
-            <ReportOutcomesListItem report={report} />
+            <ReportOutcomesListItem key={Math.random()} report={report} />
           ))}
         </ul>
       )}

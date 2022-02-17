@@ -8,7 +8,7 @@
   padding: 10px 18px 10px 20px;
   border-radius: 26px;
   border: none;
-  background-color: #f6f7fb;
+  background-color: var(--light-color-gray);
   text-transform: uppercase;
   filter: drop-shadow(1px 2px 3px rgba(170, 178, 197, 0.2));
 }

@@ -4,7 +4,7 @@
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.04em;
-  color: #52555f;
+  color: var(--main-color-grey);
 }
 
 .logoutButtonMob {
@@ -17,7 +17,7 @@
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.04em;
-  color: #52555f;
+  color: var(--main-color-grey);
 }
 
 .logoutButtonTabDesk {
@@ -29,11 +29,6 @@
   cursor: pointer;
   text-decoration: underline;
 }
-
-/* .logoutButtonTabDesk::before {
-  content: url('../../images/nav-decor-line.png');
-  margin-right: 20px;
-} */
 
 .avatar {
   width: 32px;
