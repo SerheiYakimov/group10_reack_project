@@ -1,9 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import {
-  getReportByCategories,
-  getReportBySubCategories,
-  getSummaryByMonth,
-} from '../../services/report-api';
+import reportAPI from '../../services/report-api';
+import getReportByCategories from '../../services/report-api';
+import getReportBySubCategories from '../../services/report-api';
+import getSummaryByMonth from '../../services/report-api';
 
 export const getIncomesData = createAsyncThunk(
   '/transactions/report-category-by-month',
