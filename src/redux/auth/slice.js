@@ -85,7 +85,7 @@ const authSlice = createSlice({
     },
 
     [authOperations.setUserBalance.fulfilled](state, action) {
-      state.user.balance = action.payload.data.balance;
+      state.user.balance = action.payload.data.tempUserBalance;
     },
   },
 });
