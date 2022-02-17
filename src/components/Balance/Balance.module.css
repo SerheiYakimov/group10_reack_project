@@ -28,7 +28,6 @@
 }
 
 .initialBalanceInput {
-  position: relative;
   display: flex;
   padding-left: 20px;
   padding-right: 20px;
@@ -53,7 +52,6 @@
 }
 
 .balanceInput {
-  position: relative;
   display: flex;
   padding-left: 20px;
   padding-right: 20px;
