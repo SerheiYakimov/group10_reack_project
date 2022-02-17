@@ -65,15 +65,23 @@ export default function Balance() {
             name="balance"
             maxLength="10"
             placeholder={userBalance ? `${userBalance} UAH` : `00.00 UAH`}
-            className={s.balanceInput}
+            className={
+              userBalance === null ? s.initialBalanceInput : s.balanceInput
+            }
             autoComplete="off"
           />
-          <button type="submit" className={s.confirmButton}>
-            ПОДТВЕРДИТЬ
-          </button>
+          {userBalance === null && (
+            <button type="submit" className={s.confirmButton}>
+              ПОДТВЕРДИТЬ
+            </button>
+          )}
         </div>
       </form>
       {userBalance === null && <Notify />}
     </div>
   );
 }
+
+/* <button type="submit" className={s.confirmButton}>
+    ПОДТВЕРДИТЬ
+  </button> */
