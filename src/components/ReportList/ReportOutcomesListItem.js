@@ -9,10 +9,16 @@ const ReportOutcomesListItem = ({ report }) => {
         <p className={s.reportListItemTextAmount}>
           {formatThousands(report.amount, ' ')}{' '}
         </p>
-
-        <svg className={s.reportListIcon} fill="#071F41" width="56" height="56">
-          <use href={`${sprite}#${report.icon}`}></use>
-        </svg>
+        <div className={s.reportListItemIcon}>
+          <svg
+            className={s.reportListIcon}
+            fill="#071F41"
+            width="56"
+            height="56"
+          >
+            <use href={`${sprite}#${report.icon}`}></use>
+          </svg>
+        </div>
         <p className={s.reportListItemTextTitle}> {report.category}</p>
       </div>
     </li>
