@@ -3,7 +3,8 @@ const getIsLoggedIn = state => state.auth.isLoggedIn;
 const getUserEmail = state => state.auth.user.email;
 const getUserName = state => state.auth.user.name;
 const getUserAvatar = state => state.auth.user.avatarURL;
-const getIsRefreshingCurrentUser = state => state.auth.isRefresh;
+const getIsRefreshingUser = state => state.auth.isRefreshingCurrentUser;
+const getIsRefreshingBalance = state => state.auth.isRefreshingBalance;
 const getIsAuthenticated = state => state.auth.isAuthenticated;
 
 const authSelectors = {
@@ -11,7 +12,8 @@ const authSelectors = {
   getUserEmail,
   getUserName,
   getUserBalance,
-  getIsRefreshingCurrentUser,
+  getIsRefreshingUser,
+  getIsRefreshingBalance,
   getUserAvatar,
   getIsAuthenticated,
 };
