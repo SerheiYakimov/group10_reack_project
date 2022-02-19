@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import s from './DatePicker.module.css';
-import sprite from '../../svg/sprite.svg';
+import sprite from '../../../svg/sprite.svg';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 

@@ -5,13 +5,13 @@ import Navigation from '../Navigation/Navigation';
 import s from './Header.module.css';
 
 const Header = () => {
-  const isAuth = useSelector(authSelectors.getIsAuthenticated);
+  const isAuth = useSelector(authSelectors.getIsLoggedIn);
   return (
     <header className={s.header}>
       <svg width="90" height="31">
         <use href={`${sprite}#logo`}></use>
       </svg>
-      {isAuth ? <Navigation /> : null}
+      {isAuth && <Navigation />}
     </header>
   );
 };

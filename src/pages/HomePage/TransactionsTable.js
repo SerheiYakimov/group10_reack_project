@@ -1,9 +1,12 @@
 import ProductSelection from '../../components/ProductSelection/ProductSelection';
 import Summary from '../../components/Summary/Summary';
-import s from './OutcomesPage.module.css';
+import s from './TransactionsTable.module.css';
 import Table from '../../components/Table/Table';
+import { useSelector } from 'react-redux';
+import { getAllTransactions } from '../../redux/transactions/selectors';
 
-const OutcomesPage = () => {
+const TransactionsTable = () => {
+  const tempData = useSelector(getAllTransactions);
   return (
     <>
       <div className={s.container}>
@@ -21,4 +24,4 @@ const OutcomesPage = () => {
   );
 };
 
-export default OutcomesPage;
+export default TransactionsTable;

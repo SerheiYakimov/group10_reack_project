@@ -20,10 +20,8 @@ import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
 function App() {
   const [modalActive, setModalActive] = useState(false);
   const dispatch = useDispatch();
-  const isAuth = useSelector(authSelectors.getIsAuthenticated);
-  const isUserRefreshing = useSelector(
-    authSelectors.getIsRefreshingCurrentUser,
-  );
+  const isAuth = useSelector(authSelectors.getIsLoggedIn);
+  const isUserRefreshing = useSelector(authSelectors.getIsRefreshingUser);
 
   useEffect(() => {
     dispatch(authOperations.getCurrentUser());
@@ -93,6 +91,6 @@ export default App;
 //   <Route path="/balance" element={<BalancePage />} />
 
 //   {/* <Route path="/balance/:incomes" exact element={<IncomesPage />} /> */}
-//   <Route path="/balance/:outcomes" exact element={<OutcomesPage />} />
+//   <Route path="/balance/:outcomes" exact element={<TransactionsTable />} />
 //   <Route path="/report" element={<ReportPage />} />
 // </Routes>;

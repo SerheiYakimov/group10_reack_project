@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
 import GoToReports from '../GoToReports';
@@ -5,15 +6,21 @@ import Notify from '../Notify/Notify';
 import authSelectors from '../../redux/auth/selectors';
 import authOperations from '../../redux/auth/operations';
 
-import OutcomesPage from '../../pages/OutcomesPage/OutcomesPage';
-import IncomesPage from '../../pages/IncomesPage/IncomesPage';
+import TransactionsTable from '../../pages/HomePage/TransactionsTable';
+// import IncomesPage from '../../pages/IncomesPage/IncomesPage';
 import s from './Balance.module.css';
 
 export default function Balance() {
-  const showIncome = Boolean(false);
+  // const showIncome = Boolean(false);
 
   const userBalance = useSelector(authSelectors.getUserBalance);
+  const isRefreshingBalance = useSelector(authSelectors.getIsRefreshingBalance);
+  console.log(isRefreshingBalance);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.getUserBalance());
+  }, [dispatch]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -32,16 +39,30 @@ export default function Balance() {
       <form className={s.formBalance} onSubmit={handleSubmit}>
         <p className={s.balanceLabel}>Баланс:</p>
         <div className={s.balanceAndBtn}>
-          <input
-            type="text"
-            name="balance"
-            maxLength="10"
-            placeholder={userBalance ? `${userBalance} UAH` : `00.00 UAH`}
-            className={
-              userBalance === null ? s.initialBalanceInput : s.balanceInput
-            }
-            autoComplete="off"
-          />
+          {isRefreshingBalance ? (
+            <input
+              type="text"
+              name="balance"
+              maxLength="10"
+              // placeholder={userBalance ? `${userBalance} UAH` : `00.00 UAH`}
+              className={
+                userBalance === null ? s.initialBalanceInput : s.balanceInput
+              }
+              autoComplete="off"
+            />
+          ) : (
+            <input
+              type="text"
+              name="balance"
+              maxLength="10"
+              placeholder={userBalance ? `${userBalance} UAH` : `00.00 UAH`}
+              className={
+                userBalance === null ? s.initialBalanceInput : s.balanceInput
+              }
+              autoComplete="off"
+            />
+          )}
+
           {userBalance === null && (
             <button type="submit" className={s.confirmButton}>
               ПОДТВЕРДИТЬ
@@ -51,10 +72,10 @@ export default function Balance() {
       </form>
 
       <>
-        <OutcomesPage />
-        {showIncome && <IncomesPage />}
+        <TransactionsTable />
+        {/* {showIncome && <IncomesPage />} */}
       </>
-      {userBalance === null && <Notify />}
+      {!isRefreshingBalance && userBalance === null && <Notify />}
     </div>
   );
 }

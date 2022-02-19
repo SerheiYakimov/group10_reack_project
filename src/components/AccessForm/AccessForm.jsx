@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import authOperations from '../../redux/auth/operations';
-import Button from '../Button/Button';
+import Button from '../Buttons/Button';
 import s from './AccessForm.module.css';
 
 const signInSchema = Yup.object().shape({

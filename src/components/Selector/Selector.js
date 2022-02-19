@@ -39,7 +39,7 @@ export const OutcomesSelector = () => {
 
   const optionId = selected.value;
   const optionCategory = selected.label;
-  console.log(optionId, optionCategory);
+  // console.log(optionId, optionCategory);
 
   const handleChange = e => {
     const { inputName } = e.target;

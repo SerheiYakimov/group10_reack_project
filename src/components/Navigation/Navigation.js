@@ -1,5 +1,4 @@
 import Media from 'react-media';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from '../../redux/auth/selectors';
 import authOperations from '../../redux/auth/operations';
@@ -11,10 +10,6 @@ const Navigation = () => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);
   const avatarDB = useSelector(authSelectors.getUserAvatar);
-
-  useEffect(() => {
-    dispatch(authOperations.getCurrentUser());
-  }, [dispatch]);
 
   return (
     <nav className={s.navigation}>

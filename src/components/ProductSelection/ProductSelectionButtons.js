@@ -1,4 +1,4 @@
-import Button from '../Button/Button';
+import Button from '../Buttons/Button';
 import s from './ProductSelection.module.css';
 
 const ProductSelectionButtons = () => {
