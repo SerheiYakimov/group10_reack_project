@@ -6,7 +6,6 @@ import DateReport from '../../components/DateReport/DateReport';
 import ReportSwitch from '../../components/ReportSwitch/ReportSwitch';
 import ExpensesIncome from '../../components/ExpensesIncome/ExpensesIncome';
 import Charts from '../../components/Charts/Charts';
-import BottomBg from '../../components/BottomBg/BottomBg';
 
 import s from './ReportPage.module.css';
 
