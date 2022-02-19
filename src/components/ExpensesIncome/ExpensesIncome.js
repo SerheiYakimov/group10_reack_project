@@ -7,34 +7,20 @@ import {
 import { useEffect } from 'react';
 import { getAllSum } from '../../redux/transactions/operations';
 import s from './ExpensesIncome.module.css';
+import formatThousands from 'format-thousands';
 
 export default function ExpensesIncome() {
-  const month = useSelector(getMonth);
-  const year = useSelector(getYear);
-  let normalizeMonth;
-
-  if (month.length === 1) {
-    normalizeMonth = '0' + month;
-  }
-
-  const currentDate = `${year}-${normalizeMonth}`;
-
-  const data = useSelector(getAllTransactions);
-
-  const expenses = data.find(el => el.id === 'расход');
-  const income = data.find(el => el.id === 'доход');
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAllSum({ date: currentDate }));
-  }, [currentDate, dispatch]);
+  const expenses = 10000.0;
+  const income = 10000.0;
 
   return (
     <section className={s.section}>
       <div className={s.wrapExp}>
-        <p className={s.desc}> Расходы:</p>
-        <span className={s.expenses}>{`- ${expenses.totalSum}.00 грн.`}</span>
+        <p className={s.desc}>Расходы:</p>
+        <span className={s.expenses}>{` - ${formatThousands(
+          expenses,
+          ' ',
+        )} грн.`}</span>
       </div>
       <svg
         className={s.strip}
@@ -46,8 +32,11 @@ export default function ExpensesIncome() {
       </svg>
 
       <div className={s.wrapInc}>
-        <p className={s.desc}>Доходы:</p>
-        <span className={s.incomes}>{`+ ${income.totalSum}.00 грн.`}</span>
+        <p className={s.desc}>Доходы: </p>
+        <span className={s.incomes}>{` + ${formatThousands(
+          income,
+          ' ',
+        )} грн.`}</span>
       </div>
     </section>
   );

@@ -10,14 +10,14 @@ const register = createAsyncThunk(
     try {
       const data = await authAPI.register(newUser);
       toast.success(
-        `На Ваш email отправлено письмо. Пройдите, пожалуйста, верификацию`,
+        `На Ваш email отправлено письмо. Пройдите, пожалуйста, верификацию.`,
         { duration: 4000 },
       );
       return data;
     } catch (error) {
       console.log(`error.messageRegister`, error);
       toast.error(
-        'Упс, что-то пошло не так :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки',
+        'Упс, что-то пошло не так :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки.',
       );
       return rejectWithValue(error.message);
     }
@@ -28,7 +28,7 @@ const compliteRegistration = createAsyncThunk(
   '/register',
   async (_, { rejectWithValue }) => {
     const data = { isVerified: true };
-    toast.success(`Регистрация подтверждена`, { duration: 4000 });
+    toast.success(`Регистрация подтверждена!`, { duration: 4000 });
     return data;
   },
 );
@@ -41,6 +41,9 @@ const logIn = createAsyncThunk(
       return data;
     } catch (error) {
       console.log(`error.messageLogIn`, error);
+      toast.error(
+        'К сожалению, пользователь не авторизирован. Проверьте правильность ввода логина и пароля или зарегистрируйтесь.',
+      );
       return rejectWithValue(error.message);
     }
   },
@@ -51,9 +54,13 @@ const logOut = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const data = await authAPI.logOut();
+      toast.success('До новых встреч!', { duration: 4000 });
       return data;
     } catch (error) {
       console.log(`error.messageInLogOut`, error);
+      toast.error(
+        'Упс, что-то пошло не так :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки.',
+      );
       return rejectWithValue(error.message);
     }
   },
@@ -97,9 +104,29 @@ const setUserBalance = createAsyncThunk(
   async (newBalance, { rejectWithValue }) => {
     try {
       const data = await authAPI.updateUserBalance(newBalance);
+      toast.success('Баланс успешно обновлен!');
       return data;
     } catch (error) {
       console.log(`error.messageInLogOut`, error);
+      toast.error(
+        'Баланс не обновлен :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки.',
+      );
+      return rejectWithValue(error.message);
+    }
+  },
+);
+
+const getUserBalance = createAsyncThunk(
+  '/users/balance',
+  async (_, { rejectWithValue }) => {
+    try {
+      const data = await authAPI.getCurrentUser();
+      return data;
+    } catch (error) {
+      console.log(`error.messageInLogOut`, error);
+      toast.error(
+        'Баланс не обновлен :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки.',
+      );
       return rejectWithValue(error.message);
     }
   },
@@ -113,6 +140,7 @@ const authOperations = {
   compliteRegistration,
   userFromGoogleAuth,
   setUserBalance,
+  getUserBalance,
 };
 
 export default authOperations;

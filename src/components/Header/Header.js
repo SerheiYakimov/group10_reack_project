@@ -6,7 +6,7 @@ import Navigation from '../Navigation/Navigation';
 import s from './Header.module.css';
 
 const Header = () => {
-  const isAuth = useSelector(authSelectors.getIsAuthenticated);
+  const isAuth = useSelector(authSelectors.getIsLoggedIn);
   return (
     <header className={s.header}>
       <Link to="/balance">

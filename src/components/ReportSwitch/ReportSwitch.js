@@ -5,11 +5,7 @@ import s from './ReportSwitch.module.css';
 const ReportSwitch = () => {
   const [ReportSwitchIncomes, setReportSwitchIncomes] = useState(false);
 
-  const onHandleClickLeft = () => {
-    setReportSwitchIncomes(!ReportSwitchIncomes);
-  };
-
-  const onHandleClickRight = () => {
+  const onHandleClick = () => {
     setReportSwitchIncomes(!ReportSwitchIncomes);
   };
 
@@ -20,7 +16,7 @@ const ReportSwitch = () => {
           <button
             type="button"
             className={s.reportButtonLeft}
-            onClick={onHandleClickLeft}
+            onClick={onHandleClick}
           ></button>
           <span className={s.reportSwitchTitle}>
             {ReportSwitchIncomes ? 'ДОХОДЫ' : 'РАСХОДЫ'}
@@ -28,7 +24,7 @@ const ReportSwitch = () => {
           <button
             type="button"
             className={s.reportButtonRight}
-            onClick={onHandleClickRight}
+            onClick={onHandleClick}
           ></button>
         </div>
       </div>

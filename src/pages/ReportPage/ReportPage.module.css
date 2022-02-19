@@ -2,9 +2,9 @@
   padding-top: 15px;
   padding-bottom: 50px;
   text-align: center;
-  background-image: url('../../images/mobile/bg-mob.png');
+  /* background-image: url('../../images/mobile/bg-mob.png');
   background-repeat: no-repeat;
-  background-position: left top -280px;
+  background-position: left top -280px; */
 }
 
 .wrap {
@@ -17,9 +17,9 @@
     padding-bottom: 75px;
     text-align: left;
 
-    background-image: url('../../images/mobile/bg-mob.png');
+    /* background-image: url('../../images/mobile/bg-mob.png');
     background-repeat: no-repeat, no-repeat;
-    background-position: left top -50px, right 88px bottom -40px;
+    background-position: left top -50px, right 88px bottom -40px; */
   }
   .wrapper {
     display: flex;
@@ -38,10 +38,27 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+/* @media screen and (min-width: 1280px) {
   .section {
     background-image: url('../../images/desktop/bg-desk.png');
     background-repeat: no-repeat, no-repeat;
     background-position: center top -40px, center bottom -4px;
+  }
+} */
+@media screen and (min-width: 768px) {
+  .bottomBgWrapper {
+    background-image: url('../../images/bg-cabbage-elements/cabbage-group-tab.png');
+    height: 1183px;
+    background-repeat: no-repeat;
+    background-position: top 950px left 497px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .bottomBgWrapper {
+    height: 1140px;
+    background-image: url('../../images/bg-cabbage-elements/cabbage-group.png');
+    background-repeat: repeat-x;
+    background-position: top 903px left 0;
   }
 }

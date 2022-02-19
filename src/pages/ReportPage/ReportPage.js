@@ -26,7 +26,7 @@ const ReportPage = () => {
 
   return (
     <section className={s.section}>
-      <BottomBg>
+      <div className={s.bottomBgWrapper}>
         <Container>
           <div className={s.wrapper}>
             <ArrowToGoBack />
@@ -35,12 +35,11 @@ const ReportPage = () => {
               <BalanceReport />
             </div>
           </div>
-          {/* <ExpensesIncome /> */}
+          <ExpensesIncome />
           <ReportSwitch />
-
           <Charts data={chartsData} />
         </Container>
-      </BottomBg>
+      </div>
     </section>
   );
 };

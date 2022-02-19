@@ -1,6 +1,6 @@
 .bgWrapper {
   width: 100%;
-  height: 100vh;
+  height: 798px;
   background-image: url('../../images/bg-cabbage-elements/bg-top-left.png'),
     url('../../images/bg-cabbage-elements/bg-top-right.png'),
     url('../../images/bg-cabbage-elements/bg-bottom-right.png'),
@@ -16,14 +16,18 @@
     url('../../images/bg-cabbage-elements/bg-top-right.png'),
     url('../../images/bg-cabbage-elements/bg-top-left.png'),
     url('../../images/bg-cabbage-elements/bg-top-right.png'),
-    url('../../images/bg-cabbage-elements/bg-top-left.png');
+    url('../../images/bg-cabbage-elements/bg-top-left.png'),
+    url('../../images/bg-cabbage-elements/cabbage-shadow.png'),
+    url('../../images/bg-cabbage-elements/cabbage-shadow.png');
+
   background-repeat: no-repeat;
   background-size: 83px, 83px, 83px, 83px, 83px, 83px, 83px, 83px, 83px, 83px,
-    83px, 83px, 83px, 83px, 83px, 83px, cover;
+    83px, 83px, 83px, 83px, 83px, 83px, 67px, 67px, cover;
   background-position: top 91px left 10px, top 28px left 140px,
     top 177px left 152px, top 28px left 389px, top 91px left 259px,
     top 28px left 389px, top 91px left 508px, top 28px left 638px,
     top 91px left 757px, top 28px left 887px, top 91px left 1006px,
     top 165px left 1128px, top 28px left 1136px, top 91px left 1255px,
-    top 621px left 230px, top 602px left 324px;
+    top 621px left 230px, top 602px left 324px, top 730px left 235px,
+    top 714px left 346px;
 }

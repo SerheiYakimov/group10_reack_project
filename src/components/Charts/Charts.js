@@ -78,7 +78,7 @@ const Charts = ({ data }) => {
       <Media
         query="(min-width: 768px)"
         render={() => (
-          <VictoryGroup height={285}>
+          <VictoryGroup height={240}>
             <VictoryChart>
               <VictoryAxis
                 tickLabelComponent={
