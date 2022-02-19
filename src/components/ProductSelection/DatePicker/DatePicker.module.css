@@ -32,7 +32,6 @@
   .calendar {
     position: absolute;
     left: 31px;
-    top: 41px;
   }
 }
 @media screen and (min-width: 1279px) {
