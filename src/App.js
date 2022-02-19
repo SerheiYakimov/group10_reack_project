@@ -93,6 +93,6 @@ export default App;
 //   <Route path="/balance" element={<BalancePage />} />
 
 //   {/* <Route path="/balance/:incomes" exact element={<IncomesPage />} /> */}
-//   <Route path="/balance/:outcomes" exact element={<OutcomesPage />} />
+//   <Route path="/balance/:outcomes" exact element={<TransactionsTable />} />
 //   <Route path="/report" element={<ReportPage />} />
 // </Routes>;

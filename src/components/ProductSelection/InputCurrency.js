@@ -15,7 +15,7 @@ export const InputCurrency = ({ children }) => {
           min="0,00000001"
         />
         <div className={s.culc_div}>
-          <svg className={s.culculator} fill=" #52555F" width="20" height="20">
+          <svg className={s.calculator} fill=" #52555F" width="20" height="20">
             <use href={`${sprite}#calculator`}></use>
           </svg>
         </div>

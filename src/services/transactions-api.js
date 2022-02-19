@@ -1,6 +1,6 @@
 import { axiosServer } from './axios-defaults';
 
-axiosServer.baseURL = 'http://localhost:3001/api';
+// axiosServer.baseURL = 'http://localhost:3001/api';
 
 async function getAllTransactions(date) {
   const { data } = await axiosServer.get(

@@ -37,8 +37,8 @@ export const OutcomesSelector = () => {
   const [inputName, setInputName] = useState('');
   const [selected, setSelected] = useState([]);
 
-  // const optionId = selected.value;
-  // const optionCategory = selected.label;
+  const optionId = selected.value;
+  const optionCategory = selected.label;
   // console.log(optionId, optionCategory);
 
   const handleChange = e => {

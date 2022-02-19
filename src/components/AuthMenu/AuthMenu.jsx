@@ -1,6 +1,6 @@
 import React from 'react';
 import AccessForm from '../AccessForm/AccessForm';
-import GoogleBtn from '../GoogleBtn/GoogleBtn';
+import GoogleBtn from '../Buttons/GoogleBtn/GoogleBtn';
 import s from './AuthMenu.module.css';
 
 export default function AuthMenu() {

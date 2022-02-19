@@ -5,8 +5,8 @@ import Notify from '../Notify/Notify';
 import authSelectors from '../../redux/auth/selectors';
 import authOperations from '../../redux/auth/operations';
 
-import OutcomesPage from '../../pages/OutcomesPage/OutcomesPage';
-import IncomesPage from '../../pages/IncomesPage/IncomesPage';
+import TransactionsTable from '../../pages/HomePage/TransactionsTable';
+// import IncomesPage from '../../pages/IncomesPage/IncomesPage';
 import s from './Balance.module.css';
 
 export default function Balance() {
@@ -51,8 +51,8 @@ export default function Balance() {
       </form>
 
       <>
-        <OutcomesPage />
-        {showIncome && <IncomesPage />}
+        <TransactionsTable />
+        {/* {showIncome && <IncomesPage />} */}
       </>
       {userBalance === null && <Notify />}
     </div>

@@ -1,6 +1,6 @@
 import s from './Modal.module.css';
 import sprite from '../../svg/sprite.svg';
-import Button from '../Button/Button';
+import Button from '../Buttons/Button';
 
 const Modal = ({ active, setActive, children }) => {
   return (
