@@ -2,12 +2,12 @@ import s from './ReportList.module.css';
 import sprite from '../../svg/sprite.svg';
 import formatThousands from 'format-thousands';
 
-const ReportIncomesListItem = ({ report }) => {
+const ReportListItem = ({ report }) => {
   return (
     <li className={s.reportListItem}>
       <div className={s.reportListItemCard}>
         <p className={s.reportListItemTextAmount}>
-          {formatThousands(report.amount, ' ')}
+          {formatThousands(report.amount, ' ')}{' '}
         </p>
         <div className={s.reportListItemIcon}>
           <svg
@@ -25,4 +25,4 @@ const ReportIncomesListItem = ({ report }) => {
   );
 };
 
-export default ReportIncomesListItem;
+export default ReportListItem;

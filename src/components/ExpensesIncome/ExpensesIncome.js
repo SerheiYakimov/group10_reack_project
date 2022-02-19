@@ -9,26 +9,29 @@ import { getAllSum } from '../../redux/transactions/operations';
 import s from './ExpensesIncome.module.css';
 
 export default function ExpensesIncome() {
-  const month = useSelector(getMonth);
-  const year = useSelector(getYear);
-  let normalizeMonth;
+  // const month = useSelector(getMonth);
+  // const year = useSelector(getYear);
+  // let normalizeMonth;
 
-  if (month.length === 1) {
-    normalizeMonth = '0' + month;
-  }
+  // if (month.length === 1) {
+  //   normalizeMonth = '0' + month;
+  // }
 
-  const currentDate = `${year}-${normalizeMonth}`;
+  // const currentDate = `${year}-${normalizeMonth}`;
 
-  const data = useSelector(getAllTransactions);
+  // const data = useSelector(getAllTransactions);
 
-  const expenses = data.find(el => el.id === 'расход');
-  const income = data.find(el => el.id === 'доход');
+  // const expenses = data.find(el => el.id === 'расход');
+  // const income = data.find(el => el.id === 'доход');
 
-  const dispatch = useDispatch();
+  const expenses = 0.0;
+  const income = 0.0;
 
-  useEffect(() => {
-    dispatch(getAllSum({ date: currentDate }));
-  }, [currentDate, dispatch]);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(getAllSum({ date: currentDate }));
+  // }, [currentDate, dispatch]);
 
   return (
     <section className={s.section}>
@@ -36,14 +39,14 @@ export default function ExpensesIncome() {
         <p className={s.desc}> Расходы:</p>
         <span className={s.expenses}>{`- ${expenses.totalSum}.00 грн.`}</span>
       </div>
-      <svg
+      {/* <svg
         className={s.strip}
         width="1"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d="M1 0V70.5" stroke="#E0E5EB" />
-      </svg>
+      </svg> */}
 
       <div className={s.wrapInc}>
         <p className={s.desc}>Доходы:</p>
