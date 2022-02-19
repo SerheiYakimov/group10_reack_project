@@ -2,10 +2,12 @@ import s from './ReportList.module.css';
 import sprite from '../../svg/sprite.svg';
 import formatThousands from 'format-thousands';
 
+const onHandleSelectCategory = () => {};
+
 const ReportListItem = ({ report }) => {
   return (
     <li className={s.reportListItem}>
-      <div className={s.reportListItemCard}>
+      <div onClick={onHandleSelectCategory} className={s.reportListItemCard}>
         <p className={s.reportListItemTextAmount}>
           {formatThousands(report.amount, ' ')}{' '}
         </p>
