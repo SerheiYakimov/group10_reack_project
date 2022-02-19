@@ -20,10 +20,8 @@ import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
 function App() {
   const [modalActive, setModalActive] = useState(false);
   const dispatch = useDispatch();
-  const isAuth = useSelector(authSelectors.getIsAuthenticated);
-  const isUserRefreshing = useSelector(
-    authSelectors.getIsRefreshingCurrentUser,
-  );
+  const isAuth = useSelector(authSelectors.getIsLoggedIn);
+  const isUserRefreshing = useSelector(authSelectors.getIsRefreshingUser);
 
   useEffect(() => {
     dispatch(authOperations.getCurrentUser());
