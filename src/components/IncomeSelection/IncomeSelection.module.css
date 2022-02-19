@@ -194,7 +194,7 @@
   }
 }
 
-.culculator {
+.calculator {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -203,13 +203,13 @@
   cursor: pointer;
 }
 @media screen and (min-width: 767px) {
-  .culculator {
+  .calculator {
     left: 598px;
     top: 38px;
   }
 }
 @media screen and (min-width: 1279px) {
-  .culculator {
+  .calculator {
     left: 720px;
     top: 45px;
   }

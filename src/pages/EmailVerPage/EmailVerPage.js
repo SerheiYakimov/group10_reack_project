@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Container from '../../components/Container/Container';
-import Button from '../../components/Button/Button';
+import Button from '../../components/Buttons/Button';
 import s from './EmailVerPage.module.css';
 
 const EmailVerPage = () => {

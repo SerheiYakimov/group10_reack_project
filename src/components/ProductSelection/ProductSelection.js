@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import s from './ProductSelection.module.css';
 import Media from 'react-media';
 import { useDispatch } from 'react-redux';
-import FormDatePicker from '../../components/DatePicker/DatePicker';
+import FormDatePicker from './DatePicker/DatePicker';
 import { OutcomesSelector } from '../Selector/Selector';
 import { InputCurrency } from './InputCurrency';
 import ProductSelectionButtons from './ProductSelectionButtons';

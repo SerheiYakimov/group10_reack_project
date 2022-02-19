@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as GoogleIcon } from '../../svg/google.svg';
+import { ReactComponent as GoogleIcon } from '../../../svg/google.svg';
 import s from './GoogleBtn.module.css';
 
 function GoogleBtn({ href }) {

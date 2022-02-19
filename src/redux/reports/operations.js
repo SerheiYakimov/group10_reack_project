@@ -8,6 +8,7 @@ export const getIncomesData = createAsyncThunk(
   '/transactions/report-category-by-month',
   async (date, { rejectWithValue }) => {
     try {
+      console.log('date', date);
       const { data } = await getReportByCategories(date);
       return data;
     } catch (error) {
