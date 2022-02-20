@@ -8,6 +8,7 @@ import ExpensesIncome from '../../components/ExpensesIncome/ExpensesIncome';
 import Charts from '../../components/Charts/Charts';
 
 import s from './ReportPage.module.css';
+import TransactionSwitch from '../../components/TransactionSwitch/TransactionSwitch';
 
 const ReportPage = () => {
   const chartsData = [
@@ -35,6 +36,7 @@ const ReportPage = () => {
             </div>
           </div>
           <ExpensesIncome />
+          <TransactionSwitch />
           <ReportSwitch />
           <Charts data={chartsData} />
         </Container>
