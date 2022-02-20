@@ -84,6 +84,7 @@
   border-radius: 22px;
   outline: none;
   background-color: transparent;
+  pointer-events: none;
 }
 
 .confirmButton {
