@@ -1,5 +1,6 @@
 .transactionSwitchNavigation {
   display: inline-block;
+  margin-right: auto;
 }
 
 .transactionSwitcList {
@@ -20,16 +21,32 @@
   letter-spacing: 0.02em;
   text-align: center;
   color: #000000;
-  background-color: #fefefe;
+  background-color: #fafbfd;
   border: 0;
 }
 
-.transactionSwitchActivButton {
+.transactionSwitchActiveButton {
+  width: 138px;
+  height: 40px;
+  padding: 12px 15px;
+  border-radius: 20px 20px 0 0;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-align: center;
   color: #ff751d;
-  background-color: #fafbfd;
+  background-color: #ffffff;
+  border: 0;
 }
 
 .transactionSwitchButton:hover {
   color: #ff751d;
   background-color: #fafbfd;
+}
+.transactionSwitchActiveButton:hover {
+  color: #ff751d;
+  background-color: #ffffff;
 }
