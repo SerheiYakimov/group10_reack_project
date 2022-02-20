@@ -1,25 +1,39 @@
-// const BalancePage = () => {
-//   return <h1>Balance page</h1>;
-// };
+// import React from 'react';
 
-// export default BalancePage;
+// import Balance from '../../components/Balance/Balance';
+
+// import Container from '../../components/Container/Container';
+
+// import s from './BalancePage.module.css';
+
+// function HomeView() {
+//   return (
+//     <div className={s.bottomBgWrapper}>
+//       <Container>
+//         <Balance />
+//       </Container>
+//     </div>
+//   );
+// }
+
+// export default HomeView;
 
 import React from 'react';
+import BalancePageMob from '../../components/BalancePageMob/BalancePageMob';
+import BalancePageTab from '../../components/BalancePageTab/BalancePageTab';
 
-import Balance from '../../components/Balance/Balance';
-
-import Container from '../../components/Container/Container';
-
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 import s from './BalancePage.module.css';
 
-function HomeView() {
-  return (
-    <div className={s.bottomBgWrapper}>
-      <Container>
-        <Balance />
-      </Container>
-    </div>
-  );
-}
+const BalancePage = () => {
+  const viewPort = useWindowDimensions();
 
-export default HomeView;
+  return (
+    <section className={s.section}>
+      {viewPort.width < 768 && <BalancePageMob />}
+      {viewPort.width >= 768 && <BalancePageTab />}
+    </section>
+  );
+};
+
+export default BalancePage;
