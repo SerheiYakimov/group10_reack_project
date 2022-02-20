@@ -36,7 +36,7 @@ const ReportPage = () => {
             </div>
           </div>
           <ExpensesIncome />
-          <TransactionSwitch />
+          {/* <TransactionSwitch /> */}
           <ReportSwitch />
           <Charts data={chartsData} />
         </Container>
