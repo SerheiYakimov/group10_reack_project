@@ -11,7 +11,15 @@
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
+
+  transition: color var(--hover-transition);
 }
+
+.link:hover,
+.link:focus {
+  color: var(--accent-color);
+}
+
 .svg {
   margin-left: 15px;
   width: 14px;
@@ -19,6 +27,7 @@
   fill: var(--primary-text-color);
   align-items: baseline;
 }
+
 @media screen and (max-width: 767px) {
   .link {
     padding-top: 30px;

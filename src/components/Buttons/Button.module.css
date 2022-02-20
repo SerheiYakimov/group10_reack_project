@@ -10,6 +10,9 @@
   font-size: 12px;
   line-height: 1.17;
   filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+
+  transition: background-color var(--hover-transition),
+    filter var(--hover-transition);
 }
 
 .button:hover,
@@ -22,6 +25,9 @@
   background-color: var(--accent-color);
   color: var(--white-color);
   filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
+
+  transition: background-color var(--hover-transition),
+    filter var(--hover-transition);
 }
 
 .primary:hover,
