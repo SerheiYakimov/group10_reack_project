@@ -1,8 +1,8 @@
 .border {
   border: none;
   margin: 0;
-  margin-right: 33px;
-  margin-left: 61px;
+  /* margin-right: 33px; */
+  margin-left: 10px;
 }
 @media screen and (min-width: 1279px) {
   .border {
@@ -26,6 +26,15 @@
   text-transform: uppercase;
 
   color: var(--main-color-grey);
+}
+
+@media screen and (max-width: 767px) {
+  .calendarWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
 }
 
 @media screen and (min-width: 767px) {
