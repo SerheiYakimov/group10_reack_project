@@ -44,12 +44,19 @@ export const getAllIncome = createAsyncThunk(
   '/transactions',
   async (transactionType, { rejectWithValue }) => {
     try {
-      console.log('before getApiAllIncomeOutcome');
-      console.log('transactionType', transactionType);
-      const { data } = await transactionsAPI.getApiAllIncomeOutcome(
-        transactionType,
-      );
-      console.log('data with all income', data);
+      const { data } = await transactionsAPI.getApiAllIncome(transactionType);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  },
+);
+
+export const getAllOutcome = createAsyncThunk(
+  '/transactions',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await transactionsAPI.getApiAllOutcome();
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -78,6 +85,64 @@ export const deleteTransaction = createAsyncThunk(
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
+    }
+  },
+);
+
+export const TotalSumByMonth = createAsyncThunk(
+  '/transactions/report-sum-by-month',
+  async (date, { rejectWithValue }) => {
+    try {
+      const { data } = await transactionsAPI.getApiTotalSumByMonth(date);
+      return data;
+    } catch (error) {
+      rejectWithValue(error.message);
+    }
+  },
+);
+
+export const SixMonthsReport = createAsyncThunk(
+  '/transactions/report-sum-by-month',
+  async (type, { rejectWithValue }) => {
+    try {
+      const { data } = await transactionsAPI.getApiSixMonthsReport(type);
+      return data;
+    } catch (error) {
+      rejectWithValue(error.message);
+    }
+  },
+);
+
+export const CategoryMonthReport = createAsyncThunk(
+  '/transactions/report-sum-by-month',
+  async ({ date, type }, { rejectWithValue }) => {
+    try {
+      console.log('date', date);
+      console.log('type', type);
+      const { data } = await transactionsAPI.getApiCategoryMonthReport({
+        date,
+        type,
+      });
+      return data;
+    } catch (error) {
+      rejectWithValue(error.message);
+    }
+  },
+);
+
+export const SubcategoryMonthReport = createAsyncThunk(
+  '/transactions/report-sum-by-month',
+  async ({ date, alias }, { rejectWithValue }) => {
+    try {
+      console.log('date', date);
+      console.log('alias', alias);
+      const { data } = await transactionsAPI.getApiSubcategoryMonthReport({
+        date,
+        alias,
+      });
+      return data;
+    } catch (error) {
+      rejectWithValue(error.message);
     }
   },
 );
