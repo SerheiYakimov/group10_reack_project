@@ -1,46 +1,67 @@
 [
     {
         "id": "1",
-        "category": "продукты"
+        "category": "продукты",
+        "alias": "products"
     },
     {
         "id": "2",
-        "category": "алкоголь"
+        "category": "алкоголь",
+        "alias": "alcohol"
     },
     {
         "id": "3",
-        "category": "развлечения"
+        "category": "развлечения",
+        "alias": "entertainment"
     },
     {
         "id": "4",
-        "category": "здоровье"
+        "category": "здоровье",
+        "alias": "health"
     },
     {
         "id": "5",
-        "category": "транспорт"
+        "category": "транспорт",
+        "alias": "transport"
     },
     {
         "id": "6",
-        "category": "все для дома"
+        "category": "все для дома",
+        "alias": "homeware"
     },
     {
         "id": "7",
-        "category": "техника"
+        "category": "техника",
+        "alias": "technics"
     },
     {
         "id": "8",
-        "category": "коммуналка, связь"
+        "category": "коммуналка, связь",
+        "alias": "invoices"
     },
     {
         "id": "9",
-        "category": "спорт, хобби"
+        "category": "спорт, хобби",
+        "alias": "hobbies"
     },
     {
         "id": "10",
-        "category": "образование"
+        "category": "образование",
+        "alias": "education"
     },
     {
         "id": "11",
-        "category": "прочее"
+        "category": "прочее",
+        "alias": "other"
+    },
+    {
+        "id": "12",
+        "category": "зп",
+        "alias": "salary"
+    },
+    {
+        "id": "13",
+        "category": "доп. доход",
+        "alias": "additionalIncome"
     }
 ]
