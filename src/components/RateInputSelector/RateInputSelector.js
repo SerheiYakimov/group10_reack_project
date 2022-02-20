@@ -1,7 +1,6 @@
 import categories from '../../json/category.json';
-import types from '../../json/incomes.json';
 import React, { useState } from 'react';
-import s from './Selector.module.css';
+import s from '../RateInputSelector/RateInputSelector.module.css';
 import Select from 'react-select';
 
 const customStyles = {
@@ -28,12 +27,7 @@ const expensesOptions = categories.map(e => ({
   label: e.category,
 }));
 
-const incomesOptions = types.map(e => ({
-  value: e.id,
-  label: e.category,
-}));
-
-export const OutcomesSelector = () => {
+export const RateInputSelector = () => {
   const [inputName, setInputName] = useState('');
   const [selected, setSelected] = useState([]);
 
@@ -71,35 +65,6 @@ export const OutcomesSelector = () => {
         styles={customStyles}
         placeholder="Категория товара"
         options={expensesOptions}
-      />
-    </>
-  );
-};
-
-export const IncomesSelector = () => {
-  const [selected, setSelected] = useState([]);
-
-  // const optionId = selected.value;
-  // const optionCategory = selected.label;
-  // console.log(optionId, optionCategory);
-  return (
-    <>
-      <input
-        className={s.input}
-        id="js-keyword-input"
-        type="text"
-        name="name"
-        placeholder="Описание дохода"
-        required
-      />
-
-      <Select
-        classNamePrefix="react-select"
-        className={s.control}
-        onChange={setSelected}
-        styles={customStyles}
-        placeholder="Категория дохода"
-        options={incomesOptions}
       />
     </>
   );

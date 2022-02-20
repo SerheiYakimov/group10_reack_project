@@ -1,7 +1,7 @@
-import Button from '../Buttons/Button';
-import s from './ProductSelection.module.css';
+import Button from '../Button';
+import s from '../FormButtons/FormButtons.module.css';
 
-const ProductSelectionButtons = () => {
+const FormButtons = () => {
   return (
     <div className={s.button_div}>
       <Button type="submit" name="Ввод" isPrimary></Button>
@@ -9,4 +9,4 @@ const ProductSelectionButtons = () => {
     </div>
   );
 };
-export default ProductSelectionButtons;
+export default FormButtons;

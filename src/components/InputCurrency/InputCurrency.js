@@ -1,4 +1,4 @@
-import s from './ProductSelection.module.css';
+import s from '../InputCurrency/InputCurrency.module.css';
 import sprite from '../../svg/sprite.svg';
 import React from 'react';
 

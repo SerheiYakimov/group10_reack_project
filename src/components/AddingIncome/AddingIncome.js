@@ -1,12 +1,12 @@
 import React from 'react';
-import s from './IncomeSelection.module.css';
+import s from './AddingIncome.module.css';
 import Media from 'react-media';
-import FormDatePicker from '../../components/DatePicker/DatePicker';
-import { InputCurrency } from '../ProductSelection/InputCurrency';
-import ProductSelectionButtons from '../ProductSelection/ProductSelectionButtons';
-import { IncomesSelector } from '../Selector/Selector';
+import FormDatePicker from '../DatePicker/DatePicker';
+import { InputCurrency } from '../InputCurrency/InputCurrency';
+import FormButtons from '../Buttons/FormButtons/FormButtons';
+import { IncomeInputSelector } from '../IncomeInputSelector/IncomeInputSelector';
 
-const IncomeSelection = () => {
+const AddingIncome = () => {
   return (
     <div className={s.container}>
       <div className={s.outcomes_div}>
@@ -14,7 +14,7 @@ const IncomeSelection = () => {
           {matches => (matches.small ? <></> : <FormDatePicker />)}
         </Media>
         <form className={s.form}>
-          <IncomesSelector></IncomesSelector>
+          <IncomeInputSelector></IncomeInputSelector>
 
           <Media queries={{ small: { maxWidth: 767 } }}>
             {matches =>
@@ -28,9 +28,9 @@ const IncomeSelection = () => {
         </form>
       </div>
 
-      <ProductSelectionButtons />
+      <FormButtons />
     </div>
   );
 };
 
-export default IncomeSelection;
+export default AddingIncome;
