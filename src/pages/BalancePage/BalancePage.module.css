@@ -1,5 +1,5 @@
 @media screen and (min-width: 768px) {
-  .bottomBgWrapper {
+  .section {
     background-image: url('../../images/bg-cabbage-elements/cabbage-group-tab.png');
     height: 1183px;
     background-repeat: no-repeat;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .bottomBgWrapper {
+  .section {
     background-image: url('../../images/bg-cabbage-elements/cabbage-group.png');
     height: 830px;
     background-repeat: repeat-x;
