@@ -6,7 +6,7 @@ import Notify from '../Notify/Notify';
 import authSelectors from '../../redux/auth/selectors';
 import authOperations from '../../redux/auth/operations';
 
-import TransactionsTable from '../../pages/HomePage/TransactionsTable';
+import TransactionsTable from '../TransactionsTable/TransactionsTable';
 // import IncomesPage from '../../pages/IncomesPage/IncomesPage';
 import s from './Balance.module.css';
 

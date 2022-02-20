@@ -1,4 +1,4 @@
-.option:hover {
+/* .option:hover {
   background-color: var(--light-color-gray);
 }
 
@@ -51,9 +51,9 @@
   .select {
     width: 188px;
   }
-}
+} */
 
-.input {
+/* .input {
   background-color: transparent;
   display: block;
   width: 282px;
@@ -93,7 +93,7 @@
   letter-spacing: 0.02em;
 
   color: var(--second-white-color);
-}
+} */
 
 .container {
   display: inline-block;
@@ -105,7 +105,7 @@
   display: none;
 }
 
-.control {
+/* .control {
   background-color: transparent;
   display: block;
   width: 282px;
@@ -158,4 +158,4 @@
   .control {
     width: 188px;
   }
-}
+} */

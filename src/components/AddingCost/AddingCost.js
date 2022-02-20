@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import s from './ProductSelection.module.css';
+import s from '../AddingCost/AddingCost.module.css';
 import Media from 'react-media';
 import { useDispatch } from 'react-redux';
-import FormDatePicker from './DatePicker/DatePicker';
-import { OutcomesSelector } from '../Selector/Selector';
-import { InputCurrency } from './InputCurrency';
-import ProductSelectionButtons from './ProductSelectionButtons';
+import FormDatePicker from '../DatePicker/DatePicker';
+import { RateInputSelector } from '../RateInputSelector/RateInputSelector';
+import { InputCurrency } from '../InputCurrency/InputCurrency';
+import FormButtons from '../Buttons/FormButtons/FormButtons';
 // import toast from 'react-hot-toast';
 
-const ProductSelection = () => {
+const AddingCost = () => {
   const [category, setCategory] = useState('');
   const [id, setId] = useState('');
   const [decription, setDecription] = useState('');
@@ -38,7 +38,7 @@ const ProductSelection = () => {
           {matches => (matches.small ? <></> : <FormDatePicker />)}
         </Media>
         <form className={s.form} onSubmit={handleSubmit}>
-          <OutcomesSelector></OutcomesSelector>
+          <RateInputSelector></RateInputSelector>
 
           <Media queries={{ small: { maxWidth: 767 } }}>
             {matches =>
@@ -51,9 +51,9 @@ const ProductSelection = () => {
           </Media>
         </form>
       </div>
-      <ProductSelectionButtons />
+      <FormButtons />
     </div>
   );
 };
 
-export default ProductSelection;
+export default AddingCost;
