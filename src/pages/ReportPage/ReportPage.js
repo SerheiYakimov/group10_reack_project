@@ -6,7 +6,6 @@ import DateReport from '../../components/DateReport/DateReport';
 import ReportSwitch from '../../components/ReportSwitch/ReportSwitch';
 import ExpensesIncome from '../../components/ExpensesIncome/ExpensesIncome';
 import Charts from '../../components/Charts/Charts';
-import BottomBg from '../../components/BottomBg/BottomBg';
 
 import s from './ReportPage.module.css';
 
@@ -26,7 +25,7 @@ const ReportPage = () => {
 
   return (
     <section className={s.section}>
-      <BottomBg>
+      <div className={s.bottomBgWrapper}>
         <Container>
           <div className={s.wrapper}>
             <ArrowToGoBack />
@@ -39,7 +38,7 @@ const ReportPage = () => {
           <ReportSwitch />
           <Charts data={chartsData} />
         </Container>
-      </BottomBg>
+      </div>
     </section>
   );
 };

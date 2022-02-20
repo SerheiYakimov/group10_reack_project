@@ -10,13 +10,15 @@ import Balance from '../../components/Balance/Balance';
 
 import Container from '../../components/Container/Container';
 
+import s from './BalancePage.module.css';
+
 function HomeView() {
   return (
-    <>
+    <div className={s.bottomBgWrapper}>
       <Container>
         <Balance />
       </Container>
-    </>
+    </div>
   );
 }
 
