@@ -1,5 +1,5 @@
 import Balance from '../Balance/Balance';
-import TransactionsTable from '../TransactionsTable/TransactionsTable';
+import TransactionsTableMob from '../TransactionsTable/TransactionsTableMob';
 import TransactionSwitch from '../TransactionSwitch/TransactionSwitch';
 import Container from '../Container/Container';
 
@@ -9,7 +9,7 @@ export default function BalancePageMob() {
   return (
     <Container>
       <Balance />
-      <TransactionsTable />
+      <TransactionsTableMob />
       <div className={s.wrap}>
         <TransactionSwitch />
       </div>

@@ -29,18 +29,20 @@ const FormDatePicker = () => {
 
   return (
     <>
-      <svg className={s.calendar} fill="red" width="20" height="20">
-        <use href={`${sprite}#calendar`}></use>
-      </svg>
-      <DatePicker
-        closeOnScroll={true}
-        selected={startDate}
-        onChange={date => setStartDate(date)}
-        showTimeInput
-        customTimeInput={<ExampleCustomTimeInput />}
-        showDisabledMonthNavigation
-        className={classes}
-      />
+      <div className={s.calendarWrapper}>
+        <svg className={s.calendar} fill="red" width="20" height="20">
+          <use href={`${sprite}#calendar`}></use>
+        </svg>
+        <DatePicker
+          closeOnScroll={true}
+          selected={startDate}
+          onChange={date => setStartDate(date)}
+          showTimeInput
+          customTimeInput={<ExampleCustomTimeInput />}
+          showDisabledMonthNavigation
+          className={classes}
+        />
+      </div>
     </>
   );
 };
