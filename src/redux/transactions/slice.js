@@ -32,7 +32,7 @@ const transactionsSlice = createSlice({
     },
   },
   extraReducers: {
-    [transactionsOps.getAllSum.fulfilled]: (state, action) => {
+    [transactionsOps.getAllUserTransactions.fulfilled]: (state, action) => {
       state.items = [...action.payload];
     },
   },
