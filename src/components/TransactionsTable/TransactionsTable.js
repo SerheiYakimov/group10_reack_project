@@ -4,13 +4,11 @@ import Table from '../Table/Table';
 import { useSelector } from 'react-redux';
 import { getAllTransactions } from '../../redux/transactions/selectors';
 import InputForm from '../InputForm/InputForm';
-// import TransactionSwitch from '../TransactionSwitch/TransactionSwitch';
 
 const TransactionsTable = () => {
   const tempData = useSelector(getAllTransactions);
   return (
     <>
-      {/* <TransactionSwitch /> */}
       <div className={s.container}>
         <InputForm />
 

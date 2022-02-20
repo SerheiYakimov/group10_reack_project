@@ -15,35 +15,3 @@
     background-position: top 593px left 0;
   }
 }
-
-/* .section {
-  max-width: 1280px;
-  height: 100vh;
-  margin: 0 auto;
-  padding-top: 15px;
-  background-image: url('../../images/bg-cabbage-elements/cabbage-group.png');
-  background-repeat: no-repeat;
-  background-position: left top -300px;
-}
-
-@media screen and (min-width: 768px) {
-  .section {
-    height: 100vh;
-    padding-top: 40px;
-    padding-bottom: 64px;
-
-    background-image: url('../../images/bg-cabbage-elements/cabbage-group-tab.png');
-    background-repeat: no-repeat;
-    background-position: left top;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .section {
-    padding-bottom: 83px;
-    background-image: url('../../images/homepage/bg-main.svg'),
-      url('../../images/balance/bg-balance-bot.svg');
-    background-repeat: no-repeat, no-repeat;
-    background-position: center top, center top 656px;
-  }
-} */
