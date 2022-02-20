@@ -27,18 +27,21 @@
   /* background-color: green; */
 
   /* position: relative; */
-  display: inline-block;
-  align-content: center;
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* margin: 10px; */
 }
 
 .table_month {
-  margin-left: 5px;
+  margin-left: 15px;
 }
 
 @media screen and (max-width: 767px) {
   .table_wrapper {
     display: flex;
+    flex-direction: column;
     margin: 0 auto;
   }
 }
@@ -46,6 +49,7 @@
 @media screen and (min-width: 1279px) {
   .table {
     /* position: relative; */
+    margin-top: 0;
     margin-right: 50px;
     max-width: 760px;
   }
@@ -55,19 +59,24 @@
   .table_month {
     /* border: 3px solid green; */
     background-color: #fff;
-    position: absolute;
+    /* position: absolute;
     bottom: 140px;
-    right: 20px;
+    right: 20px; */
     margin-left: 20px;
     /* padding: 60px 30px 160px 20px; */
     width: 230px;
     height: 278px;
   }
+  .table_wrapper {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 767px) {
   .table_month {
-    margin: 75px 0 0 -400px;
+    /* margin: 75px 0 0 -400px; */
   }
 }
 
