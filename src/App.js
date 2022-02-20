@@ -6,7 +6,7 @@ import { PublicRoute } from './routes/PublicRoute';
 import { useDispatch, useSelector } from 'react-redux';
 import authOperations from './redux/auth/operations';
 import authSelectors from './redux/auth/selectors';
-import { Oval } from 'react-loader-spinner';
+// import { Oval } from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import './App.css';
 import Header from './components/Header/Header';
@@ -16,6 +16,7 @@ import Modal from './components/Modal/Modal';
 import BalancePage from './pages/BalancePage/BalancePage';
 import EmailVerPage from './pages/EmailVerPage/EmailVerPage';
 import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
+import { Loader } from './components/Loader/Loader';
 
 function App() {
   const [modalActive, setModalActive] = useState(false);
@@ -30,14 +31,7 @@ function App() {
   return (
     <>
       {isUserRefreshing ? (
-        <Oval
-          ariaLabel="loading-indicator"
-          height={100}
-          width={100}
-          strokeWidth={5}
-          color="#ff751d"
-          secondaryColor="#52555f"
-        />
+        <Loader />
       ) : (
         <div className="App" id="scrollbar">
           <Header />

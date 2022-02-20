@@ -1,8 +1,8 @@
 @media screen and (min-width: 768px) {
   .charts {
     background-image: url('../../images/desktop/chart-bg.png');
-    background-size: 920px 350px;
-    background-position: top 98px center;
+    background-size: 580px 242px;
+    background-position: top 55px center;
     background-repeat: no-repeat;
     margin-top: 30px;
     box-shadow: 0px 10px 60px 0px #aab2c533;
@@ -14,5 +14,7 @@
 @media screen and (min-width: 1280px) {
   .charts {
     margin: 30px 30px 0 30px;
+    background-size: 920px 392px;
+    background-position: top 80px center;
   }
 }

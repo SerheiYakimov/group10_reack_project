@@ -24,7 +24,7 @@ const Charts = ({ data }) => {
                     dx={11}
                     textAnchor="start"
                     style={{
-                      fontSize: 9,
+                      fontSize: 12,
                       fill: '#52555F',
                       fontFamily: 'Roboto, sans-serif',
                     }}
@@ -40,7 +40,7 @@ const Charts = ({ data }) => {
                 labelComponent={
                   <VictoryLabel
                     dx={0}
-                    dy={-14}
+                    dy={-12}
                     textAnchor="start"
                     verticalAnchor="end"
                   />
@@ -61,7 +61,7 @@ const Charts = ({ data }) => {
                     width: 15,
                   },
                   labels: {
-                    fontSize: 9,
+                    fontSize: 12,
                     fill: '#52555F',
                     fontFamily: 'Roboto, sans-serif',
                     lineHeight: 14,
@@ -78,7 +78,7 @@ const Charts = ({ data }) => {
       <Media
         query="(min-width: 768px)"
         render={() => (
-          <VictoryGroup height={240}>
+          <VictoryGroup height={250}>
             <VictoryChart>
               <VictoryAxis
                 tickLabelComponent={
