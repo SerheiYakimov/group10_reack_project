@@ -27,17 +27,22 @@ const expensesOptions = categories.map(e => ({
   label: e.category,
 }));
 
-export const RateInputSelector = ({ getTransactionName }) => {
+export const RateInputSelector = ({
+  resetInput,
+  handleChangeCategory,
+  handleChangeSubCategory,
+}) => {
   const [category, setCategory] = useState('');
-  const [subCategory, setSubCategory] = useState([]);
+  const [subCategory, setSubCategory] = useState({});
 
-  // const optionId = selected.value;
-  // const optionCategory = selected.label;
-  // console.log(optionId, optionCategory);
-
-  const handleChange = e => {
+  const handleChangeCategoryLocal = e => {
     setCategory(e.target.value);
-    // getTransactionName(category, subCategory);
+    handleChangeCategory(e.target.value);
+  };
+
+  const handleChangeSubCategoryLocal = e => {
+    setSubCategory({ value: e.value, label: e.label });
+    handleChangeSubCategory({ value: e.value, label: e.label });
   };
 
   return (
@@ -48,7 +53,7 @@ export const RateInputSelector = ({ getTransactionName }) => {
         type="text"
         name="name"
         value={category}
-        onChange={handleChange}
+        onChange={handleChangeCategoryLocal}
         placeholder="Описание товара"
         required
       />
@@ -57,7 +62,7 @@ export const RateInputSelector = ({ getTransactionName }) => {
         className={s.control}
         name="selected"
         value={subCategory}
-        onChange={setSubCategory}
+        onChange={handleChangeSubCategoryLocal}
         styles={customStyles}
         placeholder="Категория товара"
         options={expensesOptions}
