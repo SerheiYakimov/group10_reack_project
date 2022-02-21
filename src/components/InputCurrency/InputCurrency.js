@@ -3,11 +3,12 @@ import sprite from '../../svg/sprite.svg';
 import React from 'react';
 import { useState } from 'react';
 
-export const InputCurrency = ({ children }) => {
+export const InputCurrency = ({ getTransactionSum, children }) => {
   const [sum, setSum] = useState('');
 
   const handleChange = e => {
     setSum(e.target.value);
+    // getTransactionSum(sum);
   };
 
   return (
