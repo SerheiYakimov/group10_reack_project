@@ -28,21 +28,15 @@ const expensesOptions = categories.map(e => ({
 }));
 
 export const RateInputSelector = () => {
-  const [inputName, setInputName] = useState('');
+  const [productName, setProductName] = useState('');
   const [selected, setSelected] = useState([]);
 
-  const optionId = selected.value;
-  const optionCategory = selected.label;
+  // const optionId = selected.value;
+  // const optionCategory = selected.label;
   // console.log(optionId, optionCategory);
 
   const handleChange = e => {
-    const { inputName } = e.target;
-    setInputName(inputName);
-  };
-
-  const resetForm = () => {
-    setInputName('');
-    setSelected('');
+    setProductName(e.target.value);
   };
 
   return (
@@ -52,8 +46,8 @@ export const RateInputSelector = () => {
         id="js-keyword-input"
         type="text"
         name="name"
-        value={inputName}
-        onChahge={handleChange}
+        value={productName}
+        onChange={handleChange}
         placeholder="Описание товара"
         required
       />
@@ -61,6 +55,7 @@ export const RateInputSelector = () => {
         classNamePrefix="react-select"
         className={s.control}
         name="selected"
+        value={selected}
         onChange={setSelected}
         styles={customStyles}
         placeholder="Категория товара"

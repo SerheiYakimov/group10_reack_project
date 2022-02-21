@@ -1,8 +1,15 @@
 import s from '../InputCurrency/InputCurrency.module.css';
 import sprite from '../../svg/sprite.svg';
 import React from 'react';
+import { useState } from 'react';
 
 export const InputCurrency = ({ children }) => {
+  const [sum, setSum] = useState('');
+
+  const handleChange = e => {
+    setSum(e.target.value);
+  };
+
   return (
     <>
       <div className={s.currency_div}>
@@ -10,6 +17,9 @@ export const InputCurrency = ({ children }) => {
           className={s.input_price}
           type="number"
           data-type="currency"
+          name="name"
+          value={sum}
+          onChange={handleChange}
           placeholder={children}
           step="0.01"
           min="0,00000001"
