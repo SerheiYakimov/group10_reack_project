@@ -1,11 +1,11 @@
 import AddingCost from '../AddingCost/AddingCost';
-import AddingIncome from '../AddingIncome/AddingIncome';
+// import AddingIncome from '../AddingIncome/AddingIncome';
 
 const InputForm = () => {
   return (
     <>
       <AddingCost />
-      <AddingIncome />
+      {/* <AddingIncome /> */}
     </>
   );
 };
