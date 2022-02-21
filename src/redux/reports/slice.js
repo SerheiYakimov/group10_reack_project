@@ -1,23 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit';
-import reportOperations from './operations';
+import * as reportOperations from './operations';
 
-const initialState = {};
+const initialState = {
+  reportIncimeItems: [],
+  reportOutcomeItems: [],
+  reportSummaryItems: [],
+  reportChartItems: [],
+};
 
 const reportSlice = createSlice({
   name: 'report',
   initialState,
   extraReducers: {
-    [reportOperations.getSummaryData.fulfilled](state, action) {
-      state.auth.user.summaryData = action.payload.data.summaryData;
+    [reportOperations.getSummaryData.fulfilled]: (state, action) => {
+      state.reportSummaryItems = [...action.payload];
     },
-    [reportOperations.getIncomesData.fulfilled](state, action) {
-      state.auth.user.incomesData = action.payload.data.incomesData;
+    [reportOperations.getIncomesData.fulfilled]: (state, action) => {
+      state.reportIncimeItems = [...action.payload];
     },
-    [reportOperations.getOutcomesData.fulfilled](state, action) {
-      state.auth.user.outcomesData = action.payload.data.outcomesData;
+    [reportOperations.getOutcomesData.fulfilled]: (state, action) => {
+      state.reportOutcomeItems = [...action.payload];
     },
     [reportOperations.getCategoryData.fulfilled](state, action) {
-      state.auth.user.categoryData = action.payload.data.categoryData;
+      state.reportChartItems = [...action.payload];
     },
   },
 });
