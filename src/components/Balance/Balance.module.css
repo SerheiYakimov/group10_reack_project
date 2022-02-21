@@ -101,6 +101,9 @@
   border-radius: 0 22px 22px 0;
   outline: none;
   color: var(--primary-text-color);
+
+  transition: background-color var(--hover-transition),
+    color var(--hover-transition);
 }
 
 .confirmButton:hover,

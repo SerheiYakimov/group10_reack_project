@@ -27,8 +27,12 @@
 .reportListItemIcon {
   background: var(--light-color-gray);
   border-radius: 80%;
+
+  transition: background var(--hover-transition);
 }
-.reportListItemIcon:hover {
+
+.reportListItemIcon:hover,
+.reportListItemIcon:focus {
   background: #ffdac0;
 }
 
@@ -55,9 +59,12 @@
   text-align: center;
   /* background: #f5f6fb;
   border-radius: 20px; */
+
+  transition: fill var(--hover-transition);
 }
 
-.reportListIcon:hover {
+.reportListIcon:hover,
+.reportListIcon:focus {
   fill: var(--accent-color);
   /* background: #ffdac0; */
 }

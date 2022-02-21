@@ -23,6 +23,9 @@
   color: #000000;
   background-color: #fafbfd;
   border: 0;
+
+  transition: background-color var(--hover-transition),
+    color var(--hover-transition);
 }
 
 .transactionSwitchActiveButton {
@@ -40,13 +43,19 @@
   color: #ff751d;
   background-color: #ffffff;
   border: 0;
+
+  transition: background-color var(--hover-transition),
+    color var(--hover-transition);
 }
 
-.transactionSwitchButton:hover {
+.transactionSwitchButton:hover,
+.transactionSwitchButton:focus {
   color: #ff751d;
   background-color: #fafbfd;
 }
-.transactionSwitchActiveButton:hover {
+
+.transactionSwitchActiveButton:hover,
+.transactionSwitchActiveButton:focus {
   color: #ff751d;
   background-color: #ffffff;
 }

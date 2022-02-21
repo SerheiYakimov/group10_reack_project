@@ -184,8 +184,12 @@
 
   align-items: center;
   padding: 10px;
+
+  transition: background-color var(--hover-transition),
+    border-radius var(--hover-transition);
 }
-.delete_btn:hover {
+.delete_btn:hover,
+.delete_btn:focus {
   background: #f5f6fb;
   border-radius: 50%;
 }

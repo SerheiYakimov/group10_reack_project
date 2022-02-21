@@ -9,6 +9,8 @@
   border-radius: 16px 16px 0 0;
   padding-left: 20px;
   color: var(--second-white-color);
+
+  transition: border var(--hover-transition);
 }
 @media screen and (min-width: 767px) {
   .input {
@@ -23,12 +25,12 @@
     width: 289px;
   }
 }
+
+.input:hover,
 .input:focus {
   border: 2px solid var(--accent-color);
 }
-.input:hover {
-  border: 2px solid var(--accent-color);
-}
+
 .input::placeholder {
   display: block;
   width: 155px;
@@ -65,7 +67,10 @@
   cursor: pointer;
 
   padding-left: 15px;
+
+  transition: border var(--hover-transition);
 }
+
 .control::after {
   border-color: 2px solid var(--accent-color);
 }
@@ -76,12 +81,12 @@
   background-position: calc(100% - 20px) 18px;
   background-image: url(../../svg/Vector.svg);
 }
+
+.control:hover,
 .control:focus {
   border: 2px solid var(--accent-color);
 }
-.control:hover {
-  border: 2px solid var(--accent-color);
-}
+
 @media screen and (min-width: 767px) {
   .control {
     width: 171px;
@@ -93,6 +98,10 @@
   .control {
     width: 188px;
   }
+}
+
+.option {
+  transition: background-color var(--hover-transition);
 }
 
 .option:hover {
@@ -120,7 +129,10 @@
 
   color: var(--second-white-color);
   padding-left: 20px;
+
+  transition: border var(--hover-transition);
 }
+
 .select::after {
   border-color: 2px solid var(--accent-color);
 }
@@ -131,12 +143,12 @@
   background-position: calc(100% - 20px) 18px;
   background-image: url(../../svg/Vector.svg);
 }
+
+.select:hover,
 .select:focus {
   border: 2px solid var(--accent-color);
 }
-.select:hover {
-  border: 2px solid var(--accent-color);
-}
+
 @media screen and (min-width: 767px) {
   .select {
     width: 171px;
@@ -144,6 +156,7 @@
     border-color: var(--light-color-gray);
   }
 }
+
 @media screen and (min-width: 1279px) {
   .select {
     width: 188px;

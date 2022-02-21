@@ -12,7 +12,15 @@
   line-height: 10px;
   letter-spacing: 0.04em;
   color: var(--color-grey);
+
+  transition: var(--hover-transition);
 }
+
+.link:hover,
+.link:focus {
+  color: var(--accent-color);
+}
+
 @media screen and (max-width: 1279px) {
   .toGoBack {
     margin-right: auto;

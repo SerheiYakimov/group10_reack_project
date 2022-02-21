@@ -11,13 +11,15 @@
   padding-left: 15px;
 
   color: var(--second-white-color);
+
+  transition: border var(--hover-transition);
 }
+
+.input_price:hover,
 .input_price:focus {
   border: 2px solid var(--accent-color);
 }
-.input_price:hover {
-  border: 2px solid var(--accent-color);
-}
+
 @media screen and (min-width: 767px) {
   .input_price {
     width: 104px;

@@ -28,6 +28,13 @@
   outline: none;
   cursor: pointer;
   text-decoration: underline;
+
+  transition: color var(--hover-transition);
+}
+
+.logoutButtonTabDesk:hover,
+.logoutButtonTabDesk:focus {
+  color: var(--accent-color);
 }
 
 .avatar {

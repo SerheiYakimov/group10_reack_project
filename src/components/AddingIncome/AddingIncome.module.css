@@ -16,6 +16,8 @@
   letter-spacing: 0.02em;
 
   color: var(--second-white-color);
+
+  transition: background-color var(--hover-transition);
 }
 
 .option:hover {
