@@ -17,12 +17,15 @@ const AddingCost = () => {
 
   // const dispatch = useDispatch();
 
-  const getTransactionName = (category, subCategory) => {
+  const handleChangeCategory = category => {
     setCategory(category);
-    setSubcategory(subCategory);
   };
 
-  const getTransactionSum = sum => {
+  const handleChangeSubCategory = subcategory => {
+    setSubcategory(subcategory);
+  };
+
+  const handleChangeSum = sum => {
     setSum(sum);
   };
 
@@ -36,9 +39,8 @@ const AddingCost = () => {
     };
 
     setTransaction({ transaction });
-    addNewTransaction(transaction);
+    addNewTransaction({ transaction });
 
-    resetForm();
     toast.success('Транзакция успешно добавлена!');
   };
 
@@ -46,13 +48,12 @@ const AddingCost = () => {
     setAllTransactions(allTransactions => [...allTransactions, transaction]);
   };
 
-  console.log(transaction);
+  // console.log(transaction);
 
-  const resetForm = () => {
-    setCategory('');
-    setSubcategory([]);
-    setSum('');
-  };
+  // const resetInput = () => {
+  //   setCategory('');
+  //   setSubcategory({});
+  // };
 
   return (
     <div className={s.container}>
@@ -61,25 +62,29 @@ const AddingCost = () => {
           {matches => (matches.small ? <></> : <FormDatePicker />)}
         </Media>
         <form className={s.form} onSubmit={handleSubmit}>
-          <RateInputSelector getTransactionName={getTransactionName} />
+          <RateInputSelector
+            handleChangeCategory={handleChangeCategory}
+            handleChangeSubCategory={handleChangeSubCategory}
+          />
 
           <Media queries={{ small: { maxWidth: 767 } }}>
             {matches =>
               matches.small ? (
-                <InputCurrency getTransactionSum={getTransactionSum}>
+                <InputCurrency handleChangeSum={handleChangeSum}>
                   {' '}
                   00.00 UAH
                 </InputCurrency>
               ) : (
-                <InputCurrency getTransactionSum={getTransactionSum}>
+                <InputCurrency handleChangeSum={handleChangeSum}>
                   00.00
                 </InputCurrency>
               )
             }
           </Media>
+          <FormButtons onClick={handleSubmit} />
         </form>
       </div>
-      <FormButtons onClick={handleSubmit} />
+      {/* <FormButtons onClick={handleSubmit} /> */}
     </div>
   );
 };
