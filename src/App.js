@@ -16,6 +16,7 @@ import Modal from './components/Modal/Modal';
 import BalancePage from './pages/BalancePage/BalancePage';
 import EmailVerPage from './pages/EmailVerPage/EmailVerPage';
 import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
+import DevelopersView from './pages/DevelopersView';
 import { Loader } from './components/Loader/Loader';
 
 function App() {
@@ -43,6 +44,18 @@ function App() {
                 <PublicRoute isAuth={isAuth} component={HomePage} restricted />
               }
             />
+
+            <Route
+              path="/developers"
+              element={
+                <PublicRoute
+                  isAuth={isAuth}
+                  component={DevelopersView}
+                  restricted
+                />
+              }
+            />
+
             <Route
               path="/google-redirect"
               element={
@@ -65,6 +78,7 @@ function App() {
               path="/reports"
               element={<PrivateRoute isAuth={isAuth} component={ReportPage} />}
             />
+
             {/* <Route path="/reports" element={<ReportPage />} /> */}
           </Routes>
           <Modal active={modalActive} setActive={setModalActive}></Modal>
