@@ -62,25 +62,27 @@ const AddingCost = () => {
           {matches => (matches.small ? <></> : <FormDatePicker />)}
         </Media>
         <form className={s.form} onSubmit={handleSubmit}>
-          <RateInputSelector
-            handleChangeCategory={handleChangeCategory}
-            handleChangeSubCategory={handleChangeSubCategory}
-          />
+          <div className={s.formWrapper}>
+            <RateInputSelector
+              handleChangeCategory={handleChangeCategory}
+              handleChangeSubCategory={handleChangeSubCategory}
+            />
 
-          <Media queries={{ small: { maxWidth: 767 } }}>
-            {matches =>
-              matches.small ? (
-                <InputCurrency handleChangeSum={handleChangeSum}>
-                  {' '}
-                  00.00 UAH
-                </InputCurrency>
-              ) : (
-                <InputCurrency handleChangeSum={handleChangeSum}>
-                  00.00
-                </InputCurrency>
-              )
-            }
-          </Media>
+            <Media queries={{ small: { maxWidth: 767 } }}>
+              {matches =>
+                matches.small ? (
+                  <InputCurrency handleChangeSum={handleChangeSum}>
+                    {' '}
+                    00.00 UAH
+                  </InputCurrency>
+                ) : (
+                  <InputCurrency handleChangeSum={handleChangeSum}>
+                    00.00
+                  </InputCurrency>
+                )
+              }
+            </Media>
+          </div>
           <FormButtons onClick={handleSubmit} />
         </form>
       </div>
