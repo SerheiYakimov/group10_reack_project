@@ -6,29 +6,27 @@ import FormDatePicker from '../DatePicker/DatePicker';
 import { RateInputSelector } from '../RateInputSelector/RateInputSelector';
 import { InputCurrency } from '../InputCurrency/InputCurrency';
 import FormButtons from '../Buttons/FormButtons/FormButtons';
-// import toast from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const AddingCost = () => {
   const [category, setCategory] = useState('');
-  const [id, setId] = useState('');
-  const [decription, setDecription] = useState('');
+  const [subcategory, setSubcategory] = useState('');
   const [sum, setSum] = useState('');
-  const dispatch = useDispatch();
+
+  // const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    // const transaction = {
-    //     category,
-    //     subcategory,
-    //     sum,
-    //     date,
-    //     transactionType,
-    // }
+    const transaction = {
+      category,
+      subcategory,
+      sum,
+    };
 
     // dispatch(addThunkTransaction(transaction));
     // resetForm();
-    // toast.success('Транзакция успешно добавлена!')
+    toast.success('Транзакция успешно добавлена!');
   };
 
   return (

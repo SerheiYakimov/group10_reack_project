@@ -7,13 +7,29 @@ import FormButtons from '../Buttons/FormButtons/FormButtons';
 import { IncomeInputSelector } from '../IncomeInputSelector/IncomeInputSelector';
 
 const AddingIncome = () => {
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    // const transaction = {
+    //     category,
+    //     subcategory,
+    //     sum,
+    //     date,
+    //     transactionType,
+    // }
+
+    // dispatch(addThunkTransaction(transaction));
+    // resetForm();
+    // toast.success('Транзакция успешно добавлена!')
+  };
+
   return (
     <div className={s.container}>
       <div className={s.outcomes_div}>
         <Media queries={{ small: { maxWidth: 767 } }}>
           {matches => (matches.small ? <></> : <FormDatePicker />)}
         </Media>
-        <form className={s.form}>
+        <form className={s.form} onSubmit={handleSubmit}>
           <IncomeInputSelector></IncomeInputSelector>
 
           <Media queries={{ small: { maxWidth: 767 } }}>
