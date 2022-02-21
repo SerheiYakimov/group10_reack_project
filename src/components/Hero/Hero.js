@@ -9,15 +9,21 @@ const Hero = () => {
     <section className={s.hero}>
       <Media
         query="(max-width: 767.98px)"
-        render={() => <img src={heroLogoMob} alt="hero-logo"></img>}
+        render={() => (
+          <img src={heroLogoMob} className={s.title} alt="hero-logo"></img>
+        )}
       />
       <Media
         query="(min-width: 768px) and (max-width: 1279.98px)"
-        render={() => <img src={heroLogoTab} alt="hero-logo"></img>}
+        render={() => (
+          <img src={heroLogoTab} className={s.title} alt="hero-logo"></img>
+        )}
       />
       <Media
         query="(min-width: 1280px)"
-        render={() => <img src={heroLogoDesk} alt="hero-logo"></img>}
+        render={() => (
+          <img src={heroLogoDesk} className={s.title} alt="hero-logo"></img>
+        )}
       />
       <h1 className={s.heroTitle}>smart finance</h1>
     </section>
