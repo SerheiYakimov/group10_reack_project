@@ -6,7 +6,7 @@ import { getAllTransactions } from '../../redux/transactions/selectors';
 import InputForm from '../InputForm/InputForm';
 
 const TransactionsTable = () => {
-  const tempData = useSelector(getAllTransactions);
+  // const tempData = useSelector(getAllTransactions);
   return (
     <>
       <div className={s.container}>

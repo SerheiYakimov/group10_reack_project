@@ -17,6 +17,8 @@ import BalancePage from './pages/BalancePage/BalancePage';
 import EmailVerPage from './pages/EmailVerPage/EmailVerPage';
 import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
 import { Loader } from './components/Loader/Loader';
+import TransactionSelectors from './redux/transactions/selectors';
+import { getAllUserTransactions } from './redux/transactions/operations';
 
 function App() {
   const [modalActive, setModalActive] = useState(false);
@@ -26,6 +28,7 @@ function App() {
 
   useEffect(() => {
     dispatch(authOperations.getCurrentUser());
+    dispatch(getAllUserTransactions());
   }, [dispatch]);
 
   return (
