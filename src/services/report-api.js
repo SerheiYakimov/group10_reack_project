@@ -1,4 +1,6 @@
-import { axiosServer } from './axios-defaults';
+import { token, axiosServer } from './axios-defaults';
+
+const tokenAPI = token;
 
 async function getReportByCategories(reportData) {
   const { data } = await axiosServer.get(
@@ -17,11 +19,11 @@ async function getReportBySubCategories(reportData) {
   return data;
 }
 async function getSummaryByMonth(reportData) {
+  console.log(`start Report for summary:`, reportData);
   const { data } = await axiosServer.get(
-    '/transaction/report-by-six-month',
-    reportData,
+    `/transaction/report-by-six-month?type=${reportData}`,
   );
-  console.log(`Report for summary:`, data);
+  console.log(`end - Report for summary:`, data);
   return data;
 }
 

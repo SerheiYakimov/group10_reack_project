@@ -16,13 +16,14 @@ const summaryData = [
   { id: '6', month: 'Июнь', amount: '8000.00' },
 ];
 
-// const summaryData = useSelector(reportSelectors.getSummaryData);
-// console.log(summaryData);
-// const dispatch = useDispatch();
-// dispatch(reportOperations.getSummaryData({ date: '2022-01' }));
-
 const Summary = ({ sixMonthsReport }) => {
+  const dispatch = useDispatch();
+  dispatch(reportOperations.getSummaryData('income'));
+  const summaryData_ = useSelector(reportSelectors.getSummaryData);
+  console.log(summaryData_);
+
   console.log('sixMonthsReport inside Summary', sixMonthsReport);
+
   return (
     <section className={s.summarySection}>
       <SummaryTitle />
