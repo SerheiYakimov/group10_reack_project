@@ -90,9 +90,6 @@ export default function TransactionsForm() {
         {/* <label>Last name</label>
             <input type="text" {...register("lastName")} /> */}
 
-        {/* <label style={{ display: 'block', marginTop: 20, marginBottom: 20 }}>
-          Description
-        </label> */}
         <input
           className={s.input}
           type="text"
@@ -111,6 +108,7 @@ export default function TransactionsForm() {
         </select>
         <input
           type="number"
+
           placeholder="00.00UAH"
           className={s.input_price}
           {...register('sum', { required: true })}

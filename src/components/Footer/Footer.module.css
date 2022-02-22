@@ -1,0 +1,48 @@
+.footer {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  color: #000000;
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
+.footerBox {
+  margin: 10px 0 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  color: black;
+  margin-left: 5px;
+}
+
+@media (min-width: 320px) {
+  .footer {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}
+@media (min-width: 768px) {
+  .footer {
+    font-size: 12px;
+    line-height: 1.25;
+    display: flex;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}

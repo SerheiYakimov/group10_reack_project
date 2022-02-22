@@ -101,6 +101,7 @@
 }
 
 .input_price:hover,
+input_price:hover,
 .input_price:focus {
   border: 2px solid var(--accent-color);
 }

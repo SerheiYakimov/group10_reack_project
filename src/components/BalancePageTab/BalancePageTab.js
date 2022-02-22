@@ -7,8 +7,10 @@ export default function BalancePageTab() {
   return (
     <section className={s.section}>
       <Balance />
-      <TransactionSwitch />
-      <TransactionsTable />
+      <div className={s.pageContainer}>
+        <TransactionSwitch />
+        <TransactionsTable />
+      </div>
     </section>
   );
 }

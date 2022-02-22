@@ -1,6 +1,6 @@
 .transactionSwitchNavigation {
-  display: inline-block;
-  margin-right: auto;
+  /* display: inline-block;
+  margin-right: auto; */
 }
 
 .transactionSwitcList {
@@ -9,10 +9,10 @@
 }
 
 .transactionSwitchButton {
-  width: 138px;
-  height: 40px;
+  width: 159px;
+  height: 53px;
   padding: 12px 15px;
-  border-radius: 20px 20px 0 0;
+  /* border-radius: 20px 20px 0 0; */
   font-family: Roboto;
   font-size: 12px;
   font-style: normal;
@@ -21,7 +21,7 @@
   letter-spacing: 0.02em;
   text-align: center;
   color: #000000;
-  background-color: #fafbfd;
+  background-color: var(--light-color-gray);
   border: 0;
 
   transition: background-color var(--hover-transition),
@@ -29,10 +29,10 @@
 }
 
 .transactionSwitchActiveButton {
-  width: 138px;
-  height: 40px;
+  width: 159px;
+  height: 53px;
   padding: 12px 15px;
-  border-radius: 20px 20px 0 0;
+  /* border-radius: 20px 20px 0 0; */
   font-family: Roboto;
   font-size: 12px;
   font-style: normal;
@@ -40,8 +40,8 @@
   line-height: 14px;
   letter-spacing: 0.02em;
   text-align: center;
-  color: #ff751d;
-  background-color: #ffffff;
+  color: var(--white-color);
+  background-color: var(--accent-color);
   border: 0;
 
   transition: background-color var(--hover-transition),
@@ -50,12 +50,42 @@
 
 .transactionSwitchButton:hover,
 .transactionSwitchButton:focus {
-  color: #ff751d;
-  background-color: #fafbfd;
+  color: var(--accent-color);
+  background-color: var(--white-color);
 }
 
 .transactionSwitchActiveButton:hover,
 .transactionSwitchActiveButton:focus {
-  color: #ff751d;
-  background-color: #ffffff;
+  color: var(--white-color);
+  background-color: var(--accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  .transactionSwitchButton {
+    width: 138px;
+    height: 40px;
+    border-radius: 20px 20px 0 0;
+    background-color: #fafbfd;
+    color: var(--black-color);
+  }
+
+  .transactionSwitchButton:hover,
+  .transactionSwitchButton:focus {
+    color: var(--accent-color);
+    background-color: #fafbfd;
+  }
+
+  .transactionSwitchActiveButton {
+    width: 138px;
+    height: 40px;
+    border-radius: 20px 20px 0 0;
+    color: var(--accent-color);
+    background-color: #fefefe;
+  }
+
+  .transactionSwitchActiveButton:hover,
+  .transactionSwitchActiveButton:focus {
+    color: var(--accent-color);
+    background-color: #fefefe;
+  }
 }
