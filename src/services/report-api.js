@@ -5,7 +5,6 @@ const tokenAPI = token;
 async function getReportByCategories({ reportData, type }) {
   const { data } = await axiosServer.get(
     `/transactions/report-category-by-month?date=${reportData}&type=${type}`,
-    reportData,
   );
   console.log(`Report by categories:`, data);
   return data;
@@ -20,11 +19,9 @@ async function getReportBySubCategories(reportData, type) {
   return data;
 }
 async function getSummaryByMonth(reportData) {
-  console.log(`start Report for summary:`, reportData);
   const { data } = await axiosServer.get(
     `/transactions/report-by-six-month?type=${reportData}`,
   );
-  console.log(`end - Report for summary:`, data);
   return data;
 }
 

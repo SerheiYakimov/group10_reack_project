@@ -66,19 +66,22 @@ const reportIncomesData = [
 
 const ReportListSection = ({ ReportSwitchIncomes }) => {
   const dispatch = useDispatch();
-  dispatch(
-    reportOperations.getIncomesData({ reportData: '1111-11', type: 'income' }),
-  );
-  dispatch(
-    reportOperations.getOutcomesData({
-      reportData: '1111-11',
-      type: 'outcome',
-    }),
-  );
 
-  const reportOutcomesData_ = useSelector(reportSelectors.getOutcomesData);
+  console.log('report sw - ', ReportSwitchIncomes);
+
+  if (ReportSwitchIncomes) {
+    dispatch(
+      reportOperations.getIncomesData({ date: '2022-02', type: 'income' }),
+    );
+  } else {
+    dispatch(
+      reportOperations.getOutcomesData({ date: '2022-02', type: 'outcome' }),
+    );
+  }
+
+  let reportOutcomesData_ = useSelector(reportSelectors.getOutcomesData);
   console.log(reportOutcomesData_);
-  const reportIncomesData_ = useSelector(reportSelectors.getIncomesData);
+  let reportIncomesData_ = useSelector(reportSelectors.getIncomesData);
   console.log(reportIncomesData_);
 
   console.log('report categories - ', ReportSwitchIncomes);

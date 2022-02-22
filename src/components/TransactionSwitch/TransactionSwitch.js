@@ -4,12 +4,14 @@ import s from './TransactionSwitch.module.css';
 const TransactionSwitch = () => {
   const [TransactionSwitchIncomes, setTransactionSwitchIncomes] =
     useState(false);
-
+  localStorage.setItem('SwitchIncomes', false);
   const onHandleClickIncomes = () => {
     setTransactionSwitchIncomes(true);
+    localStorage.setItem('SwitchIncomes', TransactionSwitchIncomes);
   };
   const onHandleClickOutcomes = () => {
     setTransactionSwitchIncomes(false);
+    localStorage.setItem('SwitchIncomes', TransactionSwitchIncomes);
   };
 
   return (

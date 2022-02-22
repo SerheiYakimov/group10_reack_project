@@ -7,6 +7,7 @@ import InputForm from '../InputForm/InputForm';
 
 const TransactionsTable = () => {
   // const tempData = useSelector(getAllTransactions);
+
   return (
     <>
       <div className={s.container}>
@@ -16,7 +17,7 @@ const TransactionsTable = () => {
           <div className={s.table}></div>
           <Table></Table>
           <div className={s.table_month}>
-            <Summary />
+            <Summary SwitchIncomes={localStorage.getItem('SwitchIncomes')} />
           </div>
         </div>
       </div>
