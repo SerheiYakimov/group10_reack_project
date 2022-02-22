@@ -6,11 +6,21 @@ import FormDatePicker from '../DatePicker/DatePicker';
 import s from './TransactionForm.module.css';
 import Table from '../Table/Table';
 import Summary from '../Summary/Summary';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { getAllTransactions } from '../../redux/transactions/selectors';
+import {
+  getAllUserTransactions,
+  addTransactionToStore,
+} from '../../redux/transactions/operations';
+import getUserBalance from '../../redux/auth/selectors';
 // import "./styles.css";
 
 export default function TransactionsForm() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllUserTransactions());
+  }, [dispatch]);
+
   const {
     register,
     handleSubmit,
@@ -19,7 +29,7 @@ export default function TransactionsForm() {
   } = useForm({ defaultValues: { subcategory: '', category: '', sum: 0 } });
 
   let transactions = useSelector(getAllTransactions);
-  console.log('transactions', transactions);
+  // console.log('transactions', transactions);
   // let sixMonthsReport = useSelector()
   // нужно дописать селектор и вытягивать из стейта данные, чтобы потом прокинуть их в summary
   let sixMonthsReport = null;
@@ -32,19 +42,26 @@ export default function TransactionsForm() {
       subcategory,
       sum,
     };
-    console.log('transactionToAdd', transactionToAdd);
-    const status = await transactionsAPI.addTransaction(transactionToAdd);
+    // console.log('transactionToAdd', transactionToAdd);
+    // const status = await transactionsAPI.addTransaction(transactionToAdd);
+    const status = dispatch(addTransactionToStore(transactionToAdd));
     console.log('status', status);
-    if (status === 201) {
-      const updatedTransactions = await transactionsAPI.getApiTransactions();
-      console.log('updatedTransactions', updatedTransactions);
-      transactions = updatedTransactions;
-      const tempSixMonthsReport = await transactionsAPI.getApiSixMonthsReport(
-        'loss',
-      );
-      sixMonthsReport = tempSixMonthsReport.data.result;
-      console.log('sixMonthsReport', sixMonthsReport);
-    }
+    // if (status.code === 200) {
+    // const tempBal = getUserBalance()
+    // console.log('tempBal', tempBal)
+    // dispatch(addTransactionToStore(transactionToAdd))
+    let updatedTransactions = await transactionsAPI.getApiTransactions();
+    updatedTransactions = updatedTransactions.data;
+    console.log('updatedTransactions', updatedTransactions);
+    // const temp = getAllUserTransactions()
+    // console.log('temp', temp)
+    transactions = updatedTransactions.data;
+    const tempSixMonthsReport = await transactionsAPI.getApiSixMonthsReport(
+      'loss',
+    );
+    sixMonthsReport = tempSixMonthsReport.data.result;
+    console.log('sixMonthsReport', sixMonthsReport);
+    // }
   };
 
   //to reset values after successful submit
@@ -65,7 +82,7 @@ export default function TransactionsForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className={s.submit_form} onSubmit={handleSubmit(onSubmit)}>
         {/* <label>First name</label>
             <input type="text" {...register("firstName", { required: true })} />
             {errors.firstName && <p>This is required</p>} */}
@@ -73,9 +90,6 @@ export default function TransactionsForm() {
         {/* <label>Last name</label>
             <input type="text" {...register("lastName")} /> */}
 
-        <label style={{ display: 'block', marginTop: 20, marginBottom: 20 }}>
-          Description
-        </label>
         <input
           className={s.input}
           type="text"
@@ -94,15 +108,18 @@ export default function TransactionsForm() {
         </select>
         <input
           type="number"
+
+          placeholder="00.00UAH"
           className={s.input_price}
           {...register('sum', { required: true })}
         />
 
-        <input type="submit" />
+        <input type="submit" value="Ввод" className={s.submit_button} />
         <input
-          style={{ display: 'block', marginTop: 20 }}
+          // style={{ display: 'block', marginTop: 20 }}
           type="reset"
-          value="Standard Reset Field Values"
+          value="Очистить"
+          className={s.submit_button}
         />
       </form>
       <Table transactions={transactions} />
