@@ -18,7 +18,10 @@ const summaryData = [
 
 const Summary = ({ sixMonthsReport }) => {
   const dispatch = useDispatch();
-  dispatch(reportOperations.getSummaryData('income'));
+
+  //dispatch(reportOperations.getSummaryData('income'));
+  dispatch(reportOperations.getSummaryData('loss'));
+
   const summaryData_ = useSelector(reportSelectors.getSummaryData);
   console.log(summaryData_);
 

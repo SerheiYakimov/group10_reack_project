@@ -5,7 +5,7 @@ export const getIncomesData = createAsyncThunk(
   '/transactions/report-category-by-month',
   async (date, { rejectWithValue }) => {
     try {
-      console.log('date', date);
+      console.log('req-date', date);
       const { data } = await reportAPI.getReportByCategories(date);
       return data;
     } catch (error) {
