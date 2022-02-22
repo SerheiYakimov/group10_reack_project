@@ -8,8 +8,10 @@ import s from './BalancePageMob.module.css';
 export default function BalancePageMob() {
   return (
     <Container>
-      <Balance />
-      <TransactionsTableMob />
+      <div className={s.wrapper}>
+        <Balance />
+        <TransactionsTableMob />
+      </div>
       <div className={s.wrap}>
         <TransactionSwitch />
       </div>

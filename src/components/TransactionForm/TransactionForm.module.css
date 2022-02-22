@@ -1,7 +1,12 @@
 .submit_form {
-  display: flex;
-  align-items: center;
-  margin: 30px 0 0 150px;
+  padding-top: 30px;
+}
+@media screen and (min-width: 1279px) {
+  .submit_form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .input {
@@ -97,7 +102,7 @@
 
 .input_price::-webkit-inner-spin-button,
 .input_price::-webkit-inner-spin-button {
-  -webkit-appearance: ;
+  /* -webkit-appearance: ; */
 }
 
 .input_price:hover,
@@ -182,4 +187,28 @@ input_price:hover,
 
   transition: background-color var(--hover-transition),
     filter var(--hover-transition);
+}
+
+.submit_button:hover {
+  color: var(--white-color);
+  background-color: var(--accent-color);
+}
+
+.button_wrapper {
+  display: flex;
+  width: 270px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.input_wrapper {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 1279px) {
+  .input_wrapper {
+    margin-bottom: 0;
+  }
 }

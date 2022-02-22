@@ -1,17 +1,8 @@
 .border {
   border: none;
   margin: 0;
-  /* margin-right: 33px; */
   margin-left: 10px;
   background-color: transparent;
-}
-
-@media screen and (min-width: 1280px) {
-  .border {
-    margin-right: 23px;
-    margin-left: 50px;
-    margin-bottom: 25px;
-  }
 }
 
 .text {
@@ -41,18 +32,14 @@
 
 @media screen and (min-width: 768px) {
   .calendarWrapper {
+    width: 104px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-right: 36px;
   }
 }
-
-/* @media screen and (min-width: 768px) {
-  .calendar {
-    position: absolute;
-    left: 31px;
-  }
-} */
 
 @media screen and (min-width: 1280px) {
   .calendar {

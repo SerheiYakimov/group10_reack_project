@@ -90,40 +90,43 @@ export default function TransactionsForm() {
         {/* <label>Last name</label>
             <input type="text" {...register("lastName")} /> */}
 
-        <input
-          className={s.input}
-          type="text"
-          placeholder=""
-          {...register('subcategory', { required: true })}
-        />
-        <select
-          className={s.control}
-          {...register('category', { required: true })}
-        >
-          {categoryOptions.map(option => (
-            <option value={option.label} id={option.id}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        <input
-          type="number"
-
-          placeholder="00.00UAH"
-          className={s.input_price}
-          {...register('sum', { required: true })}
-        />
-
-        <input type="submit" value="Ввод" className={s.submit_button} />
-        <input
-          // style={{ display: 'block', marginTop: 20 }}
-          type="reset"
-          value="Очистить"
-          className={s.submit_button}
-        />
+        <div className={s.input_wrapper}>
+          <FormDatePicker />
+          <input
+            className={s.input}
+            type="text"
+            placeholder=""
+            {...register('subcategory', { required: true })}
+          />
+          <select
+            className={s.control}
+            {...register('category', { required: true })}
+          >
+            {categoryOptions.map(option => (
+              <option value={option.label} id={option.id}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          <input
+            type="number"
+            placeholder="00.00UAH"
+            className={s.input_price}
+            {...register('sum', { required: true })}
+          />
+        </div>
+        <div className={s.button_wrapper}>
+          <input type="submit" value="Ввод" className={s.submit_button} />
+          <input
+            // style={{ display: 'block', marginTop: 20 }}
+            type="reset"
+            value="Очистить"
+            className={s.submit_button}
+          />
+        </div>
       </form>
-      <Table transactions={transactions} />
-      <Summary sixMonthsReport={sixMonthsReport} />
+      {/* <Table transactions={transactions} />
+      <Summary sixMonthsReport={sixMonthsReport} /> */}
     </>
   );
 }
