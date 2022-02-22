@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
 import authAPI from '../../services/auth-api';
+import { token } from '../../services/axios-defaults';
 
 const register = createAsyncThunk(
   '/auth/registration',
@@ -76,7 +77,7 @@ const getCurrentUser = createAsyncThunk(
       if (persistedToken === null) {
         return thunkAPI.rejectWithValue();
       }
-      authAPI.tokenAPI.set(persistedToken);
+      token.set(persistedToken);
       const currentUser = await authAPI.getCurrentUser();
       return currentUser;
     } catch (error) {
@@ -120,7 +121,8 @@ const getUserBalance = createAsyncThunk(
   '/users/balance',
   async (_, { rejectWithValue }) => {
     try {
-      const data = await authAPI.getCurrentUser();
+      const data = await authAPI.getBalance();
+      console.log('data in operation:', data);
       return data;
     } catch (error) {
       console.log(`error.messageInLogOut`, error);
