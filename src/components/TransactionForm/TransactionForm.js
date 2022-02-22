@@ -2,6 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import categories from '../../json/category.json';
 import transactionsAPI from '../../services/transactions-api';
+import FormDatePicker from '../DatePicker/DatePicker';
+import s from './TransactionForm.module.css';
 
 // import "./styles.css";
 
@@ -46,18 +48,26 @@ export default function TransactionsForm() {
         Description
       </label>
       <input
+        className={s.input}
         type="text"
         placeholder=""
         {...register('subcategory', { required: true })}
       />
-      <select {...register('category', { required: true })}>
+      <select
+        className={s.control}
+        {...register('category', { required: true })}
+      >
         {categoryOptions.map(option => (
           <option value={option.label} id={option.id}>
             {option.label}
           </option>
         ))}
       </select>
-      <input type="number" {...register('sum', { required: true })} />
+      <input
+        type="number"
+        className={s.input_price}
+        {...register('sum', { required: true })}
+      />
 
       <input type="submit" />
       <input

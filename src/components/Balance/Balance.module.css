@@ -132,7 +132,7 @@
     justify-content: space-between;
     align-items: baseline;
     width: 668px;
-    height: 44px;
+    /* height: 44px; */
   }
   .balanceLabel {
     display: flex;
@@ -170,8 +170,8 @@
 @media screen and (min-width: 1280px) {
   .containerBalance {
     width: 1060px;
-    height: 44px;
     justify-content: end;
+    /* height: 44px; */
   }
 
   .balanceInput {

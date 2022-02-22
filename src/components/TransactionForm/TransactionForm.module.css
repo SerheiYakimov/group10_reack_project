@@ -1,0 +1,156 @@
+.input {
+  background-color: transparent;
+  width: 282px;
+  height: 44px;
+
+  border: 2px solid var(--white-color);
+  /* box-sizing: border-box; */
+  border-radius: 16px 16px 0 0;
+  color: var(--second-white-color);
+
+  transition: border var(--hover-transition);
+}
+
+.input:hover,
+.input:focus {
+  border: 2px solid var(--accent-color);
+}
+
+.input::placeholder {
+  display: block;
+  width: 155px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+
+  color: var(--second-white-color);
+}
+
+.control {
+  background-color: transparent;
+  /* display: block; */
+  width: 282px;
+  height: 44px;
+  box-sizing: border-box;
+  border-radius: 0 0 16px 0;
+
+  border-color: var(--white-color);
+
+  border-style: solid;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  font-size: 12px;
+  line-height: 1.16;
+  align-items: center;
+  letter-spacing: 0.02em;
+
+  color: var(--second-white-color);
+  cursor: pointer;
+
+  padding-left: 15px;
+
+  transition: border var(--hover-transition);
+}
+
+.control::after {
+  border-color: 2px solid var(--accent-color);
+}
+
+.control:not([multiple]) {
+  padding-right: 35px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) 18px;
+  background-image: url(../../svg/Vector.svg);
+}
+
+.control:hover,
+.control:focus {
+  border: 2px solid var(--accent-color);
+}
+
+.input_price {
+  position: relative;
+  width: 125px;
+  height: 44px;
+  background-color: transparent;
+
+  border: 2px solid var(--white-color);
+  box-sizing: border-box;
+  border-radius: 22px 0px 0px 22px;
+
+  padding-left: 15px;
+
+  color: var(--second-white-color);
+
+  transition: border var(--hover-transition);
+}
+
+input_price:hover,
+.input_price:focus {
+  border: 2px solid var(--accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  .input_price {
+    width: 104px;
+    border-radius: 0 16px 16px 0;
+    border-left: none;
+    border-color: var(--light-color-gray);
+    padding-right: 40px;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .input_price {
+    width: 126px;
+  }
+}
+
+.input_price::placeholder {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.16;
+  text-align: right;
+  padding-right: 15px;
+  padding-left: 15px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: var(--black-color);
+}
+
+@media screen and (min-width: 768px) {
+  .input_price::placeholder {
+    font-weight: normal;
+
+    color: var(--second-white-color);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .input {
+    width: 192px;
+    border-radius: 16px 0 0 0;
+    border-right: none;
+    border-color: var(--light-color-gray);
+  }
+
+  .control {
+    width: 171px;
+    border-radius: 0;
+    border-color: var(--light-color-gray);
+  }
+
+  .control {
+    width: 192px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .input {
+    width: 289px;
+  }
+}

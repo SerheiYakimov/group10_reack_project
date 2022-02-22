@@ -28,14 +28,6 @@
     color var(--hover-transition);
 }
 
-@media screen and (min-width: 768px) {
-  .transactionSwitchButton {
-    width: 138px;
-    height: 40px;
-    border-radius: 20px 20px 0 0;
-  }
-}
-
 .transactionSwitchActiveButton {
   width: 159px;
   height: 53px;
@@ -56,14 +48,6 @@
     color var(--hover-transition);
 }
 
-@media screen and (min-width: 768px) {
-  .transactionSwitchActiveButton {
-    width: 138px;
-    height: 40px;
-    border-radius: 20px 20px 0 0;
-  }
-}
-
 .transactionSwitchButton:hover,
 .transactionSwitchButton:focus {
   color: var(--accent-color);
@@ -74,4 +58,34 @@
 .transactionSwitchActiveButton:focus {
   color: var(--white-color);
   background-color: var(--accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  .transactionSwitchButton {
+    width: 138px;
+    height: 40px;
+    border-radius: 20px 20px 0 0;
+    background-color: #fafbfd;
+    color: var(--black-color);
+  }
+
+  .transactionSwitchButton:hover,
+  .transactionSwitchButton:focus {
+    color: var(--accent-color);
+    background-color: #fafbfd;
+  }
+
+  .transactionSwitchActiveButton {
+    width: 138px;
+    height: 40px;
+    border-radius: 20px 20px 0 0;
+    color: var(--accent-color);
+    background-color: #fefefe;
+  }
+
+  .transactionSwitchActiveButton:hover,
+  .transactionSwitchActiveButton:focus {
+    color: var(--accent-color);
+    background-color: #fefefe;
+  }
 }
