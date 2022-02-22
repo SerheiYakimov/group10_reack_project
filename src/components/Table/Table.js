@@ -7,9 +7,9 @@ import Media from 'react-media';
 import TableHead from './TableHead';
 import { removeOperation } from '../../redux/transactions/operations';
 
-const Table = ({ id }) => {
+const Table = ({ id, transactions }) => {
   const dispatch = useDispatch();
-
+  // console.log('transactions inside Table', transactions)
   const del_btn = () => (
     <button type="button" className={s.delete_btn}>
       <svg onClick={() => dispatch(removeOperation(id))} width="18" height="18">
@@ -93,6 +93,7 @@ const Table = ({ id }) => {
     ],
     [],
   );
+  console.log('data', data);
   const columns = React.useMemo(
     () => [
       {
@@ -120,6 +121,8 @@ const Table = ({ id }) => {
   );
 
   const { getTableBodyProps, rows, prepareRow } = useTable({ columns, data });
+  // console.log('table body props', useTable.getTableBodyProps = useTable({ columns, transactions }))
+  // const { getTableBodyProps, rows, prepareRow } = useTable({ columns, transactions });
 
   return (
     <div className={s.scroll_table}>
