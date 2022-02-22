@@ -6,7 +6,7 @@ const tokenAPI = token;
 
 async function getApiTransactions() {
   const { data } = await axiosServer.get('/transactions');
-  console.log('inside get api trans');
+  console.log('inside get api trans', data);
   return data;
 }
 

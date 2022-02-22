@@ -33,7 +33,14 @@ const transactionsSlice = createSlice({
   },
   extraReducers: {
     [transactionsOps.getAllUserTransactions.fulfilled]: (state, action) => {
-      state.items = [...action.payload];
+      console.log('action.payload getAll', action.payload);
+      state.items = [...state.items, ...action.payload];
+      // state.user.balance = action.payload
+    },
+    [transactionsOps.addTransactionToStore.fulfilled]: (state, action) => {
+      console.log('action.payload add transaction slice!!', action.payload);
+      // state.items = [...state.items, action.payload.addedTransaction];
+      state.items = [action.payload, ...state.items];
     },
   },
 });
