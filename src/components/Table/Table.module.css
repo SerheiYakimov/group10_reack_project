@@ -6,16 +6,16 @@
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .scroll_table {
-    margin-top: 48px;
+    /* margin-top: 48px; */
     width: 605px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .scroll_table {
-    margin-top: 59px;
+    /* margin-top: 59px; */
     width: 760px;
   }
 }
