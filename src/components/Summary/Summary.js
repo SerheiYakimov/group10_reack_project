@@ -21,7 +21,8 @@ const summaryData = [
 // const dispatch = useDispatch();
 // dispatch(reportOperations.getSummaryData({ date: '2022-01' }));
 
-const Summary = () => {
+const Summary = ({ sixMonthsReport }) => {
+  console.log('sixMonthsReport inside Summary', sixMonthsReport);
   return (
     <section className={s.summarySection}>
       <SummaryTitle />
