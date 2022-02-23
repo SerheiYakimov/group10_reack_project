@@ -6,7 +6,7 @@ import { token } from '../../services/axios-defaults';
 const register = createAsyncThunk(
   '/auth/registration',
   async (newUser, { rejectWithValue }) => {
-    console.log(`newUser in auth-operation`, newUser);
+    // console.log(`newUser in auth-operation`, newUser);
 
     try {
       const data = await authAPI.register(newUser);
@@ -16,7 +16,7 @@ const register = createAsyncThunk(
       );
       return data;
     } catch (error) {
-      console.log(`error.messageRegister`, error);
+      // console.log(`error.messageRegister`, error);
       toast.error(
         'Упс, что-то пошло не так :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки.',
       );
@@ -41,7 +41,7 @@ const logIn = createAsyncThunk(
       const data = await authAPI.logIn(user);
       return data;
     } catch (error) {
-      console.log(`error.messageLogIn`, error);
+      // console.log(`error.messageLogIn`, error);
       toast.error(
         'К сожалению, пользователь не авторизирован. Проверьте правильность ввода логина и пароля или зарегистрируйтесь.',
       );
@@ -58,7 +58,7 @@ const logOut = createAsyncThunk(
       toast.success('До новых встреч!', { duration: 4000 });
       return data;
     } catch (error) {
-      console.log(`error.messageInLogOut`, error);
+      // console.log(`error.messageInLogOut`, error);
       toast.error(
         'Упс, что-то пошло не так :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки.',
       );
