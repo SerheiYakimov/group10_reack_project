@@ -33,6 +33,7 @@ async function addTransaction(transaction) {
 
 async function deleteApiTransaction(id) {
   const { data } = await axiosServer.delete(`/transactions/${id}`);
+  console.log('id after transaction removal', id);
   console.log('data after transaction removal', data);
   return data;
 }
