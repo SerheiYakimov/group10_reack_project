@@ -7,9 +7,7 @@ figure {
 
 figure:hover,
 figure:focus {
-  transform: translate(30px, 30%);
-  /* transition: transform 350ms cubic-bezier(0.6, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(1, 0, 0.2, 1); */
+  transform: scale(1.2, 1.2);
 }
 
 .team {
