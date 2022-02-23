@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import authOperations from './operations';
+import {
+  addTransactionToStore,
+  deleteTransaction,
+} from '../transactions/operations';
 
 const initialState = {
   user: {
@@ -93,6 +97,14 @@ const authSlice = createSlice({
 
     [authOperations.setUserBalance.fulfilled](state, action) {
       state.user.balance = action.payload.data.tempUserBalance;
+      state.isRefreshingBalance = false;
+    },
+    [addTransactionToStore.fulfilled](state, action) {
+      state.user.balance = action.payload.newBalance;
+      state.isRefreshingBalance = false;
+    },
+    [deleteTransaction.fulfilled](state, action) {
+      state.user.balance = action.payload.balance;
       state.isRefreshingBalance = false;
     },
   },
