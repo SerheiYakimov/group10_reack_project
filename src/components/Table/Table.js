@@ -5,27 +5,40 @@ import { useTable } from 'react-table';
 import s from './Table.module.css';
 import Media from 'react-media';
 import TableHead from './TableHead';
-import { removeOperation } from '../../redux/transactions/operations';
+// import { removeOperation } from '../../redux/transactions/operations';
 import { getAllTransactions } from '../../redux/transactions/selectors';
+import transactionsAPI from '../../services/transactions-api';
 
 const Table = () => {
   const arrayTrans = useSelector(getAllTransactions);
   const dispatch = useDispatch();
   // console.log('transactions inside Table', transactions)
 
-  const items = arrayTrans[0].map(item => ({
+  const items = arrayTrans?.map(item => ({
     ...item,
     date: item.createdAt,
     description: item.subcategory,
     category: item.category,
     sum: item.sum,
     id: item.id,
+    type: item.transactionType,
   }));
 
-  const del_btn = ({ id }) => (
+  const transactionType = items[0].type;
+
+  console.log('items.type', transactionType);
+
+  let classes = `${s.data_rows} `;
+  if (transactionType === 'loss') {
+    classes += s.outcomes;
+  } else if (transactionType === 'income') {
+    classes += s.incomes;
+  }
+
+  const del_btn = id => (
     <button type="button" className={s.delete_btn}>
       <svg
-        onClick={() => dispatch(removeOperation({ id }))}
+        onClick={() => transactionsAPI.deleteApiTransaction(id)}
         width="18"
         height="18"
       >
@@ -94,7 +107,7 @@ const Table = () => {
                 <tr className={s.row} {...row.getRowProps()}>
                   {row.cells.map(cell => {
                     return (
-                      <td className={s.data_rows} {...cell.getCellProps()}>
+                      <td className={classes} {...cell.getCellProps()}>
                         {cell.render('Cell')}
                       </td>
                     );

@@ -77,11 +77,13 @@ export const addTransactionToStore = createAsyncThunk(
 );
 
 export const deleteTransaction = createAsyncThunk(
-  '/transactions',
+  '/transactions/delete',
   async (id, { rejectWithValue }) => {
     try {
       const { data } = await transactionsAPI.deleteApiTransaction(id);
+      console.log('id after deleting transaction', id);
       console.log('data after deleting transaction', data);
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
