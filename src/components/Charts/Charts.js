@@ -10,7 +10,11 @@ import Media from 'react-media';
 import s from './Charts.module.css';
 
 const Charts = ({ data }) => {
-  return (
+  return data.length === 0 ? (
+    <div className={`${s.charts} ${s.emptyChart}`}>
+      <p>Здесь пока ничего нет...</p>
+    </div>
+  ) : (
     <div className={s.charts}>
       <Media
         query="(max-width: 767.98px)"
