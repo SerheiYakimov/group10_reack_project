@@ -43,10 +43,20 @@ async function getMonthOutcomeSum(reportData) {
   return data;
 }
 
+async function getApiTotalSumByMonth(date) {
+  // date must be in format YYYY-MM (ex, 2022-02)
+  const { data } = await axiosServer.get(
+    `/transactions/report-sum-by-month?date=${date}`,
+  );
+  console.log('data from report-api', data);
+  return data;
+}
+
 const reportAPI = {
   getReportByCategories,
   getReportBySubCategories,
   getSummaryByMonth,
+  getApiTotalSumByMonth,
   getMonthIncomeSum,
   getMonthOutcomeSum,
 };

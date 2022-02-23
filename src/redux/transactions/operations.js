@@ -80,7 +80,6 @@ export const addTransactionToStore = createAsyncThunk(
 );
 
 export const deleteTransaction = createAsyncThunk(
-
   '/transactions/remove',
 
   async (id, { rejectWithValue }) => {
@@ -92,18 +91,6 @@ export const deleteTransaction = createAsyncThunk(
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
-    }
-  },
-);
-
-export const TotalSumByMonth = createAsyncThunk(
-  '/transactions/report-sum-by-month',
-  async (date, { rejectWithValue }) => {
-    try {
-      const { data } = await transactionsAPI.getApiTotalSumByMonth(date);
-      return data;
-    } catch (error) {
-      rejectWithValue(error.message);
     }
   },
 );

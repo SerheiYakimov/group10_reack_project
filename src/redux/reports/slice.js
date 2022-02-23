@@ -6,6 +6,7 @@ const initialState = {
   reportOutcomeItems: [],
   reportSummaryItems: [],
   reportChartItems: [],
+  data: [],
   reportIncomeSum: 0.0,
   reportOutcomeSum: 0.0,
 };
@@ -22,6 +23,13 @@ const reportSlice = createSlice({
     },
     [reportOperations.getOutcomesData.fulfilled]: (state, action) => {
       state.reportOutcomeItems = [...action.payload];
+    },
+    [reportOperations.getCategoryData.fulfilled](state, action) {
+      state.data = [...action.payload];
+    },
+    [reportOperations.getSumByMonth.fulfilled](state, action) {
+      console.log(action.payload.result);
+      state.data = [...action.payload.result];
     },
     [reportOperations.getCategoryData.fulfilled]: (state, action) => {
       state.reportChartItems = [...action.payload];

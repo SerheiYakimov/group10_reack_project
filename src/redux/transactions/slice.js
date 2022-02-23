@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import * as transactionsOps from './operations';
 
-const year = String(new Date().getFullYear());
-const month = String(new Date().getMonth() + 1);
+const date = new Date();
+const year = String(date.getFullYear());
+const month = String(date.getMonth() + 1);
 
 const transactionsSlice = createSlice({
   name: 'transactions',

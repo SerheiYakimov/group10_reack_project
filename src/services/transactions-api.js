@@ -38,14 +38,6 @@ async function deleteApiTransaction(id) {
   return data;
 }
 
-async function getApiTotalSumByMonth(date) {
-  // date must be in format YYYY-MM (ex, 2022-02)
-  const { data } = await axiosServer.get(
-    `/transactions/report-sum-by-month?date=${date}`,
-  );
-  return data;
-}
-
 async function getApiSixMonthsReport(type) {
   // type must be either "loss" or "income"
   const { data } = await axiosServer.get(
@@ -79,7 +71,6 @@ const transactionsAPI = {
   getApiAllIncomeOutcome,
   addTransaction,
   deleteApiTransaction,
-  getApiTotalSumByMonth,
   getApiSixMonthsReport,
   getApiCategoryMonthReport,
   getApiSubcategoryMonthReport,
