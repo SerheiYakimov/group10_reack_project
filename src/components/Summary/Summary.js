@@ -14,14 +14,15 @@ import reportOperations from '../../redux/reports/operations';
 //   { id: '6', month: 'Июнь', amount: '8000.00' },
 // ];
 
-const Summary = ({ SwitchIncomes }) => {
+const Summary = ({ switchIncomes }) => {
   const dispatch = useDispatch();
 
-  SwitchIncomes
+  switchIncomes
     ? dispatch(reportOperations.getSummaryData('income'))
     : dispatch(reportOperations.getSummaryData('loss'));
 
   const summaryData = useSelector(reportSelectors.getSummaryData);
+  console.log('switch income - ', switchIncomes);
   console.log('summary data - ', summaryData);
 
   return (

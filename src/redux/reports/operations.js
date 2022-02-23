@@ -3,10 +3,10 @@ import reportAPI from '../../services/report-api';
 
 export const getIncomesData = createAsyncThunk(
   '/report/report-category-by-month',
-  async (date, { rejectWithValue }) => {
+  async ({ date, type }, { rejectWithValue }) => {
     try {
-      console.log('req-incomes-data', date);
-      const { data } = await reportAPI.getReportByCategories(date);
+      console.log('req-incomes-data', { date, type });
+      const { data } = await reportAPI.getReportByCategories({ date, type });
       console.log('req-incomes-data-res', data);
       return data;
     } catch (error) {
@@ -16,7 +16,7 @@ export const getIncomesData = createAsyncThunk(
 );
 
 export const getOutcomesData = createAsyncThunk(
-  '/report/report-category-by-month',
+  '/report/report-category-by-month-outcomes',
   async (date, { rejectWithValue }) => {
     try {
       console.log('req-outcomes-data', date);
@@ -71,7 +71,7 @@ export const getIncomesSum = createAsyncThunk(
 );
 
 export const getOutcomesSum = createAsyncThunk(
-  '/report/total-sum-by-month',
+  '/report/total-sum-by-month-outcomes',
   async (date, { rejectWithValue }) => {
     try {
       const { data } = await reportAPI.getMonthOutcomeSum(date);

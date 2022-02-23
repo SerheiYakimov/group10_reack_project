@@ -6,7 +6,7 @@ async function getReportByCategories({ date, type }) {
   const { data } = await axiosServer.get(
     `/transactions/report-category-by-month?date=${date}&type=${type}`,
   );
-  console.log(`Report by categories:`, data);
+  console.log(`Report by categories: API `, data);
   return data;
 }
 
