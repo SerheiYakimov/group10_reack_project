@@ -5,16 +5,26 @@ import { useTable } from 'react-table';
 import s from './Table.module.css';
 import Media from 'react-media';
 import TableHead from './TableHead';
-// import { removeOperation } from '../../redux/transactions/operations';
 import { getAllTransactions } from '../../redux/transactions/selectors';
+import { getAllUserTransactions } from '../../redux/transactions/operations';
 import transactionsAPI from '../../services/transactions-api';
 
-const Table = () => {
-  const arrayTrans = useSelector(getAllTransactions);
+const Table = ({ transactions }) => {
+  // const arrayTrans = useSelector(getAllTransactions);
   const dispatch = useDispatch();
-  console.log('transactions inside Table', arrayTrans);
+  // console.log('transactions inside Table', arrayTrans);
 
-  const items = arrayTrans?.map(item => ({
+  const functionDel = async id => {
+    transactionsAPI.deleteApiTransaction(id);
+    const undateInfo = await transactionsAPI.getApiTransactions();
+    const updateTable = undateInfo.data;
+    // console.log('undateInfo', undateInfo)
+    // console.log('updateTable', updateTable)
+    transactions = updateTable;
+    // console.log('transactions', transactions)
+  };
+
+  const items = transactions?.map(item => ({
     ...item,
     date: item.createdAt,
     description: item.subcategory,
@@ -23,8 +33,9 @@ const Table = () => {
     id: item.id,
     type: item.transactionType,
   }));
-  const transactionType = items[0].type;
 
+  ///    Окрашивание суммы   /////
+  const transactionType = items[0].type;
   console.log('items.type', transactionType);
 
   let classes = `${s.data_rows} `;
@@ -33,10 +44,7 @@ const Table = () => {
   } else if (transactionType === 'income') {
     classes += s.incomes;
   }
-  const functionDel = id => {
-    transactionsAPI.deleteApiTransaction(id);
-    // transactionsAPI.getApiTransactions()
-  };
+  ///////////////////////////////
 
   const del_btn = id => (
     <button type="button" className={s.delete_btn}>
@@ -45,8 +53,6 @@ const Table = () => {
       </svg>
     </button>
   );
-
-  // const currency = `-${()}.00 `
 
   const data = React.useMemo(
     () =>
@@ -58,6 +64,7 @@ const Table = () => {
         sum: `${e.sum}.00 грн.`,
         id: e.id,
         delete: del_btn(e.id),
+        type: e.transactionType,
       })),
     [items],
   );
