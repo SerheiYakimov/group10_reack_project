@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import * as transactionsOps from './operations';
 
-const year = String(new Date().getFullYear());
-const month = String(new Date().getMonth() + 1);
+const date = new Date();
+const year = String(date.getFullYear());
+const month = String(date.getMonth() + 1);
 
 const transactionsSlice = createSlice({
   name: 'transactions',
@@ -33,7 +34,14 @@ const transactionsSlice = createSlice({
   },
   extraReducers: {
     [transactionsOps.getAllUserTransactions.fulfilled]: (state, action) => {
-      state.items = [...action.payload];
+      console.log('action.payload getAll', action.payload);
+      state.items = [...state.items, ...action.payload];
+      // state.user.balance = action.payload
+    },
+    [transactionsOps.addTransactionToStore.fulfilled]: (state, action) => {
+      console.log('action.payload add transaction slice!!', action.payload);
+      // state.items = [...state.items, action.payload.addedTransaction];
+      state.items = [action.payload.addedTransaction, ...state.items];
     },
   },
 });

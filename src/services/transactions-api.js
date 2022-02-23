@@ -6,7 +6,7 @@ const tokenAPI = token;
 
 async function getApiTransactions() {
   const { data } = await axiosServer.get('/transactions');
-  console.log('inside get api trans');
+  console.log('inside get api trans', data);
   return data;
 }
 
@@ -33,15 +33,8 @@ async function addTransaction(transaction) {
 
 async function deleteApiTransaction(id) {
   const { data } = await axiosServer.delete(`/transactions/${id}`);
+  console.log('id after transaction removal', id);
   console.log('data after transaction removal', data);
-  return data;
-}
-
-async function getApiTotalSumByMonth(date) {
-  // date must be in format YYYY-MM (ex, 2022-02)
-  const { data } = await axiosServer.get(
-    `/transactions/report-sum-by-month?date=${date}`,
-  );
   return data;
 }
 
@@ -78,7 +71,6 @@ const transactionsAPI = {
   getApiAllIncomeOutcome,
   addTransaction,
   deleteApiTransaction,
-  getApiTotalSumByMonth,
   getApiSixMonthsReport,
   getApiCategoryMonthReport,
   getApiSubcategoryMonthReport,

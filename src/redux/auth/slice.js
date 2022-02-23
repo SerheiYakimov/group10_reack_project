@@ -35,6 +35,7 @@ const authSlice = createSlice({
       state.token = action.payload.data.user.token;
       state.user.name = action.payload.data.user.name;
       state.user.avatarURL = action.payload.data.user.avatar;
+      state.user.balance = action.payload.data.user.balance;
       state.isLoggedIn = true;
     },
 
@@ -75,27 +76,23 @@ const authSlice = createSlice({
       state.user.name = action.payload.data.user.name;
       state.user.email = action.payload.data.user.email;
       state.user.avatarURL = action.payload.data.user.avatarURL;
+      state.user.balance = action.payload.data.user.balance;
       state.token = action.payload.token;
       state.isLoggedIn = true;
       state.isRefreshingCurrentUser = false;
       state.isRefreshingBalance = false;
     },
 
-    [authOperations.setUserBalance.fulfilled](state, action) {
-      state.user.balance = action.payload.data.tempUserBalance;
+    [authOperations.getUserBalance.fulfilled](state, action) {
+      state.user.balance = action.payload.data.user.balance;
     },
 
-    [authOperations.getUserBalance.pending](state, action) {
+    [authOperations.setUserBalance.pending](state, action) {
       state.isRefreshingBalance = true;
     },
 
-    [authOperations.getUserBalance.fulfilled](state, action) {
-      state.user.balance = action.payload.data.user.balance;
-      state.isRefreshingBalance = false;
-    },
-
-    [authOperations.getUserBalance.rejected](state, action) {
-      state.user.balance = action.payload.data.user.balance;
+    [authOperations.setUserBalance.fulfilled](state, action) {
+      state.user.balance = action.payload.data.tempUserBalance;
       state.isRefreshingBalance = false;
     },
   },

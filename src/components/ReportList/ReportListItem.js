@@ -2,9 +2,10 @@ import s from './ReportList.module.css';
 import sprite from '../../svg/sprite.svg';
 import formatThousands from 'format-thousands';
 
-const onHandleSelectCategory = () => {};
-
 const ReportListItem = ({ report }) => {
+  const onHandleSelectCategory = () => {
+    console.log(' ! select category - ', report.category);
+  };
   return (
     <li className={s.reportListItem}>
       <div onClick={onHandleSelectCategory} className={s.reportListItemCard}>

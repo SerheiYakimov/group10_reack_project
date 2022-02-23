@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { PrivateRoute } from './routes/PrivateRoute';
 import { PublicRoute } from './routes/PublicRoute';
@@ -10,14 +10,26 @@ import authSelectors from './redux/auth/selectors';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import './App.css';
 import Header from './components/Header/Header';
-import HomePage from './pages/HomePage/HomePage';
-import ReportPage from './pages/ReportPage/ReportPage';
+// import HomePage from './pages/HomePage/HomePage';
+// import ReportPage from './pages/ReportPage/ReportPage';
 import Modal from './components/Modal/Modal';
 import BalancePage from './pages/BalancePage/BalancePage';
 import EmailVerPage from './pages/EmailVerPage/EmailVerPage';
 import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
 import DevelopersView from './pages/DevelopersView';
+
 import { Loader } from './components/Loader/Loader';
+import TransactionSelectors from './redux/transactions/selectors';
+import { getAllUserTransactions } from './redux/transactions/operations';
+
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const ReportPage = lazy(() => import('./pages/ReportPage/ReportPage'));
+const BalancePage = lazy(() => import('./pages/BalancePage/BalancePage'));
+const EmailVerPage = lazy(() => import('./pages/EmailVerPage/EmailVerPage'));
+const GoogleVerPage = lazy(() => import('./pages/GoogleVerPage/GoogleVerPage'));
+const DevelopersView = lazy(() =>
+  import('./pages/DevelopersView/DevelopersView'),
+);
 
 function App() {
   const [modalActive, setModalActive] = useState(false);
@@ -27,15 +39,14 @@ function App() {
 
   useEffect(() => {
     dispatch(authOperations.getCurrentUser());
+    dispatch(getAllUserTransactions());
   }, [dispatch]);
 
   return (
-    <>
-      {isUserRefreshing ? (
-        <Loader />
-      ) : (
-        <div className="App" id="scrollbar">
-          <Header />
+    !isUserRefreshing && (
+      <div className="App" id="scrollbar">
+        <Header />
+        <Suspense fallback={<Loader />}>
           <Routes>
             <Route
               exact
@@ -56,6 +67,16 @@ function App() {
               }
             />
 
+            <Route
+              path="/developers"
+              element={
+                <PublicRoute
+                  isAuth={isAuth}
+                  component={DevelopersView}
+                  restricted
+                />
+              }
+            />
             <Route
               path="/google-redirect"
               element={
@@ -81,14 +102,14 @@ function App() {
 
             {/* <Route path="/reports" element={<ReportPage />} /> */}
           </Routes>
-          <Modal active={modalActive} setActive={setModalActive}></Modal>
-          {/* <button type="button" onClick={() => setModalActive(true)}>
+        </Suspense>
+        <Modal active={modalActive} setActive={setModalActive}></Modal>
+        {/* <button type="button" onClick={() => setModalActive(true)}>
         Open modal
       </button> */}
-          <Toaster position="top-right" />
-        </div>
-      )}
-    </>
+        <Toaster position="top-right" />
+      </div>
+    )
   );
 }
 

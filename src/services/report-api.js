@@ -1,16 +1,18 @@
-import { axiosServer } from './axios-defaults';
+import { token, axiosServer } from './axios-defaults';
 
-async function getReportByCategories(reportData) {
+const tokenAPI = token;
+
+async function getReportByCategories({ reportData, type }) {
   const { data } = await axiosServer.get(
-    '/transaction/report-category-by-month',
-    reportData,
+    `/transactions/report-category-by-month?date=${reportData}&type=${type}`,
   );
   console.log(`Report by categories:`, data);
   return data;
 }
-async function getReportBySubCategories(reportData) {
+
+async function getReportBySubCategories(reportData, type) {
   const { data } = await axiosServer.get(
-    '/transaction/report-subcategory-by-month',
+    `/transactions/report-category-by-month?date=${reportData}&type=${type}`,
     reportData,
   );
   console.log(`Report by sub-categories:`, data);
@@ -18,10 +20,35 @@ async function getReportBySubCategories(reportData) {
 }
 async function getSummaryByMonth(reportData) {
   const { data } = await axiosServer.get(
-    '/transaction/report-by-six-month',
-    reportData,
+    `/transactions/report-by-six-month?type=${reportData}`,
   );
-  console.log(`Report for summary:`, data);
+  return data;
+}
+
+async function getMonthIncomeSum(reportData) {
+  console.log(`start Report for summary:`, reportData);
+  const { data } = await axiosServer.get(
+    `/transactions/total-sum-by-month?date=${reportData}`,
+  );
+  console.log(`end - total sum in-out for report:`, data);
+  return data;
+}
+
+async function getMonthOutcomeSum(reportData) {
+  console.log(`start Report for summary:`, reportData);
+  const { data } = await axiosServer.get(
+    `/transactions/total-sum-by-month?date=${reportData}`,
+  );
+  console.log(`end - total sum in-out for report:`, data);
+  return data;
+}
+
+async function getApiTotalSumByMonth(date) {
+  // date must be in format YYYY-MM (ex, 2022-02)
+  const { data } = await axiosServer.get(
+    `/transactions/report-sum-by-month?date=${date}`,
+  );
+  console.log('data from report-api', data);
   return data;
 }
 
@@ -29,6 +56,9 @@ const reportAPI = {
   getReportByCategories,
   getReportBySubCategories,
   getSummaryByMonth,
+  getApiTotalSumByMonth,
+  getMonthIncomeSum,
+  getMonthOutcomeSum,
 };
 
 export default reportAPI;

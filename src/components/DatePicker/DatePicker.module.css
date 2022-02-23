@@ -1,10 +1,11 @@
 .border {
   border: none;
   margin: 0;
-  /* margin-right: 33px; */
   margin-left: 10px;
+  background-color: transparent;
 }
-@media screen and (min-width: 1279px) {
+
+@media screen and (min-width: 1280px) {
   .border {
     margin-right: 23px;
     margin-left: 50px;
@@ -37,15 +38,27 @@
   }
 }
 
-@media screen and (min-width: 767px) {
-  .calendar {
-    position: absolute;
-    left: 31px;
+@media screen and (min-width: 768px) {
+  .calendarWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
   }
 }
 @media screen and (min-width: 1279px) {
+  .calendarWrapper {
+    position: relative;
+    margin-bottom: 0;
+    margin-top: 20px;
+    margin-right: 0px;
+  }
+}
+
+@media screen and (min-width: 1279px) {
   .calendar {
+    position: absolute;
     left: 20px;
-    top: 46px;
+    top: -10px;
   }
 }
