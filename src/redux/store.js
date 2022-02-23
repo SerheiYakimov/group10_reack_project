@@ -13,6 +13,7 @@ import storage from 'redux-persist/lib/storage';
 import transactionsReducer from './transactions/slice';
 import authReducer from './auth/slice';
 import reportReducer from './reports/slice';
+import incomeReducer from './incomeReducer/slice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -32,6 +33,7 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     transactions: transactionsReducer,
     report: reportReducer,
+    incomeState: incomeReducer,
   },
   middleware,
   devTools: true,
