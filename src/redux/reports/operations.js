@@ -5,8 +5,9 @@ export const getIncomesData = createAsyncThunk(
   '/transactions/report-category-by-month',
   async (date, { rejectWithValue }) => {
     try {
-      console.log('req-date', date);
+      console.log('req-incomes-data', date);
       const { data } = await reportAPI.getReportByCategories(date);
+      console.log('req-incomes-data-res', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -18,7 +19,9 @@ export const getOutcomesData = createAsyncThunk(
   '/transactions/report-category-by-month',
   async (date, { rejectWithValue }) => {
     try {
+      console.log('req-outcomes-data', date);
       const { data } = await reportAPI.getReportByCategories(date);
+      console.log('req-outcomes-data-res', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -30,7 +33,9 @@ export const getCategoryData = createAsyncThunk(
   '/transactions/report-subcategory-by-month',
   async (date, { rejectWithValue }) => {
     try {
+      console.log('req-category-data', date);
       const { data } = await reportAPI.getReportBySubCategories(date);
+      console.log('req-category-data-res', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

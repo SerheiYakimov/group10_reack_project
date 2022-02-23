@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import * as reportOperations from './operations';
 
 const initialState = {
-  reportIncimeItems: [],
+  reportIncomeItems: [],
   reportOutcomeItems: [],
   reportSummaryItems: [],
   reportChartItems: [],
@@ -18,10 +18,14 @@ const reportSlice = createSlice({
       state.reportSummaryItems = [...action.payload];
     },
     [reportOperations.getIncomesData.fulfilled]: (state, action) => {
-      state.reportIncimeItems = [...action.payload];
+      console.log('action.payload incData', action.payload);
+      state.reportIncomeItems = [...action.payload];
+      console.log('state - ', state.reportIncimeItems);
     },
     [reportOperations.getOutcomesData.fulfilled]: (state, action) => {
+      console.log('action.payload outcData', action.payload);
       state.reportOutcomeItems = [...action.payload];
+      console.log('state - ', state.reportOutcomeItems);
     },
     [reportOperations.getCategoryData.fulfilled]: (state, action) => {
       state.reportChartItems = [...action.payload];

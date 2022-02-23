@@ -69,20 +69,31 @@ const ReportListSection = ({ ReportSwitchIncomes }) => {
 
   console.log('report sw - ', ReportSwitchIncomes);
 
-  if (ReportSwitchIncomes) {
-    dispatch(
-      reportOperations.getIncomesData({ date: '2022-02', type: 'income' }),
-    );
-  } else {
-    dispatch(
-      reportOperations.getOutcomesData({ date: '2022-02', type: 'outcome' }),
-    );
-  }
+  // if (ReportSwitchIncomes) {
+  //   dispatch(
+  //     reportOperations.getIncomesData({ date: '02-2022', type: 'income' }),
+  //   );
+  // } else {
+  //   dispatch(
+  //     reportOperations.getOutcomesData({ date: '02-2022', type: 'outcome' }),
+  //   );
+  // }
 
-  let reportOutcomesData_ = useSelector(reportSelectors.getOutcomesData);
-  console.log(reportOutcomesData_);
-  let reportIncomesData_ = useSelector(reportSelectors.getIncomesData);
-  console.log(reportIncomesData_);
+  dispatch(
+    reportOperations.getIncomesData({ date: '2022-02', type: 'income' }),
+  );
+
+  dispatch(reportOperations.getOutcomesData({ date: '2022-02', type: 'loss' }));
+
+  dispatch(reportOperations.getCategoryData({ date: '2022-02', type: 'loss' }));
+
+  const reportOutcomesData_ = useSelector(reportSelectors.getOutcomesData);
+  console.log('- incomes ', reportOutcomesData_);
+  const reportIncomesData_ = useSelector(reportSelectors.getIncomesData);
+  console.log('- outcomes', reportIncomesData_);
+
+  const reportCategiryData_ = useSelector(reportSelectors.getCategoryData);
+  console.log('- categiries', reportCategiryData_);
 
   console.log('report categories - ', ReportSwitchIncomes);
 
