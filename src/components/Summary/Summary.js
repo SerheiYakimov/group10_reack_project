@@ -16,12 +16,24 @@ import reportOperations from '../../redux/reports/operations';
 
 const Summary = ({ SwitchIncomes }) => {
   const dispatch = useDispatch();
+  ////////// добавила Марьяна в последнем пуле
 
+  // dispatch(reportOperations.getSummaryData('income'));
+  // const summaryData_ = useSelector(reportSelectors.getSummaryData);
+
+  //////////////////////
+
+  // console.log(summaryData_);
+
+  // console.log('sixMonthsReport inside Summary', sixMonthsReport);
+
+  //////////////////было в дев
   SwitchIncomes
     ? dispatch(reportOperations.getSummaryData('income'))
     : dispatch(reportOperations.getSummaryData('loss'));
 
   const summaryData = useSelector(reportSelectors.getSummaryData);
+  ////////////////////////////
 
   return (
     <section className={s.summarySection}>

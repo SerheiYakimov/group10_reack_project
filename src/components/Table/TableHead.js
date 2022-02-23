@@ -12,81 +12,7 @@ const TableHead = () => {
     </button>
   );
   const setActive = () => {};
-  const data = React.useMemo(
-    () => [
-      {
-        date: '05.09.2019',
-        description: 'Бананы',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-    ],
-    [],
-  );
+  const data = React.useMemo(() => [], []);
   const columns = React.useMemo(
     () => [
       {
@@ -119,7 +45,7 @@ const TableHead = () => {
         {headerGroups.map(headerGroup => (
           <tr className={s.table_head} {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <th className={s.date_column} {...column.getHeaderProps()}>
+              <th className={s.data_column} {...column.getHeaderProps()}>
                 {column.render('Header')}
               </th>
             ))}
