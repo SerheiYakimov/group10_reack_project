@@ -27,12 +27,12 @@ export const removeOperation = createAsyncThunk(
 );
 
 export const getAllUserTransactions = createAsyncThunk(
-  '/transactions',
+  '/transactions/all',
   async (_, { rejectWithValue }) => {
     try {
-      console.log('inside getApi');
+      // console.log('inside getApi');
       const { data } = await TransactionsAPI.getApiTransactions();
-      console.log('data inside operation', data);
+      // console.log('data inside operation', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -41,10 +41,13 @@ export const getAllUserTransactions = createAsyncThunk(
 );
 
 export const getAllIncome = createAsyncThunk(
-  '/transactions',
+  '/transactions/income',
   async (transactionType, { rejectWithValue }) => {
     try {
-      const { data } = await transactionsAPI.getApiAllIncome(transactionType);
+      const { data } = await transactionsAPI.getApiAllIncomeOutcome(
+        transactionType,
+      );
+      console.log('data  in get all income', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -53,10 +56,10 @@ export const getAllIncome = createAsyncThunk(
 );
 
 export const getAllOutcome = createAsyncThunk(
-  '/transactions',
+  '/transactions/outcome',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await transactionsAPI.getApiAllOutcome();
+      const { data } = await transactionsAPI.getApiAllIncomeOutcome();
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -65,7 +68,7 @@ export const getAllOutcome = createAsyncThunk(
 );
 
 export const addTransactionToStore = createAsyncThunk(
-  '/transactions',
+  '/transactions/add',
   async (transaction, { rejectWithValue }) => {
     try {
       const { data } = await transactionsAPI.addTransaction(transaction);
@@ -77,11 +80,14 @@ export const addTransactionToStore = createAsyncThunk(
 );
 
 export const deleteTransaction = createAsyncThunk(
-  '/transactions',
+  '/transactions/remove',
+
   async (id, { rejectWithValue }) => {
     try {
       const { data } = await transactionsAPI.deleteApiTransaction(id);
+      console.log('id after deleting transaction', id);
       console.log('data after deleting transaction', data);
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -90,9 +96,10 @@ export const deleteTransaction = createAsyncThunk(
 );
 
 export const SixMonthsReport = createAsyncThunk(
-  '/transactions/report-sum-by-month',
+  '/transactions/report-by-six-month',
   async (type, { rejectWithValue }) => {
     try {
+      console.log('6 months report');
       const { data } = await transactionsAPI.getApiSixMonthsReport(type);
       return data;
     } catch (error) {

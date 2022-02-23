@@ -30,7 +30,7 @@ const FormDatePicker = () => {
   return (
     <>
       <div className={s.calendarWrapper}>
-        <svg className={s.calendar} fill="red" width="20" height="20">
+        <svg className={s.calendar} width="20" height="20">
           <use href={`${sprite}#calendar`}></use>
         </svg>
         <DatePicker

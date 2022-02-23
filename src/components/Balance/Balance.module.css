@@ -7,6 +7,7 @@
   justify-content: space-around;
   margin: 0 auto;
   margin-bottom: 40px;
+  color: var(--main-color-grey);
 }
 .formBalance {
   text-align: center;
@@ -15,6 +16,7 @@
 .balanceAndBtn {
   display: flex;
   margin-top: 6px;
+  color: var(--black-color);
 }
 
 .balanceLabel {
@@ -130,7 +132,7 @@
     justify-content: space-between;
     align-items: baseline;
     width: 668px;
-    height: 44px;
+    /* height: 44px; */
   }
   .balanceLabel {
     display: flex;
@@ -168,8 +170,8 @@
 @media screen and (min-width: 1280px) {
   .containerBalance {
     width: 1060px;
-    height: 44px;
     justify-content: end;
+    /* height: 44px; */
   }
 
   .balanceInput {

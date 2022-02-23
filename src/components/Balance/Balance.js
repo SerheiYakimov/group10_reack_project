@@ -5,21 +5,16 @@ import GoToReports from '../GoToReports';
 import Notify from '../Notify/Notify';
 import authSelectors from '../../redux/auth/selectors';
 import authOperations from '../../redux/auth/operations';
-
-// import IncomesPage from '../../pages/IncomesPage/IncomesPage';
 import s from './Balance.module.css';
 
 export default function Balance() {
-  // const showIncome = Boolean(false);
-
   const userBalance = useSelector(authSelectors.getUserBalance);
   const isRefreshingBalance = useSelector(authSelectors.getIsRefreshingBalance);
-  console.log(isRefreshingBalance);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(authOperations.getUserBalance());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(authOperations.getUserBalance());
+  // }, [dispatch]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -28,8 +23,8 @@ export default function Balance() {
       return toast.error('Внесите пожалуйста сумму на баланс больше нуля');
     }
     const newBalance = Number(balance);
-    dispatch(authOperations.setUserBalance({ balance: newBalance }));
     e.target.elements.balance.value = '';
+    dispatch(authOperations.setUserBalance({ balance: newBalance }));
   };
 
   return (
@@ -76,6 +71,6 @@ export default function Balance() {
   );
 }
 
-/* <button type="submit" className={s.confirmButton}>
-    ПОДТВЕРДИТЬ
-  </button> */
+// <button type="submit" className={s.confirmButton}>
+//   ПОДТВЕРДИТЬ
+// </button>;

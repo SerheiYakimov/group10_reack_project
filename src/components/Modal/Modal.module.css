@@ -27,6 +27,7 @@
 
 .is_hidden {
   opacity: 0;
+  display: none;
   visibility: visible;
   pointer-events: none;
 }

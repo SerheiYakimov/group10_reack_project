@@ -6,14 +6,14 @@
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .scroll_table {
     margin-top: 48px;
     width: 605px;
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .scroll_table {
     margin-top: 59px;
     width: 760px;
@@ -21,8 +21,13 @@
 }
 
 .scroll_table_body {
-  height: 350px;
+  height: 250px;
   overflow-x: auto;
+}
+@media screen and (min-width: 767px) {
+  .scroll_table_body {
+    height: 360px;
+  }
 }
 /* ///  table   /// */
 
@@ -50,32 +55,32 @@
 
 /* ///     columns        /// */
 
-.date_column {
+.data_column {
   padding-left: 20px;
 }
 
-.date_column:nth-child(-5n + 5) {
+.data_column:nth-child(-5n + 5) {
   width: 50px;
 }
-.date_column:nth-child(-2n + 2) {
+.data_column:nth-child(-2n + 2) {
   padding-left: 40px;
 }
 
 @media screen and (min-width: 1279px) {
-  .date_column:nth-child(-2n + 2) {
+  .data_column:nth-child(-2n + 2) {
     width: 230px;
     padding-left: 20px;
   }
-  .date_column:nth-child(-3n + 3) {
+  .data_column:nth-child(-3n + 3) {
     width: 150px;
 
     padding-left: 20px;
   }
-  .date_column:nth-child(-4n + 4) {
+  .data_column:nth-child(-4n + 4) {
     padding-left: 40px;
   }
 
-  .date_column:first-child {
+  .data_column:first-child {
     width: 140px;
   }
 }
@@ -88,13 +93,22 @@
   line-height: 1.12;
   letter-spacing: 0.04em;
   border-bottom: 2px solid #f5f6fb;
+  width: 84px;
 }
 
 .data_rows:nth-child(-4n + 4) {
   font-size: 12px;
   line-height: 1.16;
   font-weight: bold;
+  /* color: #e7192e; */
+  text-align: right;
+}
+
+.outcomes:nth-child(-4n + 4) {
   color: #e7192e;
+}
+.incomes:nth-child(-4n + 4) {
+  color: rgb(54, 214, 54);
 }
 
 @media screen and (max-width: 767px) {
@@ -118,7 +132,7 @@
     text-align: right;
     letter-spacing: 0.04em;
 
-    color: #e7192e;
+    /* color: #e7192e; */
   }
   .data_rows:first-child {
     padding-top: 20px;
@@ -143,6 +157,7 @@
 
   .data_rows:nth-child(-2n + 2) {
     width: 180px;
+    padding-left: 40px;
   }
   .data_rows:nth-child(5n + 1) {
     border-left: 2px solid #f5f6fb;

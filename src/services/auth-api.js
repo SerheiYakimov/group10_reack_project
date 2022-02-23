@@ -1,7 +1,5 @@
 import { token, axiosServer } from './axios-defaults';
 
-const tokenAPI = token;
-
 async function register(newUser) {
   const { data } = await axiosServer.post('/auth/registration', newUser);
   return data;
@@ -21,6 +19,12 @@ async function logOut() {
 
 async function getCurrentUser() {
   const { data } = await axiosServer.get('/users/current');
+  return data;
+}
+
+async function getBalance() {
+  const { data } = await axiosServer.get('/users/current');
+  console.log('data in auth-api:', data);
   return data;
 }
 
@@ -49,7 +53,7 @@ const authAPI = {
   getGoogleUser,
   verifyUser,
   updateUserBalance,
-  tokenAPI,
+  getBalance,
 };
 
 export default authAPI;

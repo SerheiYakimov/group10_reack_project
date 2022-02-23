@@ -1,11 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
 import authAPI from '../../services/auth-api';
+import { token } from '../../services/axios-defaults';
 
 const register = createAsyncThunk(
   '/auth/registration',
   async (newUser, { rejectWithValue }) => {
-    console.log(`newUser in auth-operation`, newUser);
+    // console.log(`newUser in auth-operation`, newUser);
 
     try {
       const data = await authAPI.register(newUser);
@@ -15,7 +16,7 @@ const register = createAsyncThunk(
       );
       return data;
     } catch (error) {
-      console.log(`error.messageRegister`, error);
+      // console.log(`error.messageRegister`, error);
       toast.error(
         'Упс, что-то пошло не так :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки.',
       );
@@ -40,7 +41,7 @@ const logIn = createAsyncThunk(
       const data = await authAPI.logIn(user);
       return data;
     } catch (error) {
-      console.log(`error.messageLogIn`, error);
+      // console.log(`error.messageLogIn`, error);
       toast.error(
         'К сожалению, пользователь не авторизирован. Проверьте правильность ввода логина и пароля или зарегистрируйтесь.',
       );
@@ -57,7 +58,7 @@ const logOut = createAsyncThunk(
       toast.success('До новых встреч!', { duration: 4000 });
       return data;
     } catch (error) {
-      console.log(`error.messageInLogOut`, error);
+      // console.log(`error.messageInLogOut`, error);
       toast.error(
         'Упс, что-то пошло не так :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки.',
       );
@@ -76,7 +77,7 @@ const getCurrentUser = createAsyncThunk(
       if (persistedToken === null) {
         return thunkAPI.rejectWithValue();
       }
-      authAPI.tokenAPI.set(persistedToken);
+      token.set(persistedToken);
       const currentUser = await authAPI.getCurrentUser();
       return currentUser;
     } catch (error) {
@@ -120,7 +121,8 @@ const getUserBalance = createAsyncThunk(
   '/users/balance',
   async (_, { rejectWithValue }) => {
     try {
-      const data = await authAPI.getCurrentUser();
+      const data = await authAPI.getBalance();
+      console.log('data in operation:', data);
       return data;
     } catch (error) {
       console.log(`error.messageInLogOut`, error);
