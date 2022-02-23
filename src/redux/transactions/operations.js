@@ -89,18 +89,6 @@ export const deleteTransaction = createAsyncThunk(
   },
 );
 
-export const TotalSumByMonth = createAsyncThunk(
-  '/transactions/report-sum-by-month',
-  async (date, { rejectWithValue }) => {
-    try {
-      const { data } = await transactionsAPI.getApiTotalSumByMonth(date);
-      return data;
-    } catch (error) {
-      rejectWithValue(error.message);
-    }
-  },
-);
-
 export const SixMonthsReport = createAsyncThunk(
   '/transactions/report-sum-by-month',
   async (type, { rejectWithValue }) => {
