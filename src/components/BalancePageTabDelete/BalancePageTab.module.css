@@ -1,26 +1,8 @@
-.section {
+/* .section {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-@media screen and (min-width: 768px) {
-  .section {
-    background-image: url('../../images/bg-cabbage-elements/cabbage-group-tab.png');
-    height: 1183px;
-    background-repeat: no-repeat;
-    background-position: top 950px left 497px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .section {
-    background-image: url('../../images/bg-cabbage-elements/cabbage-group.png');
-    height: 830px;
-    background-repeat: repeat-x;
-    background-position: top 593px left 0;
-  }
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -29,6 +11,10 @@
 
 @media screen and (min-width: 768px) {
   .container {
+    /* display: inline-block; */
+/* position: relative; */
+/* margin-left: auto;
+      margin-right: auto; 
     padding: 0 20px 0 20px;
     margin: 0;
     width: 665px;
@@ -36,9 +22,8 @@
     background: #ffffff;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 0px 30px 30px 30px;
-  }
-}
-@media screen and (min-width: 1280px) {
+  }}
+  @media screen and (min-width: 1280px) {
   .container {
     width: 1060px;
     height: 579px;
@@ -46,4 +31,4 @@
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 0px 30px 30px 30px;
   }
-}
+} */

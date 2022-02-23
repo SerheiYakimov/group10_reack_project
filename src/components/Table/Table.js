@@ -6,99 +6,54 @@ import s from './Table.module.css';
 import Media from 'react-media';
 import TableHead from './TableHead';
 import { removeOperation } from '../../redux/transactions/operations';
+import { getAllTransactions } from '../../redux/transactions/selectors';
 
-const Table = ({ id, transactions }) => {
+const Table = () => {
+  const arrayTrans = useSelector(getAllTransactions);
   const dispatch = useDispatch();
   // console.log('transactions inside Table', transactions)
-  const del_btn = () => (
+
+  const items = arrayTrans[0].map(item => ({
+    ...item,
+    date: item.createdAt,
+    description: item.subcategory,
+    category: item.category,
+    sum: item.sum,
+    id: item.id,
+  }));
+
+  const del_btn = ({ id }) => (
     <button type="button" className={s.delete_btn}>
-      <svg onClick={() => dispatch(removeOperation(id))} width="18" height="18">
+      <svg
+        onClick={() => dispatch(removeOperation({ id }))}
+        width="18"
+        height="18"
+      >
         <use href={`${sprite}#delete`}></use>
       </svg>
     </button>
   );
 
   const data = React.useMemo(
-    () => [
-      {
-        date: '05.09.2019',
-        description: 'Бананы',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-      {
-        date: '05.09.2019',
-        description: 'Бананы ',
-        category: 'Транспорт',
-        sum: '- 50.00 грн.',
-        delete: del_btn(),
-      },
-    ],
-    [],
+    () =>
+      items.map(e => ({
+        ...e,
+        date: e.createdAt.slice(0, 10),
+        description: e.subcategory,
+        category: e.category,
+        sum: -e.sum,
+        id: e.id,
+        delete: del_btn(e.id),
+      })),
+    [items],
   );
   console.log('data', data);
+
   const columns = React.useMemo(
     () => [
       {
         Header: 'Дата',
-        accessor: 'date', // accessor is the "key" in the data
+        accessor: 'date',
       },
       {
         Header: 'Описание',

@@ -20,9 +20,9 @@ const Summary = ({ sixMonthsReport }) => {
   const dispatch = useDispatch();
   dispatch(reportOperations.getSummaryData('income'));
   const summaryData_ = useSelector(reportSelectors.getSummaryData);
-  console.log(summaryData_);
+  // console.log(summaryData_);
 
-  console.log('sixMonthsReport inside Summary', sixMonthsReport);
+  // console.log('sixMonthsReport inside Summary', sixMonthsReport);
 
   return (
     <section className={s.summarySection}>

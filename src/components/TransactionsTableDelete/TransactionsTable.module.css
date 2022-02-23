@@ -79,6 +79,7 @@
     /* padding: 60px 30px 160px 20px; */
     width: 230px;
     height: 278px;
+    position: fixed;
   }
 
   .table_wrapper {
