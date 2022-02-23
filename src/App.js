@@ -13,10 +13,10 @@ import Header from './components/Header/Header';
 // import HomePage from './pages/HomePage/HomePage';
 // import ReportPage from './pages/ReportPage/ReportPage';
 import Modal from './components/Modal/Modal';
-import BalancePage from './pages/BalancePage/BalancePage';
-import EmailVerPage from './pages/EmailVerPage/EmailVerPage';
-import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
-import DevelopersView from './pages/DevelopersView';
+// import BalancePage from './pages/BalancePage/BalancePage';
+// import EmailVerPage from './pages/EmailVerPage/EmailVerPage';
+// import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
+// import DevelopersView from './pages/DevelopersView';
 
 import { Loader } from './components/Loader/Loader';
 import TransactionSelectors from './redux/transactions/selectors';
@@ -55,18 +55,6 @@ function App() {
                 <PublicRoute isAuth={isAuth} component={HomePage} restricted />
               }
             />
-
-            <Route
-              path="/developers"
-              element={
-                <PublicRoute
-                  isAuth={isAuth}
-                  component={DevelopersView}
-                  restricted
-                />
-              }
-            />
-
             <Route
               path="/developers"
               element={

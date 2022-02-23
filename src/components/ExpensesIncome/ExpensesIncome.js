@@ -20,15 +20,15 @@ export default function ExpensesIncome() {
   let expenses = 0;
   let income = 0;
 
-  if (data.length > 0) {
-    if (data[0]._id === 'loss') {
-      expenses = data[0].totalSum;
-      income = data[1].totalSum;
-    } else {
-      income = data[0].totalSum;
-      expenses = data[1].totalSum;
-    }
-  }
+  // if (data.length > 0) {
+  //   if (data[0]._id === 'loss') {
+  //     expenses = data[0].totalSum;
+  //     income = data[1].totalSum;
+  //   } else {
+  //     income = data[0].totalSum;
+  //     expenses = data[1].totalSum;
+  //   }
+  // }
 
   console.log('expenses', expenses);
   console.log('income', income);
