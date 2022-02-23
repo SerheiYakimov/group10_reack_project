@@ -4,8 +4,7 @@ const tokenAPI = token;
 
 async function getReportByCategories({ reportData, type }) {
   const { data } = await axiosServer.get(
-    `/transaction/report-category-by-month?date=${reportData}&type=${type}`,
-    reportData,
+    `/transactions/report-category-by-month?date=${reportData}&type=${type}`,
   );
   console.log(`Report by categories:`, data);
   return data;
@@ -13,25 +12,23 @@ async function getReportByCategories({ reportData, type }) {
 
 async function getReportBySubCategories(reportData, type) {
   const { data } = await axiosServer.get(
-    `/transaction/report-category-by-month?date=${reportData}&type=${type}`,
+    `/transactions/report-category-by-month?date=${reportData}&type=${type}`,
     reportData,
   );
   console.log(`Report by sub-categories:`, data);
   return data;
 }
 async function getSummaryByMonth(reportData) {
-  console.log(`start Report for summary:`, reportData);
   const { data } = await axiosServer.get(
-    `/transaction/report-by-six-month?type=${reportData}`,
+    `/transactions/report-by-six-month?type=${reportData}`,
   );
-  console.log(`end - Report for summary:`, data);
   return data;
 }
 
 async function getMonthIncomeSum(reportData) {
   console.log(`start Report for summary:`, reportData);
   const { data } = await axiosServer.get(
-    `/transaction/total-sum-by-month?date=${reportData}`,
+    `/transactions/total-sum-by-month?date=${reportData}`,
   );
   console.log(`end - total sum in-out for report:`, data);
   return data;
@@ -40,7 +37,7 @@ async function getMonthIncomeSum(reportData) {
 async function getMonthOutcomeSum(reportData) {
   console.log(`start Report for summary:`, reportData);
   const { data } = await axiosServer.get(
-    `/transaction/total-sum-by-month?date=${reportData}`,
+    `/transactions/total-sum-by-month?date=${reportData}`,
   );
   console.log(`end - total sum in-out for report:`, data);
   return data;

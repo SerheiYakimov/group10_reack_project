@@ -1,3 +1,6 @@
+import { useSelector, useDispatch } from 'react-redux';
+import reportSelectors from '../../redux/reports/selectors';
+import reportOperations from '../../redux/reports/operations';
 import s from './ReportList.module.css';
 
 import ReportList from './ReportList';
@@ -62,6 +65,27 @@ const reportIncomesData = [
 ];
 
 const ReportListSection = ({ ReportSwitchIncomes }) => {
+  const dispatch = useDispatch();
+
+  console.log('report sw - ', ReportSwitchIncomes);
+
+  if (ReportSwitchIncomes) {
+    dispatch(
+      reportOperations.getIncomesData({ date: '2022-02', type: 'income' }),
+    );
+  } else {
+    dispatch(
+      reportOperations.getOutcomesData({ date: '2022-02', type: 'outcome' }),
+    );
+  }
+
+  let reportOutcomesData_ = useSelector(reportSelectors.getOutcomesData);
+  console.log(reportOutcomesData_);
+  let reportIncomesData_ = useSelector(reportSelectors.getIncomesData);
+  console.log(reportIncomesData_);
+
+  console.log('report categories - ', ReportSwitchIncomes);
+
   return (
     <section className={s.reportListSection}>
       {ReportSwitchIncomes ? (

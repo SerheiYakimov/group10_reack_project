@@ -5,7 +5,7 @@ export const getIncomesData = createAsyncThunk(
   '/transactions/report-category-by-month',
   async (date, { rejectWithValue }) => {
     try {
-      console.log('date', date);
+      console.log('req-date', date);
       const { data } = await reportAPI.getReportByCategories(date);
       return data;
     } catch (error) {
@@ -44,6 +44,7 @@ export const getSummaryData = createAsyncThunk(
     console.log('start - operation/getSummaryData', date);
     try {
       const { data } = await reportAPI.getSummaryByMonth(date);
+      console.log('end - operation/getSummaryData', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
