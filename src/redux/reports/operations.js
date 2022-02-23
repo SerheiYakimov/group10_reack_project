@@ -88,8 +88,6 @@ export const getSumByMonth = createAsyncThunk(
   async (date, { rejectWithValue }) => {
     try {
       const { data } = await reportAPI.getApiTotalSumByMonth(date);
-      // console.log('data form operetion', data);
-      // console.log('date form operetion', date);
       return data;
     } catch (error) {
       rejectWithValue(error.message);

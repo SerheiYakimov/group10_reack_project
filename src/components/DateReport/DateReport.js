@@ -9,10 +9,8 @@ import { getSumByMonth } from '../../redux/reports/operations';
 const DateReport = () => {
   const dispatch = useDispatch();
 
-  let month = useSelector(getMonth);
-  if (month.length === 1) {
-    month = 0 + month;
-  }
+  const month = useSelector(getMonth);
+
   const year = useSelector(getYear);
 
   const date = year + '-' + month;
@@ -24,11 +22,11 @@ const DateReport = () => {
   }, [dispatch, date]);
 
   const onHandleClickLeft = () => {
-    dispatch(goBackMonth());
+    dispatch(goBackMonth(date));
   };
 
   const onHandleClickRight = () => {
-    dispatch(goForwardMonth());
+    dispatch(goForwardMonth(date));
   };
 
   return (

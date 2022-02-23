@@ -6,7 +6,6 @@ const getIncomesSum = state => state.report.reportIncomeSum;
 const getOutcomesSum = state => state.report.reportOutcomeSum;
 
 const getSumByMonth = state => state.report.data;
-console.log('selector', getSumByMonth);
 
 const reportSelectors = {
   getSummaryData,
