@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import reportAPI from '../../services/report-api';
 
 export const getIncomesData = createAsyncThunk(
-  '/transactions/report-category-by-month',
+  '/report/report-category-by-month',
   async (date, { rejectWithValue }) => {
     try {
       console.log('req-date', date);
@@ -15,7 +15,7 @@ export const getIncomesData = createAsyncThunk(
 );
 
 export const getOutcomesData = createAsyncThunk(
-  '/transactions/report-category-by-month',
+  '/report/report-category-by-month',
   async (date, { rejectWithValue }) => {
     try {
       const { data } = await reportAPI.getReportByCategories(date);
@@ -27,7 +27,7 @@ export const getOutcomesData = createAsyncThunk(
 );
 
 export const getCategoryData = createAsyncThunk(
-  '/transactions/report-subcategory-by-month',
+  '/report/report-subcategory-by-month',
   async (date, { rejectWithValue }) => {
     try {
       const { data } = await reportAPI.getReportBySubCategories(date);
@@ -39,7 +39,7 @@ export const getCategoryData = createAsyncThunk(
 );
 
 export const getSummaryData = createAsyncThunk(
-  '/transactions/report-by-six-month',
+  '/report/report-by-six-month',
   async (date, { rejectWithValue }) => {
     console.log('start - operation/getSummaryData', date);
     try {
@@ -53,7 +53,7 @@ export const getSummaryData = createAsyncThunk(
 );
 
 export const getIncomesSum = createAsyncThunk(
-  '/transactions/total-sum-by-month',
+  '/report/total-sum-by-month',
   async (date, { rejectWithValue }) => {
     try {
       const { data } = await reportAPI.getMonthIncomeSum(date);
@@ -66,7 +66,7 @@ export const getIncomesSum = createAsyncThunk(
 );
 
 export const getOutcomesSum = createAsyncThunk(
-  '/transactions/total-sum-by-month',
+  '/report/total-sum-by-month',
   async (date, { rejectWithValue }) => {
     try {
       const { data } = await reportAPI.getMonthOutcomeSum(date);
@@ -79,7 +79,7 @@ export const getOutcomesSum = createAsyncThunk(
 );
 
 export const getSumByMonth = createAsyncThunk(
-  '/transactions/report-sum-by-month',
+  '/report/report-sum-by-month',
   async (date, { rejectWithValue }) => {
     try {
       const { data } = await reportAPI.getApiTotalSumByMonth(date);

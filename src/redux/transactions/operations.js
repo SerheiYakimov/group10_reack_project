@@ -3,18 +3,18 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import TransactionsAPI from '../../services/transactions-api';
 import transactionsAPI from '../../services/transactions-api';
 
-export const getAllSum = createAsyncThunk(
-  '/transactions/total-sum-by-month',
-  async (_, { rejectWithValue }) => {
-    try {
-      const { data } = await TransactionsAPI.getApiTransactions();
-      console.log('data from back end', data);
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  },
-);
+// export const getAllSum = createAsyncThunk(
+//   '/transactions/total-sum-by-month',
+//   async (_, { rejectWithValue }) => {
+//     try {
+//       const { data } = await TransactionsAPI.getApiTransactions();
+//       console.log('data from back end', data);
+//       return data;
+//     } catch (error) {
+//       return rejectWithValue(error.message);
+//     }
+//   },
+// );
 
 export const removeOperation = createAsyncThunk(
   'transactions/removeOperation',

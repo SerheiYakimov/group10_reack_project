@@ -41,7 +41,7 @@ const transactionsSlice = createSlice({
     [transactionsOps.addTransactionToStore.fulfilled]: (state, action) => {
       console.log('action.payload add transaction slice!!', action.payload);
       // state.items = [...state.items, action.payload.addedTransaction];
-      state.items = [action.payload, ...state.items];
+      state.items = [action.payload.addedTransaction, ...state.items];
     },
   },
 });
