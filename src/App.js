@@ -42,75 +42,61 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
-      {isUserRefreshing ? (
-        <Loader />
-      ) : (
-        <div className="App" id="scrollbar">
-          <Header />
-          <Suspense fallback={<Loader />}>
-            <Routes>
-              <Route
-                exact
-                path="/"
-                element={
-                  <PublicRoute
-                    isAuth={isAuth}
-                    component={HomePage}
-                    restricted
-                  />
-                }
-              />
-              <Route
-                path="/developers"
-                element={
-                  <PublicRoute
-                    isAuth={isAuth}
-                    component={DevelopersView}
-                    restricted
-                  />
-                }
-              />
-              <Route
-                path="/google-redirect"
-                element={
-                  <PublicRoute
-                    isAuth={isAuth}
-                    component={GoogleVerPage}
-                    restricted
-                  />
-                }
-              />
-              <Route
-                path="/verify-redirect"
-                element={
-                  <PublicRoute isAuth={isAuth} component={EmailVerPage} />
-                }
-              />
-              <Route
-                path="/balance"
-                element={
-                  <PrivateRoute isAuth={isAuth} component={BalancePage} />
-                }
-              />
-              <Route
-                path="/reports"
-                element={
-                  <PrivateRoute isAuth={isAuth} component={ReportPage} />
-                }
-              />
+    !isUserRefreshing && (
+      <div className="App" id="scrollbar">
+        <Header />
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <PublicRoute isAuth={isAuth} component={HomePage} restricted />
+              }
+            />
+            <Route
+              path="/developers"
+              element={
+                <PublicRoute
+                  isAuth={isAuth}
+                  component={DevelopersView}
+                  restricted
+                />
+              }
+            />
+            <Route
+              path="/google-redirect"
+              element={
+                <PublicRoute
+                  isAuth={isAuth}
+                  component={GoogleVerPage}
+                  restricted
+                />
+              }
+            />
+            <Route
+              path="/verify-redirect"
+              element={<PublicRoute isAuth={isAuth} component={EmailVerPage} />}
+            />
+            <Route
+              path="/balance"
+              element={<PrivateRoute isAuth={isAuth} component={BalancePage} />}
+            />
+            <Route
+              path="/reports"
+              element={<PrivateRoute isAuth={isAuth} component={ReportPage} />}
+            />
 
-              {/* <Route path="/reports" element={<ReportPage />} /> */}
-            </Routes>
-          </Suspense>
-          <Modal active={modalActive} setActive={setModalActive}></Modal>
-          {/* <button type="button" onClick={() => setModalActive(true)}>
+            {/* <Route path="/reports" element={<ReportPage />} /> */}
+          </Routes>
+        </Suspense>
+        <Modal active={modalActive} setActive={setModalActive}></Modal>
+        {/* <button type="button" onClick={() => setModalActive(true)}>
         Open modal
       </button> */}
-          <Toaster position="top-right" />
-        </div>
-      )}
-    </>
+        <Toaster position="top-right" />
+      </div>
+    )
   );
 }
 
