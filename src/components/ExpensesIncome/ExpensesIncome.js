@@ -14,25 +14,34 @@ import s from './ExpensesIncome.module.css';
 import formatThousands from 'format-thousands';
 
 export default function ExpensesIncome() {
-  const expenses = useSelector(reportSelectors.getSumByMonth);
-  const income = useSelector(reportSelectors.getSumByMonth);
-  // const dispatch = useDispatch();
+  const data = useSelector(reportSelectors.getSumByMonth);
+  console.log('EI', data);
 
-  // useEffect(() => {
-  //   dispatch(getSumByMonth());
-  // }, [dispatch]);
+  let expenses = 0;
+  let income = 0;
 
-  // const expenses = 10000.0;
-  // const income = 10000.0;
+  if (data.length > 0) {
+    if (data[0]._id === 'loss') {
+      expenses = data[0].totalSum;
+      income = data[1].totalSum;
+    } else {
+      income = data[0].totalSum;
+      expenses = data[1].totalSum;
+    }
+  }
+
+  console.log('expenses', expenses);
+  console.log('income', income);
 
   return (
     <section className={s.section}>
       <div className={s.wrapExp}>
         <p className={s.desc}>Расходы:</p>
         <span className={s.expenses}>
-          {expenses
+          {/* {expenses
             ? ` - ${formatThousands(expenses, ' ')} грн.`
-            : ` 00.00 грн`}
+            : ` 00.00 грн`} */}
+          {` - ${formatThousands(expenses, ' ')} грн.`}
         </span>
       </div>
       <svg
@@ -47,7 +56,8 @@ export default function ExpensesIncome() {
       <div className={s.wrapInc}>
         <p className={s.desc}>Доходы: </p>
         <span className={s.incomes}>
-          {income ? ` + ${formatThousands(income, ' ')} грн.` : ` 00.00 грн`}
+          {/* {income ? ` + ${formatThousands(income, ' ')} грн.` : ` 00.00 грн`} */}
+          {` + ${formatThousands(income, ' ')} грн.`}
         </span>
       </div>
     </section>

@@ -30,6 +30,7 @@ async function getApiTotalSumByMonth(date) {
   const { data } = await axiosServer.get(
     `/transactions/report-sum-by-month?date=${date}`,
   );
+  console.log('data from report-api', data);
   return data;
 }
 
