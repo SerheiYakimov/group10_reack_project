@@ -12,7 +12,7 @@ import transactionsAPI from '../../services/transactions-api';
 const Table = () => {
   const arrayTrans = useSelector(getAllTransactions);
   const dispatch = useDispatch();
-  // console.log('transactions inside Table', transactions)
+  console.log('transactions inside Table', arrayTrans);
 
   const items = arrayTrans?.map(item => ({
     ...item,
@@ -23,7 +23,6 @@ const Table = () => {
     id: item.id,
     type: item.transactionType,
   }));
-
   const transactionType = items[0].type;
 
   console.log('items.type', transactionType);
@@ -34,18 +33,20 @@ const Table = () => {
   } else if (transactionType === 'income') {
     classes += s.incomes;
   }
+  const functionDel = id => {
+    transactionsAPI.deleteApiTransaction(id);
+    // transactionsAPI.getApiTransactions()
+  };
 
   const del_btn = id => (
     <button type="button" className={s.delete_btn}>
-      <svg
-        onClick={() => transactionsAPI.deleteApiTransaction(id)}
-        width="18"
-        height="18"
-      >
+      <svg onClick={() => functionDel(id)} width="18" height="18">
         <use href={`${sprite}#delete`}></use>
       </svg>
     </button>
   );
+
+  // const currency = `-${()}.00 `
 
   const data = React.useMemo(
     () =>
@@ -54,7 +55,7 @@ const Table = () => {
         date: e.createdAt.slice(0, 10),
         description: e.subcategory,
         category: e.category,
-        sum: -e.sum,
+        sum: `${e.sum}.00 грн.`,
         id: e.id,
         delete: del_btn(e.id),
       })),

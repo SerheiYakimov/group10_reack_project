@@ -103,7 +103,7 @@ export default function TransactionsForm() {
           <input
             className={s.input}
             type="text"
-            placeholder=""
+            placeholder="Описание категории"
             {...register('subcategory', { required: true })}
           />
           <select
