@@ -44,6 +44,7 @@ export const getAllIncome = createAsyncThunk(
   '/transactions/income',
   async (transactionType, { rejectWithValue }) => {
     try {
+      // console.log('transactionType inside getallincome', typeof (transactionType))
       const { data } = await transactionsAPI.getApiAllIncomeOutcome(
         transactionType,
       );
@@ -93,7 +94,7 @@ export const deleteTransaction = createAsyncThunk(
 );
 
 export const TotalSumByMonth = createAsyncThunk(
-  '/transactions/report-sum-by-month',
+  '/transactions/report-total-sum',
   async (date, { rejectWithValue }) => {
     try {
       const { data } = await transactionsAPI.getApiTotalSumByMonth(date);
@@ -118,7 +119,7 @@ export const SixMonthsReport = createAsyncThunk(
 );
 
 export const CategoryMonthReport = createAsyncThunk(
-  '/transactions/report-sum-by-month',
+  '/transactions/report-category',
   async ({ date, type }, { rejectWithValue }) => {
     try {
       console.log('date', date);
@@ -135,7 +136,7 @@ export const CategoryMonthReport = createAsyncThunk(
 );
 
 export const SubcategoryMonthReport = createAsyncThunk(
-  '/transactions/report-sum-by-month',
+  '/transactions/report-subcategory',
   async ({ date, alias }, { rejectWithValue }) => {
     try {
       console.log('date', date);

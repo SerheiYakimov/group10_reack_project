@@ -5,30 +5,43 @@ import { useTable } from 'react-table';
 import s from './Table.module.css';
 import Media from 'react-media';
 import TableHead from './TableHead';
-import { removeOperation } from '../../redux/transactions/operations';
+import {
+  deleteTransaction,
+  removeOperation,
+} from '../../redux/transactions/operations';
 import { getAllTransactions } from '../../redux/transactions/selectors';
+import transactionsAPI from '../../services/transactions-api';
+import { getIncomeState } from '../../redux/incomeReducer/selectors';
 
 const Table = () => {
   const arrayTrans = useSelector(getAllTransactions);
   const dispatch = useDispatch();
+  const currState = useSelector(getIncomeState);
+  console.log('currState', currState);
+  const functionDel = async id => {
+    dispatch(deleteTransaction(id));
+  };
+  // if (currState === false) {
+  //   arrayTrans = useSelector
+  // } else {
+  //   arrayTrans = useSelector
+  // }
   // console.log('transactions inside Table', transactions)
 
-  const items = arrayTrans[0].map(item => ({
+  // console.log('arrayTrans', arrayTrans)
+  const items = arrayTrans?.map(item => ({
     ...item,
     date: item.createdAt,
     description: item.subcategory,
     category: item.category,
     sum: item.sum,
     id: item.id,
+    type: item.transactionType,
   }));
 
-  const del_btn = ({ id }) => (
+  const del_btn = id => (
     <button type="button" className={s.delete_btn}>
-      <svg
-        onClick={() => dispatch(removeOperation({ id }))}
-        width="18"
-        height="18"
-      >
+      <svg onClick={() => functionDel(id)} width="18" height="18">
         <use href={`${sprite}#delete`}></use>
       </svg>
     </button>
@@ -38,7 +51,7 @@ const Table = () => {
     () =>
       items.map(e => ({
         ...e,
-        date: e.createdAt.slice(0, 10),
+        date: e.createdDate.slice(0, 10),
         description: e.subcategory,
         category: e.category,
         sum: -e.sum,
@@ -47,7 +60,7 @@ const Table = () => {
       })),
     [items],
   );
-  console.log('data', data);
+  // console.log('data', data);
 
   const columns = React.useMemo(
     () => [
