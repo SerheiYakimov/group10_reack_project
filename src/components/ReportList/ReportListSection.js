@@ -71,12 +71,12 @@ const ReportListSection = ({ ReportSwitchIncomes }) => {
 
   if (!ReportSwitchIncomes) {
     dispatch(
-      reportOperations.getIncomesData({ date: '02-2022', type: 'income' }),
+      reportOperations.getIncomesData({ date: '2022-2', type: 'income' }),
     );
     console.log('incomes start ....');
   } else {
     dispatch(
-      reportOperations.getOutcomesData({ date: '02-2022', type: 'outcome' }),
+      reportOperations.getOutcomesData({ date: '2022-2', type: 'outcome' }),
     );
     console.log('outcomes start ....');
   }

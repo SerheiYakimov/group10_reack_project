@@ -25,20 +25,20 @@ const reportSlice = createSlice({
       state.reportOutcomeItems = [...action.payload.result];
     },
     [reportOperations.getCategoryData.fulfilled](state, action) {
-      //state.data = [...action.payload];
+      state.data = [...action.payload];
     },
     [reportOperations.getSumByMonth.fulfilled](state, action) {
-      //console.log(action.payload.result);
-      //state.data = [...action.payload.result];
+      console.log(action.payload.result);
+      state.data = [...action.payload.result];
     },
     [reportOperations.getCategoryData.fulfilled]: (state, action) => {
-      //state.reportChartItems = [...action.payload];
+      state.reportChartItems = [...action.payload];
     },
     [reportOperations.getIncomesSum.fulfilled]: (state, action) => {
-      //state.reportIncomeSum = [...action.payload];
+      state.reportIncomeSum = [...action.payload];
     },
     [reportOperations.getOutcomesSum.fulfilled]: (state, action) => {
-      //state.reportOutcomeSum = [...action.payload];
+      state.reportOutcomeSum = [...action.payload];
     },
   },
 });
