@@ -16,7 +16,7 @@ const reportSlice = createSlice({
   initialState,
   extraReducers: {
     [reportOperations.getSummaryData.fulfilled]: (state, action) => {
-      //state.reportSummaryItems = [...action.payload.result];
+      state.reportSummaryItems = [...action.payload.result];
     },
     [reportOperations.getIncomesData.fulfilled]: (state, action) => {
       state.reportIncomeItems = [...action.payload.result];

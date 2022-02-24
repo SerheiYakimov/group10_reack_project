@@ -46,10 +46,9 @@ export const getCategoryData = createAsyncThunk(
 export const getSummaryData = createAsyncThunk(
   '/report/report-by-six-month',
   async (date, { rejectWithValue }) => {
-    console.log('start - operation/getSummaryData', date);
     try {
+      console.log('start - operation/getSummaryData', date);
       const { data } = await reportAPI.getSummaryByMonth(date);
-      console.log('end - operation/getSummaryData', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

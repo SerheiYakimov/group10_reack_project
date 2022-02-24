@@ -22,6 +22,7 @@ async function getSummaryByMonth(reportData) {
   const { data } = await axiosServer.get(
     `/transactions/report-by-six-month?type=${reportData}`,
   );
+  console.log(`Report for summary API`, data);
   return data;
 }
 

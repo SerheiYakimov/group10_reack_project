@@ -14,8 +14,9 @@ import reportOperations from '../../redux/reports/operations';
 //   { id: '6', month: 'Июнь', amount: '8000.00' },
 // ];
 
-const Summary = ({ switchIncomes }) => {
+const Summary = ({ sixMonthsReport }) => {
   const dispatch = useDispatch();
+  const switchIncomes = true;
 
   switchIncomes
     ? dispatch(reportOperations.getSummaryData('income'))
@@ -24,6 +25,7 @@ const Summary = ({ switchIncomes }) => {
   const summaryData = useSelector(reportSelectors.getSummaryData);
   console.log('switch income - ', switchIncomes);
   console.log('summary data - ', summaryData);
+  console.log('sixMonthsReport - ', sixMonthsReport);
 
   return (
     <section className={s.summarySection}>
