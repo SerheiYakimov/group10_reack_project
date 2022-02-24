@@ -10,7 +10,7 @@ const ReportListItem = ({ report }) => {
     <li className={s.reportListItem}>
       <div onClick={onHandleSelectCategory} className={s.reportListItemCard}>
         <p className={s.reportListItemTextAmount}>
-          {formatThousands(report.amount, ' ')}{' '}
+          {formatThousands(report.totalSum, ' ')}{' '}
         </p>
         <div className={s.reportListItemIcon}>
           <svg
@@ -19,10 +19,10 @@ const ReportListItem = ({ report }) => {
             width="56"
             height="56"
           >
-            <use href={`${sprite}#${report.icon}`}></use>
+            <use href={`${sprite}${report.icon}`}></use>
           </svg>
         </div>
-        <p className={s.reportListItemTextTitle}> {report.category}</p>
+        <p className={s.reportListItemTextTitle}> {report.category_name}</p>
       </div>
     </li>
   );
