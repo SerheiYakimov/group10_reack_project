@@ -88,6 +88,11 @@ export const deleteTransaction = createAsyncThunk(
       const { data } = await transactionsAPI.deleteApiTransaction(id);
       console.log('id after deleting transaction', id);
       console.log('data after deleting transaction', data);
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  },
+);
 
 export const TotalSumByMonth = createAsyncThunk(
   '/transactions/report-total-sum',
