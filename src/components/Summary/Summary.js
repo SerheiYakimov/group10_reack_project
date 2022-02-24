@@ -4,23 +4,18 @@ import SummaryTitle from './SummaryTitle';
 import SummaryList from './SummaryList';
 import reportSelectors from '../../redux/reports/selectors';
 import reportOperations from '../../redux/reports/operations';
+import { getIncomeState } from '../../redux/incomeReducer/selectors';
+import { useEffect } from 'react';
 
-// const summaryData = [
-//   { id: '1', month: 'Январь', amount: ' 15000.00' },
-//   { id: '2', month: 'Февраль', amount: '20000.00' },
-//   { id: '3', month: 'Март ', amount: '4000.00' },
-//   { id: '4', month: 'Апрель', amount: '12000.00' },
-//   { id: '5', month: 'Май', amount: '20000.00' },
-//   { id: '6', month: 'Июнь', amount: '8000.00' },
-// ];
-
-const Summary = ({ sixMonthsReport }) => {
+const Summary = () => {
   const dispatch = useDispatch();
-  const switchIncomes = true;
+  const switchIncomes = useSelector(getIncomeState);
 
-  switchIncomes
-    ? dispatch(reportOperations.getSummaryData('income'))
-    : dispatch(reportOperations.getSummaryData('loss'));
+  useEffect(() => {
+    switchIncomes
+      ? dispatch(reportOperations.getSummaryData('income'))
+      : dispatch(reportOperations.getSummaryData('loss'));
+  }, [dispatch, switchIncomes]);
 
   const summaryData = useSelector(reportSelectors.getSummaryData);
 
