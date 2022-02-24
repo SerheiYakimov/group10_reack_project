@@ -24,7 +24,7 @@ const ReportListSection = ({ ReportSwitchIncomes }) => {
       : dispatch(
           reportOperations.getOutcomesData({
             date: reportDataSwitch,
-            type: 'outcome',
+            type: 'loss',
           }),
         );
   }, [dispatch, ReportSwitchIncomes, reportDataSwitch]);
