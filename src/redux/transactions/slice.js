@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { act } from 'react-dom/cjs/react-dom-test-utils.production.min';
 import * as transactionsOps from './operations';
 
 const date = new Date();
@@ -9,6 +10,7 @@ const transactionsSlice = createSlice({
   name: 'transactions',
   initialState: {
     items: [],
+    itemsSub: [],
     incomeTrans: [],
     outcomeTrans: [],
     date: { month, year },
@@ -49,6 +51,9 @@ const transactionsSlice = createSlice({
     },
     [transactionsOps.getAllOutcome.fulfilled]: (state, action) => {
       state.outcomeTrans = [...action.payload];
+    },
+    [transactionsOps.SubcategoryMonthReport.fulfilled]: (state, action) => {
+      state.itemsSub = [...state.itemsSub, action.payload];
     },
   },
 });

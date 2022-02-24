@@ -10,18 +10,39 @@ import Charts from '../../components/Charts/Charts';
 import s from './ReportPage.module.css';
 import TransactionSwitch from '../../components/TransactionSwitch/TransactionSwitch';
 
+import { SubcategoryMonthReport } from '../../redux/transactions/operations';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getCategoryData } from '../../redux/reports/operations';
+import TransactionSelectors from '../../redux/transactions/selectors';
+
 const ReportPage = () => {
+  const dispatch = useDispatch();
+  const dataNew = useSelector(TransactionSelectors.getSubcategoryData);
+  console.log(dataNew, 'DOOOOOOOONE');
+
+  const date = '2022-2';
+  const alias = 'alcohol';
+
+  // useEffect(() => {
+  //   dispatch(SubcategoryMonthReport({ date, alias }));
+  // }, [dispatch]);
+
+  // const data = dispatch(SubcategoryMonthReport({ date, alias }));
+
+  // console.log(data, 'CHARTS DATA');
+
   const chartsData = [
-    { quarter: 'Cвинина', earnings: 5000 },
-    { quarter: 'Говядина', earnings: 6500 },
-    { quarter: 'Курица', earnings: 3200 },
-    { quarter: 'Рыба', earnings: 2100 },
-    { quarter: 'Панини', earnings: 1200 },
-    { quarter: 'Кофе', earnings: 867 },
-    { quarter: 'Спагетти', earnings: 1345 },
-    { quarter: 'Молоко', earnings: 400 },
-    { quarter: 'Сыр', earnings: 250 },
-    { quarter: 'Чай', earnings: 1147 },
+    { subcategory: 'Cвинина', totalSum: 5000 },
+    { subcategory: 'Говядина', totalSum: 6500 },
+    { subcategory: 'Курица', totalSum: 3200 },
+    { subcategory: 'Рыба', totalSum: 2100 },
+    { subcategory: 'Панини', totalSum: 1200 },
+    { subcategory: 'Кофе', totalSum: 867 },
+    { subcategory: 'Спагетти', totalSum: 1345 },
+    { subcategory: 'Молоко', totalSum: 400 },
+    { subcategory: 'Сыр', totalSum: 250 },
+    { subcategory: 'Чай', totalSum: 1147 },
   ];
 
   return (
