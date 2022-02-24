@@ -5,16 +5,11 @@ import { useTable } from 'react-table';
 import s from './Table.module.css';
 import Media from 'react-media';
 import TableHead from './TableHead';
-import {
-  deleteTransaction,
-  removeOperation,
-} from '../../redux/transactions/operations';
+import { deleteTransaction } from '../../redux/transactions/operations';
 import { getAllTransactions } from '../../redux/transactions/selectors';
-import transactionsAPI from '../../services/transactions-api';
 import { getIncomeState } from '../../redux/incomeReducer/selectors';
-import { getAllUserTransactions } from '../../redux/transactions/operations';
 
-const Table = ({ transactions }) => {
+const Table = () => {
   const arrayTrans = useSelector(getAllTransactions);
   const dispatch = useDispatch();
   const currState = useSelector(getIncomeState);
@@ -32,9 +27,9 @@ const Table = ({ transactions }) => {
     type: item.transactionType,
   }));
 
-
   ///    Окрашивание суммы   /////
-  const transactionType = items.type;
+  const transactionType = items[0].type;
+  console.log('items', items);
   console.log('items.type', transactionType);
 
   let classes = `${s.data_rows} `;
