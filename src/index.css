@@ -13,7 +13,7 @@ body {
   background-color: #ffff;
   background-image: url('./images/mobile/bg-mob.png');
   background-repeat: no-repeat;
-  background-size: 100% 342px;
+  background-size: 100% 525px;
 }
 
 @media screen and (min-width: 768px) {
