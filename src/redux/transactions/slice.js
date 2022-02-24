@@ -53,7 +53,7 @@ const transactionsSlice = createSlice({
       state.outcomeTrans = [...action.payload];
     },
     [transactionsOps.SubcategoryMonthReport.fulfilled]: (state, action) => {
-      state.itemsSub = [...state.itemsSub, action.payload];
+      state.itemsSub = [...state.itemsSub, ...action.payload];
     },
   },
 });

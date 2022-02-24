@@ -24,9 +24,9 @@ const ReportPage = () => {
   const date = '2022-2';
   const alias = 'alcohol';
 
-  // useEffect(() => {
-  //   dispatch(SubcategoryMonthReport({ date, alias }));
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(SubcategoryMonthReport({ date, alias }));
+  }, [dispatch]);
 
   // const data = dispatch(SubcategoryMonthReport({ date, alias }));
 
