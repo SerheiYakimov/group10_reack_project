@@ -146,6 +146,7 @@ export const SubcategoryMonthReport = createAsyncThunk(
         date,
         alias,
       });
+      console.log(data, 'DATA_OPERATION');
       return data;
     } catch (error) {
       rejectWithValue(error.message);

@@ -51,8 +51,8 @@ const Charts = ({ data }) => {
                 }
                 maxDomain={10}
                 cornerRadius={10}
-                sortKey={datum => datum.earnings}
-                labels={({ datum }) => `${datum.earnings} грн`}
+                sortKey={datum => datum.totalSum}
+                labels={({ datum }) => `${datum.totalSum} грн`}
                 horizontal={true}
                 animate={{
                   duration: 0,
@@ -72,8 +72,8 @@ const Charts = ({ data }) => {
                   },
                 }}
                 data={data}
-                x="quarter"
-                y="earnings"
+                x="subcategory"
+                y="totalSum"
               />
             </VictoryChart>
           </VictoryGroup>
@@ -104,8 +104,8 @@ const Charts = ({ data }) => {
                 labelComponent={<VictoryLabel />}
                 maxDomain={10}
                 cornerRadius={10}
-                sortKey={datum => datum.earnings}
-                labels={({ datum }) => `${datum.earnings} грн`}
+                sortKey={datum => datum.totalSum}
+                labels={({ datum }) => `${datum.totalSum} грн`}
                 horizontal={false}
                 animate={{
                   duration: 0,
@@ -162,8 +162,8 @@ const Charts = ({ data }) => {
                   },
                 ]}
                 data={data}
-                x="quarter"
-                y="earnings"
+                x="subcategory"
+                y="totalSum"
               />
             </VictoryChart>
           </VictoryGroup>
