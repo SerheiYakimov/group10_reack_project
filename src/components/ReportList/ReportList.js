@@ -7,7 +7,7 @@ export default function ReportList({ reportData }) {
       {reportData && (
         <ul className={s.reportList}>
           {reportData.map(report => (
-            <ReportListItem key={Math.random()} report={report} />
+            <ReportListItem report={report} />
           ))}
         </ul>
       )}

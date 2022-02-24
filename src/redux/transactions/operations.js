@@ -3,18 +3,18 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import TransactionsAPI from '../../services/transactions-api';
 import transactionsAPI from '../../services/transactions-api';
 
-export const getAllSum = createAsyncThunk(
-  '/transactions/total-sum-by-month',
-  async (_, { rejectWithValue }) => {
-    try {
-      const { data } = await TransactionsAPI.getApiTransactions();
-      console.log('data from back end', data);
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  },
-);
+// export const getAllSum = createAsyncThunk(
+//   '/transactions/total-sum-by-month',
+//   async (_, { rejectWithValue }) => {
+//     try {
+//       const { data } = await TransactionsAPI.getApiTransactions();
+//       console.log('data from back end', data);
+//       return data;
+//     } catch (error) {
+//       return rejectWithValue(error.message);
+//     }
+//   },
+// );
 
 export const removeOperation = createAsyncThunk(
   'transactions/removeOperation',
@@ -82,16 +82,12 @@ export const addTransactionToStore = createAsyncThunk(
 
 export const deleteTransaction = createAsyncThunk(
   '/transactions/remove',
+
   async (id, { rejectWithValue }) => {
     try {
       const { data } = await transactionsAPI.deleteApiTransaction(id);
+      console.log('id after deleting transaction', id);
       console.log('data after deleting transaction', data);
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  },
-);
 
 export const TotalSumByMonth = createAsyncThunk(
   '/transactions/report-total-sum',
@@ -100,7 +96,7 @@ export const TotalSumByMonth = createAsyncThunk(
       const { data } = await transactionsAPI.getApiTotalSumByMonth(date);
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   },
 );

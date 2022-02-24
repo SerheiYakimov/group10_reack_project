@@ -17,6 +17,7 @@ import Modal from './components/Modal/Modal';
 // import EmailVerPage from './pages/EmailVerPage/EmailVerPage';
 // import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
 // import DevelopersView from './pages/DevelopersView';
+
 import { Loader } from './components/Loader/Loader';
 import TransactionSelectors from './redux/transactions/selectors';
 import { getAllUserTransactions } from './redux/transactions/operations';

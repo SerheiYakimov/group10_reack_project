@@ -12,23 +12,16 @@ import {
 import { getAllTransactions } from '../../redux/transactions/selectors';
 import transactionsAPI from '../../services/transactions-api';
 import { getIncomeState } from '../../redux/incomeReducer/selectors';
+import { getAllUserTransactions } from '../../redux/transactions/operations';
 
-const Table = () => {
+const Table = ({ transactions }) => {
   const arrayTrans = useSelector(getAllTransactions);
   const dispatch = useDispatch();
   const currState = useSelector(getIncomeState);
-  console.log('currState', currState);
   const functionDel = async id => {
     dispatch(deleteTransaction(id));
   };
-  // if (currState === false) {
-  //   arrayTrans = useSelector
-  // } else {
-  //   arrayTrans = useSelector
-  // }
-  // console.log('transactions inside Table', transactions)
 
-  // console.log('arrayTrans', arrayTrans)
   const items = arrayTrans?.map(item => ({
     ...item,
     date: item.createdAt,
@@ -38,6 +31,19 @@ const Table = () => {
     id: item.id,
     type: item.transactionType,
   }));
+
+
+  ///    Окрашивание суммы   /////
+  const transactionType = items.type;
+  console.log('items.type', transactionType);
+
+  let classes = `${s.data_rows} `;
+  if (transactionType === 'loss') {
+    classes += s.outcomes;
+  } else if (transactionType === 'income') {
+    classes += s.incomes;
+  }
+  ///////////////////////////////
 
   const del_btn = id => (
     <button type="button" className={s.delete_btn}>
@@ -54,9 +60,10 @@ const Table = () => {
         date: e.createdDate.slice(0, 10),
         description: e.subcategory,
         category: e.category,
-        sum: -e.sum,
+        sum: `${e.sum}.00 грн.`,
         id: e.id,
         delete: del_btn(e.id),
+        type: e.transactionType,
       })),
     [items],
   );
@@ -107,7 +114,7 @@ const Table = () => {
                 <tr className={s.row} {...row.getRowProps()}>
                   {row.cells.map(cell => {
                     return (
-                      <td className={s.data_rows} {...cell.getCellProps()}>
+                      <td className={classes} {...cell.getCellProps()}>
                         {cell.render('Cell')}
                       </td>
                     );

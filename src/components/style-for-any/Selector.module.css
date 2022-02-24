@@ -95,7 +95,7 @@
   color: var(--second-white-color);
 } */
 
-.container {
+/* .container {
   display: inline-block;
   align-items: center;
   margin-left: auto;
@@ -103,7 +103,7 @@
 }
 .menu-list {
   display: none;
-}
+} */
 
 /* .control {
   background-color: transparent;
