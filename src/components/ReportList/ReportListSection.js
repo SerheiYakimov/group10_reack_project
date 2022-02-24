@@ -5,64 +5,64 @@ import s from './ReportList.module.css';
 
 import ReportList from './ReportList';
 
-const reportOutcomesData = [
-  {
-    id: '1',
-    category: 'продукты',
-    icon: 'icon-products',
-    amount: '3000.00',
-  },
-  { id: '2', category: 'алкоголь', icon: 'icon-alcohol', amount: '100.00' },
-  {
-    id: '3',
-    category: 'развлечения',
-    icon: 'icon-entertainment',
-    amount: '3000.00',
-  },
-  { id: '4', category: 'здоровье', icon: 'icon-health', amount: '300.00' },
-  {
-    id: '5',
-    category: 'транспорт',
-    icon: 'icon-transport',
-    amount: '2000.00',
-  },
-  {
-    id: '6',
-    category: 'все для дома',
-    icon: 'icon-homeware',
-    amount: '4000.00',
-  },
-  { id: '7', category: 'техника', icon: 'icon-technics', amount: '500.00' },
-  {
-    id: '8',
-    category: 'коммуналка',
-    icon: 'icon-invoices',
-    amount: '2000.00',
-  },
-  {
-    id: '9',
-    category: 'спорт, хобби',
-    icon: 'icon-hobbies',
-    amount: '5000.00',
-  },
-  {
-    id: '10',
-    category: 'образование',
-    icon: 'icon-education',
-    amount: '1000.00',
-  },
-  { id: '11', category: 'прочее', icon: 'icon-other', amount: '400.00' },
-];
+// const reportOutcomesData = [
+//   {
+//     id: '1',
+//     category: 'продукты',
+//     icon: 'icon-products',
+//     amount: '3000.00',
+//   },
+//   { id: '2', category: 'алкоголь', icon: 'icon-alcohol', amount: '100.00' },
+//   {
+//     id: '3',
+//     category: 'развлечения',
+//     icon: 'icon-entertainment',
+//     amount: '3000.00',
+//   },
+//   { id: '4', category: 'здоровье', icon: 'icon-health', amount: '300.00' },
+//   {
+//     id: '5',
+//     category: 'транспорт',
+//     icon: 'icon-transport',
+//     amount: '2000.00',
+//   },
+//   {
+//     id: '6',
+//     category: 'все для дома',
+//     icon: 'icon-homeware',
+//     amount: '4000.00',
+//   },
+//   { id: '7', category: 'техника', icon: 'icon-technics', amount: '500.00' },
+//   {
+//     id: '8',
+//     category: 'коммуналка',
+//     icon: 'icon-invoices',
+//     amount: '2000.00',
+//   },
+//   {
+//     id: '9',
+//     category: 'спорт, хобби',
+//     icon: 'icon-hobbies',
+//     amount: '5000.00',
+//   },
+//   {
+//     id: '10',
+//     category: 'образование',
+//     icon: 'icon-education',
+//     amount: '1000.00',
+//   },
+//   { id: '11', category: 'прочее', icon: 'icon-other', amount: '400.00' },
+// ];
 
-const reportIncomesData = [
-  { id: '1', category: 'зп', icon: 'icon-salary', amount: '25000.00' },
-  {
-    id: '2',
-    category: 'доп. доход',
-    icon: 'icon-additionalIncome',
-    amount: '10000.00',
-  },
-];
+// const reportIncomesData = [
+//   { id: '1', category: 'зп', icon: 'icon-salary', amount: '25000.00' },
+//   {
+//     id: '2',
+//     category: 'доп. доход',
+//     icon: 'icon-additionalIncome',
+//     amount: '10000.00',
+//   },
+// ];
 
 const ReportListSection = ({ ReportSwitchIncomes }) => {
   const dispatch = useDispatch();
@@ -81,14 +81,10 @@ const ReportListSection = ({ ReportSwitchIncomes }) => {
     console.log('outcomes start ....');
   }
 
-  const reportIncomesData_ = useSelector(reportSelectors.getIncomesData);
-  console.log('- incomes', reportIncomesData_);
-  const reportOutcomesData_ = useSelector(reportSelectors.getOutcomesData);
-  console.log('- outcomes ', reportOutcomesData_);
-
-  //dispatch(reportOperations.getCategoryData({ date: '2022-02', type: 'loss' }));
-  //const reportIncomesData_ = useSelector(reportSelectors.getIncomesData);
-  //console.log('- outcomes', reportIncomesData_);
+  const reportIncomesData = useSelector(reportSelectors.getIncomesData);
+  console.log('- incomes', reportIncomesData);
+  const reportOutcomesData = useSelector(reportSelectors.getOutcomesData);
+  console.log('- outcomes ', reportOutcomesData);
 
   return (
     <section className={s.reportListSection}>
