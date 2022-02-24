@@ -5,26 +5,24 @@ import { useTable } from 'react-table';
 import s from './Table.module.css';
 import Media from 'react-media';
 import TableHead from './TableHead';
+import {
+  deleteTransaction,
+  removeOperation,
+} from '../../redux/transactions/operations';
 import { getAllTransactions } from '../../redux/transactions/selectors';
-import { getAllUserTransactions } from '../../redux/transactions/operations';
 import transactionsAPI from '../../services/transactions-api';
+import { getIncomeState } from '../../redux/incomeReducer/selectors';
+import { getAllUserTransactions } from '../../redux/transactions/operations';
 
 const Table = ({ transactions }) => {
-  // const arrayTrans = useSelector(getAllTransactions);
+  const arrayTrans = useSelector(getAllTransactions);
   const dispatch = useDispatch();
-  // console.log('transactions inside Table', arrayTrans);
-
+  const currState = useSelector(getIncomeState);
   const functionDel = async id => {
-    transactionsAPI.deleteApiTransaction(id);
-    const undateInfo = await transactionsAPI.getApiTransactions();
-    const updateTable = undateInfo.data;
-    // console.log('undateInfo', undateInfo)
-    // console.log('updateTable', updateTable)
-    transactions = updateTable;
-    // console.log('transactions', transactions)
+    dispatch(deleteTransaction(id));
   };
 
-  const items = transactions?.map(item => ({
+  const items = arrayTrans?.map(item => ({
     ...item,
     date: item.createdAt,
     description: item.subcategory,
@@ -34,8 +32,9 @@ const Table = ({ transactions }) => {
     type: item.transactionType,
   }));
 
+
   ///    Окрашивание суммы   /////
-  const transactionType = items[0].type;
+  const transactionType = items.type;
   console.log('items.type', transactionType);
 
   let classes = `${s.data_rows} `;
@@ -58,7 +57,7 @@ const Table = ({ transactions }) => {
     () =>
       items.map(e => ({
         ...e,
-        date: e.createdAt.slice(0, 10),
+        date: e.createdDate.slice(0, 10),
         description: e.subcategory,
         category: e.category,
         sum: `${e.sum}.00 грн.`,
@@ -68,7 +67,7 @@ const Table = ({ transactions }) => {
       })),
     [items],
   );
-  console.log('data', data);
+  // console.log('data', data);
 
   const columns = React.useMemo(
     () => [

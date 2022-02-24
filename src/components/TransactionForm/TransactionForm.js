@@ -13,11 +13,15 @@ import { getAllTransactions } from '../../redux/transactions/selectors';
 import {
   getAllUserTransactions,
   addTransactionToStore,
+  getAllIncome,
 } from '../../redux/transactions/operations';
 import getUserBalance from '../../redux/auth/selectors';
+import TransactionSwitch from '../TransactionSwitch/TransactionSwitch';
 
 import Button from '../Buttons/Button';
 import DatePicker from '../DatePicker/DatePicker';
+import { changeIncomeState } from '../../redux/incomeReducer/slice';
+import { getIncomeState } from '../../redux/incomeReducer/selectors';
 
 // import "./styles.css";
 
@@ -32,12 +36,12 @@ export default function TransactionsForm() {
     handleSubmit,
     reset,
     formState: { errors, isSubmitSuccessful },
-  } = useForm({ defaultValues: { subcategory: '', category: '', sum: 0 } });
+  } = useForm({ defaultValues: { subcategory: '', category: '' } });
+
+  const currState = useSelector(getIncomeState);
 
   let transactions = useSelector(getAllTransactions);
   // console.log('transactions', transactions);
-  // let sixMonthsReport = useSelector()
-  // нужно дописать селектор и вытягивать из стейта данные, чтобы потом прокинуть их в summary
   let sixMonthsReport = null;
 
   const onSubmit = async ({ category, subcategory, sum }, e) => {
@@ -48,26 +52,14 @@ export default function TransactionsForm() {
       subcategory,
       sum,
     };
-    // console.log('transactionToAdd', transactionToAdd);
-    // const status = await transactionsAPI.addTransaction(transactionToAdd);
+
     const status = dispatch(addTransactionToStore(transactionToAdd));
     console.log('status', status);
-    // if (status.code === 200) {
-    // const tempBal = getUserBalance()
-    // console.log('tempBal', tempBal)
-    // dispatch(addTransactionToStore(transactionToAdd))
-    let updatedTransactions = await transactionsAPI.getApiTransactions();
-    updatedTransactions = updatedTransactions.data;
-    console.log('updatedTransactions', updatedTransactions);
-    // const temp = getAllUserTransactions()
-    // console.log('temp', temp)
-    transactions = updatedTransactions.data;
-    const tempSixMonthsReport = await transactionsAPI.getApiSixMonthsReport(
-      'loss',
-    );
-    sixMonthsReport = tempSixMonthsReport.data.result;
-    console.log('sixMonthsReport', sixMonthsReport);
-    // }
+
+    const allIncomeTrans = dispatch(getAllIncome('income'));
+    console.log('allIncomeTrans', allIncomeTrans);
+
+    transactions = allIncomeTrans.data;
   };
 
   //to reset values after successful submit
@@ -85,9 +77,13 @@ export default function TransactionsForm() {
     label: category.category,
   }));
   // console.log('categoryOptions', categoryOptions)
+  const onHandleChangeState = () => {
+    dispatch(changeIncomeState(true));
+  };
 
   return (
     <>
+      <TransactionSwitch />
       <form className={s.submit_form} onSubmit={handleSubmit(onSubmit)}>
         {/* <label>First name</label>
             <input type="text" {...register("firstName", { required: true })} />
@@ -146,6 +142,7 @@ export default function TransactionsForm() {
             name="Очистить"
             value="Очистить"
             className={s.button_text}
+            onClick={onHandleChangeState}
           ></Button>
         </div>
 
@@ -158,15 +155,9 @@ export default function TransactionsForm() {
         /> */}
       </form>
       <div className={s.summary_position}>
-        <Table transactions={transactions} />
+        <Table />
         <Media queries={{ small: { maxWidth: 767 } }}>
-          {matches =>
-            matches.small ? (
-              <></>
-            ) : (
-              <Summary sixMonthsReport={sixMonthsReport} />
-            )
-          }
+          {matches => (matches.small ? <></> : <Summary />)}
         </Media>
       </div>
     </>

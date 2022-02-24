@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { changeIncomeState } from '../../redux/incomeReducer/slice';
 import s from './TransactionSwitch.module.css';
 
 const TransactionSwitch = () => {
+  const dispatch = useDispatch();
   const [TransactionSwitchIncomes, setTransactionSwitchIncomes] =
     useState(false);
   localStorage.setItem('SwitchIncomes', false);
   const onHandleClickIncomes = () => {
+    dispatch(changeIncomeState(true));
     setTransactionSwitchIncomes(true);
     localStorage.setItem('SwitchIncomes', TransactionSwitchIncomes);
   };
   const onHandleClickOutcomes = () => {
+    dispatch(changeIncomeState(false));
     setTransactionSwitchIncomes(false);
     localStorage.setItem('SwitchIncomes', TransactionSwitchIncomes);
   };
