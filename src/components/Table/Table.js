@@ -13,6 +13,7 @@ const Table = () => {
   const arrayTrans = useSelector(getAllTransactions);
   const dispatch = useDispatch();
   const currState = useSelector(getIncomeState);
+
   const functionDel = async id => {
     dispatch(deleteTransaction(id));
   };
@@ -28,7 +29,7 @@ const Table = () => {
   }));
 
   ///    Окрашивание суммы   /////
-  const transactionType = items[0].type;
+  const transactionType = items[0]?.type;
   console.log('items', items);
   console.log('items.type', transactionType);
 
