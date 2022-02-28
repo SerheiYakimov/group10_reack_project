@@ -5,6 +5,7 @@ import GoToReports from '../GoToReports';
 import Notify from '../Notify/Notify';
 import authSelectors from '../../redux/auth/selectors';
 import authOperations from '../../redux/auth/operations';
+import reportOperations from '../../redux/reports/operations';
 import s from './Balance.module.css';
 
 export default function Balance() {
@@ -24,7 +25,7 @@ export default function Balance() {
     }
     const newBalance = Number(balance);
     e.target.elements.balance.value = '';
-    dispatch(authOperations.setUserBalance({ balance: newBalance }));
+    dispatch(reportOperations.setUserBalance({ balance: newBalance }));
   };
 
   return (

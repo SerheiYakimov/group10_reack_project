@@ -10,11 +10,12 @@ async function getReportByCategories({ date, type }) {
   return data;
 }
 
-async function getReportBySubCategories({ date, type }) {
+async function getReportBySubCategories({ date, alias }) {
+  console.log(` - start Report By SubCategory API:`, date, alias);
   const { data } = await axiosServer.get(
-    `transactions/report-subcategory-by-month?date=${date}&type=${type}`,
+    `transactions/report-subcategory-by-month?date=${date}&category=${alias}`,
   );
-  console.log(`Report by sub-categories:`, data);
+  console.log(` - end Report By SubCategory API:`, data);
   return data;
 }
 

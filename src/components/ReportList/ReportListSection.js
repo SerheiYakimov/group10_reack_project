@@ -31,19 +31,6 @@ const ReportListSection = ({ ReportSwitchIncomes }) => {
 
   console.log('report sw - ', ReportSwitchIncomes);
 
-  // if (!ReportSwitchIncomes) {
-  //   dispatch(
-  //     reportOperations.getIncomesData({ date: '2022-2', type: 'income' }),
-  //   );
-  //   console.log('incomes start ....');
-  // } else {
-  //   dispatch(
-  //     reportOperations.getOutcomesData({ date: '2022-2', type: 'outcome' }),
-  //   );
-  //   console.log('outcomes start ....');
-  // }
-
-
   const reportIncomesData = useSelector(reportSelectors.getIncomesData);
   console.log('- incomes', reportIncomesData);
   const reportOutcomesData = useSelector(reportSelectors.getOutcomesData);
