@@ -7,13 +7,17 @@ const initialState = {
   reportSummaryItems: [],
   reportChartItems: [],
   data: [],
-  reportIncomeSum: 0.0,
-  reportOutcomeSum: 0.0,
+  reportCategoryAlias: 'test',
 };
 
 const reportSlice = createSlice({
   name: 'report',
   initialState,
+  reducers: {
+    setCategoryAlias(state, action) {
+      state.reportCategoryAlias = action.payload;
+    },
+  },
   extraReducers: {
     [reportOperations.getSummaryData.fulfilled]: (state, action) => {
       state.reportSummaryItems = [...action.payload.result];
@@ -25,14 +29,11 @@ const reportSlice = createSlice({
       state.reportOutcomeItems = [...action.payload.result];
     },
     [reportOperations.getCategoryData.fulfilled](state, action) {
-      state.data = [...action.payload];
+      state.reportChartItems = [...action.payload.result];
     },
     [reportOperations.getSumByMonth.fulfilled](state, action) {
       console.log(action.payload.result);
       state.data = [...action.payload.result];
-    },
-    [reportOperations.getCategoryData.fulfilled]: (state, action) => {
-      state.reportChartItems = [...action.payload];
     },
     [reportOperations.getIncomesSum.fulfilled]: (state, action) => {
       state.reportIncomeSum = [...action.payload];
@@ -44,3 +45,4 @@ const reportSlice = createSlice({
 });
 
 export default reportSlice.reducer;
+export const { setCategoryAlias } = reportSlice.actions;
