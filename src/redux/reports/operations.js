@@ -97,16 +97,11 @@ export const getSumByMonth = createAsyncThunk(
   },
 );
 
-export const getChartCategoryAlias = () => {
-  console.log('getChartCategoryAlias ....');
-};
-
 const reportOperations = {
   getSummaryData,
   getIncomesData,
   getOutcomesData,
   getCategoryData,
-  getChartCategoryAlias,
   getSumByMonth,
   getIncomesSum,
   getOutcomesSum,
