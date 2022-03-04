@@ -4,7 +4,6 @@ const getOutcomesData = state => state.report.reportOutcomeItems;
 const getCategoryData = state => state.report.reportChartItems;
 const getIncomesSum = state => state.report.reportIncomeSum;
 const getOutcomesSum = state => state.report.reportOutcomeSum;
-const getChartCategoryAlias = state => state.report.reportCategoryAlias;
 const getSumByMonth = state => state.report.data;
 
 const reportSelectors = {
@@ -12,7 +11,6 @@ const reportSelectors = {
   getIncomesData,
   getOutcomesData,
   getCategoryData,
-  getChartCategoryAlias,
   getSumByMonth,
   getIncomesSum,
   getOutcomesSum,

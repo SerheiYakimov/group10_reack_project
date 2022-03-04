@@ -1,51 +1,17 @@
-import { useSelector, useDispatch } from 'react-redux';
-import reportSelectors from '../../redux/reports/selectors';
-import reportOperations from '../../redux/reports/operations';
-import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import s from './ReportList.module.css';
 import sprite from '../../svg/sprite.svg';
 import formatThousands from 'format-thousands';
-import { getMonth, getYear } from '../../redux/transactions/selectors';
-
-// import { useSelector, useDispatch } from 'react-redux';
-// import reportSelectors from '../../redux/reports/selectors';
-// import reportOperations from '../../redux/reports/operations';
-// import { useEffect } from 'react';
-// import { getMonth, getYear } from '../../redux/transactions/selectors';
-
-// const getDataForCarts = ({ categoryName }) => {
-//   const dispatch = useDispatch();
-//   const month = useSelector(getMonth);
-//   const reportDataSwitch = year + '-' + month;
-//   console.log(' ! report data - ', reportDataSwitch);
-
-//   useEffect(() => {
-//     dispatch(
-//       reportOperations.getCategoryData({
-//         date: reportDataSwitch,
-//         type: categoryName,
-//       }),
-//     );
-//   }, [dispatch, categoryName]);
-
-//   const reportChartsData = useSelector(reportSelectors.getCategoryData);
-//   console.log(' Charts Data - ', reportChartsData);
-// };
-
-// export default getDataForCarts;
+import { setCategoryAlias } from '../../redux/reports/slice';
 
 const ReportListItem = ({ report }) => {
-  const [reportCategoryAlias, setCategoryAlias] = useState(
-    report.category_alias,
-  );
+  const dispatch = useDispatch();
+  localStorage.setItem('SelectCategoryAlias', 'product');
 
   const onHandleSelectCategory = () => {
     console.log(' ! select category - ', report.category_alias);
-    setCategoryAlias(report.category_alias);
-    console.log(reportCategoryAlias);
-
-    //useSelector(setCategoryAlias(report.category_alias));
-    //const category = useSelector(setCategoryAlias);
+    localStorage.setItem('SelectCategoryAlias', report.category_alias);
+    dispatch(setCategoryAlias(report.category_alias));
   };
 
   return (

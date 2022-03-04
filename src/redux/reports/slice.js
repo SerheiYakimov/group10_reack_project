@@ -7,7 +7,7 @@ const initialState = {
   reportSummaryItems: [],
   reportChartItems: [],
   data: [],
-  reportCategoryAlias: 'test',
+  reportCategoryAlias: 'products',
 };
 
 const reportSlice = createSlice({
@@ -18,6 +18,7 @@ const reportSlice = createSlice({
       state.reportCategoryAlias = action.payload;
     },
   },
+
   extraReducers: {
     [reportOperations.getSummaryData.fulfilled]: (state, action) => {
       state.reportSummaryItems = [...action.payload.result];
