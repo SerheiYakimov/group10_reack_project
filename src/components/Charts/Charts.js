@@ -20,7 +20,7 @@ const Charts = ({ data }) => {
         query="(max-width: 767.98px)"
         render={() => (
           <VictoryGroup height={550}>
-            <VictoryChart domainPadding={10}>
+            <VictoryChart domainPadding={20}>
               <VictoryAxis
                 tickLabelComponent={
                   <VictoryLabel
@@ -43,7 +43,7 @@ const Charts = ({ data }) => {
               <VictoryBar
                 labelComponent={
                   <VictoryLabel
-                    dx={0}
+                    dx={20}
                     dy={-12}
                     textAnchor="start"
                     verticalAnchor="end"
