@@ -50,7 +50,7 @@ const transactionsSlice = createSlice({
       state.incomeTrans = [...action.payload];
     },
     [transactionsOps.getAllOutcome.fulfilled]: (state, action) => {
-      state.outcomeTrans = [...action.payload];
+      state.incomeTrans = [...action.payload];
     },
     [transactionsOps.SubcategoryMonthReport.fulfilled]: (state, action) => {
       state.itemsSub = [...state.itemsSub, ...action.payload];

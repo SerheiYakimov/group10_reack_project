@@ -1,12 +1,7 @@
-import axios from 'axios';
-
-import { token, axiosServer } from './axios-defaults';
-
-const tokenAPI = token;
+import { axiosServer } from './axios-defaults';
 
 async function getApiTransactions() {
   const { data } = await axiosServer.get('/transactions');
-  console.log('inside get api trans', data);
   return data;
 }
 
@@ -15,26 +10,16 @@ async function getApiAllIncomeOutcome(transactionType) {
   const { data } = await axiosServer.get(
     `/transactions/?transactionType=${transactionType}`,
   );
-  console.log('get all income', data);
   return data;
 }
 
-// async function getApiAllOutcome() {
-//   const { data } = await axiosServer.get('/transactions/?transactionType=loss');
-//   console.log('get all income', data)
-//   return data;
-// }
-
 async function addTransaction(transaction) {
   const { data } = await axiosServer.post('/transactions', transaction);
-  console.log('data after transaction add', data);
   return data;
 }
 
 async function deleteApiTransaction(id) {
   const { data } = await axiosServer.delete(`/transactions/${id}`);
-  // console.log('id after transaction removal', id);
-  // console.log('data after transaction removal', data);
   return data;
 }
 
@@ -49,8 +34,6 @@ async function getApiSixMonthsReport(type) {
 async function getApiCategoryMonthReport({ date, type }) {
   // date must be in format YYYY-MM (ex, 2022-02)
   // type must be either "loss" or "income"
-  console.log('date', date);
-  console.log('type', type);
   const { data } = await axiosServer.get(
     `transactions/report-category-by-month?date=${date}&type=${type}`,
   );
