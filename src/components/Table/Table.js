@@ -1,18 +1,30 @@
 import sprite from '../../svg/sprite.svg';
 import { useSelector, useDispatch } from 'react-redux';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTable } from 'react-table';
 import s from './Table.module.css';
 import Media from 'react-media';
 import TableHead from './TableHead';
-import { deleteTransaction } from '../../redux/transactions/operations';
-import { getAllTransactions } from '../../redux/transactions/selectors';
+import TransactionSelectors from '../../redux/transactions/selectors';
 import { getIncomeState } from '../../redux/incomeReducer/selectors';
+import {
+  getAllIncome,
+  getAllOutcome,
+  deleteTransaction,
+} from '../../redux/transactions/operations';
+import authSelectors from '../../redux/auth/selectors';
 
 const Table = () => {
-  const arrayTrans = useSelector(getAllTransactions);
   const dispatch = useDispatch();
   const currState = useSelector(getIncomeState);
+  const arrayTrans = useSelector(TransactionSelectors.transactionsTable);
+  const currBalance = useSelector(authSelectors.getUserBalance);
+
+  useEffect(() => {
+    currState
+      ? dispatch(getAllIncome('income'))
+      : dispatch(getAllOutcome('loss'));
+  }, [dispatch, currState, currBalance]);
 
   const functionDel = async id => {
     dispatch(deleteTransaction(id));
@@ -28,7 +40,7 @@ const Table = () => {
     type: item.transactionType,
   }));
 
-  ///    Окрашивание суммы   /////
+  ///    Coloring the numbers   /////
   const transactionType = items[0]?.type;
   console.log('items', items);
   console.log('items.type', transactionType);
@@ -63,7 +75,6 @@ const Table = () => {
       })),
     [items],
   );
-  // console.log('data', data);
 
   const columns = React.useMemo(
     () => [
@@ -92,8 +103,6 @@ const Table = () => {
   );
 
   const { getTableBodyProps, rows, prepareRow } = useTable({ columns, data });
-  // console.log('table body props', useTable.getTableBodyProps = useTable({ columns, transactions }))
-  // const { getTableBodyProps, rows, prepareRow } = useTable({ columns, transactions });
 
   return (
     <div className={s.scroll_table}>

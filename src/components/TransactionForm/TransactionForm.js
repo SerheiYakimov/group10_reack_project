@@ -1,29 +1,20 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import categories from '../../json/category.json';
-import transactionsAPI from '../../services/transactions-api';
 import Media from 'react-media';
-import FormDatePicker from '../DatePicker/DatePicker';
 import s from './TransactionForm.module.css';
 import sprite from '../../svg/sprite.svg';
 import Table from '../Table/Table';
 import Summary from '../Summary/Summary';
-import { useSelector, useDispatch } from 'react-redux';
-import { getAllTransactions } from '../../redux/transactions/selectors';
+import { useDispatch } from 'react-redux';
 import {
   getAllUserTransactions,
   addTransactionToStore,
-  getAllIncome,
 } from '../../redux/transactions/operations';
-import getUserBalance from '../../redux/auth/selectors';
-import TransactionSwitch from '../TransactionSwitch/TransactionSwitch';
 
 import Button from '../Buttons/Button';
 import DatePicker from '../DatePicker/DatePicker';
 import { changeIncomeState } from '../../redux/incomeReducer/slice';
-import { getIncomeState } from '../../redux/incomeReducer/selectors';
-
-// import "./styles.css";
 
 export default function TransactionsForm() {
   const dispatch = useDispatch();
@@ -38,28 +29,14 @@ export default function TransactionsForm() {
     formState: { errors, isSubmitSuccessful },
   } = useForm({ defaultValues: { subcategory: '', category: '' } });
 
-  const currState = useSelector(getIncomeState);
-
-  let transactions = useSelector(getAllTransactions);
-  // console.log('transactions', transactions);
-  let sixMonthsReport = null;
-
   const onSubmit = async ({ category, subcategory, sum }, e) => {
-    // console.log('data', data)
-    // console.log('e', e)
     const transactionToAdd = {
       category,
       subcategory,
       sum,
     };
 
-    const status = dispatch(addTransactionToStore(transactionToAdd));
-    console.log('status', status);
-
-    const allIncomeTrans = dispatch(getAllIncome('income'));
-    console.log('allIncomeTrans', allIncomeTrans);
-
-    transactions = allIncomeTrans.data;
+    dispatch(addTransactionToStore(transactionToAdd));
   };
 
   //to reset values after successful submit
@@ -76,21 +53,13 @@ export default function TransactionsForm() {
     value: category.id,
     label: category.category,
   }));
-  // console.log('categoryOptions', categoryOptions)
   const onHandleChangeState = () => {
     dispatch(changeIncomeState(true));
   };
 
   return (
     <>
-      <TransactionSwitch />
       <form className={s.submit_form} onSubmit={handleSubmit(onSubmit)}>
-        {/* <label>First name</label>
-            <input type="text" {...register("firstName", { required: true })} />
-            {errors.firstName && <p>This is required</p>} */}
-
-        {/* <label>Last name</label>
-            <input type="text" {...register("lastName")} /> */}
         <div className={s.inputs_div}>
           <Media queries={{ small: { maxWidth: 767 } }}>
             {matches => (matches.small ? <></> : <DatePicker />)}
@@ -145,14 +114,6 @@ export default function TransactionsForm() {
             onClick={onHandleChangeState}
           ></Button>
         </div>
-
-        {/* <input type="submit" value="Ввод" className={s.submit_button} />
-        <input
-          // style={{ display: 'block', marginTop: 20 }}
-          type="reset"
-          value="Очистить"
-          className={s.submit_button}
-        /> */}
       </form>
       <div className={s.summary_position}>
         <Table />
