@@ -19,7 +19,7 @@ import Modal from './components/Modal/Modal';
 // import DevelopersView from './pages/DevelopersView';
 
 import { Loader } from './components/Loader/Loader';
-import TransactionSelectors from './redux/transactions/selectors';
+// import TransactionSelectors from './redux/transactions/selectors';
 import { getAllUserTransactions } from './redux/transactions/operations';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
