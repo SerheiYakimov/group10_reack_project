@@ -4,6 +4,7 @@ import TransactionSwitch from '../../components/TransactionSwitch/TransactionSwi
 import s from '../BalancePage/BalancePage.module.css';
 import DatePicker from '../../components/DatePicker/DatePicker';
 import TransactionsForm from '../../components/TransactionForm/TransactionForm';
+
 export default function BalancePage() {
   return (
     <section className={s.section}>
