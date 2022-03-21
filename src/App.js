@@ -6,21 +6,11 @@ import { PublicRoute } from './routes/PublicRoute';
 import { useDispatch, useSelector } from 'react-redux';
 import authOperations from './redux/auth/operations';
 import authSelectors from './redux/auth/selectors';
-// import { Oval } from 'react-loader-spinner';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import './App.css';
 import Header from './components/Header/Header';
-// import HomePage from './pages/HomePage/HomePage';
-// import ReportPage from './pages/ReportPage/ReportPage';
 import Modal from './components/Modal/Modal';
-// import BalancePage from './pages/BalancePage/BalancePage';
-// import EmailVerPage from './pages/EmailVerPage/EmailVerPage';
-// import GoogleVerPage from './pages/GoogleVerPage/GoogleVerPage';
-// import DevelopersView from './pages/DevelopersView';
-
 import { Loader } from './components/Loader/Loader';
-import TransactionSelectors from './redux/transactions/selectors';
 import { getAllUserTransactions } from './redux/transactions/operations';
+import './App.css';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const ReportPage = lazy(() => import('./pages/ReportPage/ReportPage'));
@@ -102,12 +92,3 @@ function App() {
 }
 
 export default App;
-
-// <Routes>
-//   <Route path="/" element={<HomePage />} />
-//   <Route path="/balance" element={<BalancePage />} />
-
-//   {/* <Route path="/balance/:incomes" exact element={<IncomesPage />} /> */}
-//   <Route path="/balance/:outcomes" exact element={<TransactionsTable />} />
-//   <Route path="/report" element={<ReportPage />} />
-// </Routes>;

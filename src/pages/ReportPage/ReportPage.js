@@ -17,13 +17,11 @@ import reportOperations from '../../redux/reports/operations';
 const ReportPage = () => {
   const dispatch = useDispatch();
   const dataNew = useSelector(TransactionSelectors.getSubcategoryData);
-  console.log(dataNew, 'DOOOOOOOONE');
 
   //================== Charts ===============
   const month = useSelector(getMonth);
   const year = useSelector(getYear);
   const reportDataSwitch = year + '-' + month;
-  console.log(' ! report data - ', reportDataSwitch);
   const categoryAlias = useSelector(state => state.report.reportCategoryAlias);
 
   useEffect(() => {
@@ -36,7 +34,6 @@ const ReportPage = () => {
   }, [dispatch, categoryAlias, reportDataSwitch]);
 
   const chartsData = useSelector(reportSelectors.getCategoryData);
-  console.log(' ! Charts Data - ', chartsData);
 
   //==========================================
 

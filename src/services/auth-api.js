@@ -24,7 +24,6 @@ async function getCurrentUser() {
 
 async function getBalance() {
   const { data } = await axiosServer.get('/users/current');
-  console.log('data in auth-api:', data);
   return data;
 }
 

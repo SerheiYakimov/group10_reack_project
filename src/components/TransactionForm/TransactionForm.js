@@ -42,12 +42,9 @@ export default function TransactionsForm() {
   //to reset values after successful submit
   useEffect(() => {
     if (isSubmitSuccessful) {
-      console.log('inside isSubmitSuccessful');
       reset({ subcategory: '', category: '', sum: 0 });
     }
   }, [isSubmitSuccessful, reset]);
-
-  console.log(errors);
 
   const categoryOptions = categories.map(category => ({
     value: category.id,
@@ -76,7 +73,7 @@ export default function TransactionsForm() {
             {...register('category', { required: true })}
           >
             {categoryOptions.map(option => (
-              <option value={option.label} id={option.id}>
+              <option value={option.label} id={option.id} key={Math.random()}>
                 {option.label}
               </option>
             ))}

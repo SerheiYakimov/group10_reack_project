@@ -9,7 +9,6 @@ const ReportListItem = ({ report }) => {
   localStorage.setItem('SelectCategoryAlias', 'product');
 
   const onHandleSelectCategory = () => {
-    console.log(' ! select category - ', report.category_alias);
     localStorage.setItem('SelectCategoryAlias', report.category_alias);
     dispatch(setCategoryAlias(report.category_alias));
   };

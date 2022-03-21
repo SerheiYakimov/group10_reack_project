@@ -1,7 +1,3 @@
-.transactionSwitchNavigation {
-  /* display: inline-block;
-  margin-right: auto; */
-}
 @media screen and (max-width: 768px) {
   .transactionSwitchNavigation {
     position: fixed;
@@ -18,7 +14,6 @@
   width: 159px;
   height: 53px;
   padding: 12px 15px;
-  /* border-radius: 20px 20px 0 0; */
   font-family: Roboto;
   font-size: 12px;
   font-style: normal;
@@ -38,7 +33,6 @@
   width: 159px;
   height: 53px;
   padding: 12px 15px;
-  /* border-radius: 20px 20px 0 0; */
   font-family: Roboto;
   font-size: 12px;
   font-style: normal;

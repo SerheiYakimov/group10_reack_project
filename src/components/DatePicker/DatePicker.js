@@ -8,15 +8,6 @@ import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 const FormDatePicker = () => {
   const [startDate, setStartDate] = useState(new Date());
 
-  // const dateNow = new Date();
-  // console.log(dateNow)
-  // const dateInfo = {
-  //   year: dateNow.getFullYear(),
-  //   month: dateNow.getUTCMonth() + 1,
-  //   day: dateNow.getDate(),
-  // };
-  // console.log(dateInfo)
-
   const ExampleCustomTimeInput = ({ date, value, onChange }) => (
     <input
       value={value}

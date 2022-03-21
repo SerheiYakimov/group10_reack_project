@@ -15,10 +15,7 @@
 }
 
 .heroLogo {
-  /* width: 183px; */
-  /* height: auto; */
   display: inline-block;
-  /* width: 183px; */
   -webkit-animation: tracking-in-contract-bck-top 1s
     cubic-bezier(0.215, 0.61, 0.355, 1) both;
   animation: tracking-in-contract-bck-top 1s cubic-bezier(0.215, 0.61, 0.355, 1)
@@ -27,21 +24,18 @@
 
 @media screen and (min-width: 768px) {
   .heroLogo {
-    /* width: 306px; */
     height: auto;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .heroLogo {
-    /* width: 377px; */
     height: auto;
   }
 }
 
 .title {
   display: inline-block;
-  /* width: 183px; */
   -webkit-animation: tracking-in-contract-bck-top 1s
     cubic-bezier(0.215, 0.61, 0.355, 1) both;
   animation: tracking-in-contract-bck-top 1s cubic-bezier(0.215, 0.61, 0.355, 1)

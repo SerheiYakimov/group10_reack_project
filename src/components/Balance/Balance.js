@@ -1,10 +1,8 @@
-import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
 import GoToReports from '../GoToReports';
 import Notify from '../Notify/Notify';
 import authSelectors from '../../redux/auth/selectors';
-import authOperations from '../../redux/auth/operations';
 import reportOperations from '../../redux/reports/operations';
 import s from './Balance.module.css';
 
@@ -12,10 +10,6 @@ export default function Balance() {
   const userBalance = useSelector(authSelectors.getUserBalance);
   const isRefreshingBalance = useSelector(authSelectors.getIsRefreshingBalance);
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(authOperations.getUserBalance());
-  // }, [dispatch]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -39,7 +33,6 @@ export default function Balance() {
               type="text"
               name="balance"
               maxLength="10"
-              // placeholder={userBalance ? `${userBalance} UAH` : `00.00 UAH`}
               className={
                 userBalance === null ? s.initialBalanceInput : s.balanceInput
               }
@@ -65,13 +58,7 @@ export default function Balance() {
           )}
         </div>
       </form>
-
-      <>{/* {showIncome && <IncomesPage />} */}</>
       {!isRefreshingBalance && userBalance === null && <Notify />}
     </div>
   );
 }
-
-// <button type="submit" className={s.confirmButton}>
-//   ПОДТВЕРДИТЬ
-// </button>;

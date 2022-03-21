@@ -6,8 +6,6 @@ import { token } from '../../services/axios-defaults';
 const register = createAsyncThunk(
   '/auth/registration',
   async (newUser, { rejectWithValue }) => {
-    // console.log(`newUser in auth-operation`, newUser);
-
     try {
       const data = await authAPI.register(newUser);
       toast.success(
@@ -16,7 +14,6 @@ const register = createAsyncThunk(
       );
       return data;
     } catch (error) {
-      // console.log(`error.messageRegister`, error);
       toast.error(
         'Упс, что-то пошло не так :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки.',
       );
@@ -41,7 +38,6 @@ const logIn = createAsyncThunk(
       const data = await authAPI.logIn(user);
       return data;
     } catch (error) {
-      // console.log(`error.messageLogIn`, error);
       toast.error(
         'К сожалению, пользователь не авторизирован. Проверьте правильность ввода логина и пароля или зарегистрируйтесь.',
       );
@@ -58,7 +54,6 @@ const logOut = createAsyncThunk(
       toast.success('До новых встреч!', { duration: 4000 });
       return data;
     } catch (error) {
-      // console.log(`error.messageInLogOut`, error);
       toast.error(
         'Упс, что-то пошло не так :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки.',
       );
@@ -94,7 +89,6 @@ const userFromGoogleAuth = createAsyncThunk(
       const fullData = { ...data, token };
       return fullData;
     } catch (error) {
-      console.log(`error in auth-operation`, error);
       return rejectWithValue(error.message);
     }
   },
@@ -108,7 +102,6 @@ const setUserBalance = createAsyncThunk(
       toast.success('Баланс успешно обновлен!');
       return data;
     } catch (error) {
-      console.log(`error.messageInLogOut`, error);
       toast.error(
         'Баланс не обновлен :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки.',
       );
@@ -122,10 +115,8 @@ const getUserBalance = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const data = await authAPI.getBalance();
-      console.log('data in operation:', data);
       return data;
     } catch (error) {
-      console.log(`error.messageInLogOut`, error);
       toast.error(
         'Баланс не обновлен :( Попробуйте еще раз, пожалуйста. Если ошибка повторяется, обратитесь в службу поддержки.',
       );

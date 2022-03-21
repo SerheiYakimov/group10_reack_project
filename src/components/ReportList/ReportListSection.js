@@ -29,12 +29,8 @@ const ReportListSection = ({ ReportSwitchIncomes }) => {
         );
   }, [dispatch, ReportSwitchIncomes, reportDataSwitch]);
 
-  console.log('report sw - ', ReportSwitchIncomes);
-
   const reportIncomesData = useSelector(reportSelectors.getIncomesData);
-  console.log('- incomes', reportIncomesData);
   const reportOutcomesData = useSelector(reportSelectors.getOutcomesData);
-  console.log('- outcomes ', reportOutcomesData);
 
   return (
     <section className={s.reportListSection}>
