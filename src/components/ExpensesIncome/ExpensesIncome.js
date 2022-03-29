@@ -18,17 +18,12 @@ export default function ExpensesIncome() {
   if (incomIdx !== -1) {
     income = data[incomIdx].totalSum;
   }
-  console.log('expenses', expenses);
-  console.log('income', income);
 
   return (
     <section className={s.section}>
       <div className={s.wrapExp}>
         <p className={s.desc}>Расходы:</p>
         <span className={s.expenses}>
-          {/* {expenses
-            ? ` - ${formatThousands(expenses, ' ')} грн.`
-            : ` - 00.00 грн`} */}
           {` - ${formatThousands(expenses, ' ')} грн.`}
         </span>
       </div>
@@ -44,7 +39,6 @@ export default function ExpensesIncome() {
       <div className={s.wrapInc}>
         <p className={s.desc}>Доходы: </p>
         <span className={s.incomes}>
-          {/* {income ? ` + ${formatThousands(income, ' ')} грн.` : ` + 00.00 грн`} */}
           {` + ${formatThousands(income, ' ')} грн.`}
         </span>
       </div>

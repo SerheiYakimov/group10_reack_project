@@ -33,7 +33,6 @@ const reportSlice = createSlice({
       state.reportChartItems = [...action.payload.result];
     },
     [reportOperations.getSumByMonth.fulfilled](state, action) {
-      console.log(action.payload.result);
       state.data = [...action.payload.result];
     },
     [reportOperations.getIncomesSum.fulfilled]: (state, action) => {

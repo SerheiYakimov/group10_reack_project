@@ -8,7 +8,7 @@ export default function SummaryList({ summaryData }) {
       {summaryData && (
         <ul className={s.summaryList}>
           {summaryData.map(summary => (
-            <SummaryListItem summary={summary} />
+            <SummaryListItem summary={summary} key={Math.random()} />
           ))}
         </ul>
       )}

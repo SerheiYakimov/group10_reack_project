@@ -42,8 +42,6 @@ const Table = () => {
 
   ///    Coloring the numbers   /////
   const transactionType = items[0]?.type;
-  console.log('items', items);
-  console.log('items.type', transactionType);
 
   let classes = `${s.data_rows} `;
   if (transactionType === 'loss') {

@@ -5,9 +5,7 @@ export const getIncomesData = createAsyncThunk(
   '/report/report-category-by-month',
   async ({ date, type }, { rejectWithValue }) => {
     try {
-      console.log('req-incomes-data', { date, type });
       const { data } = await reportAPI.getReportByCategories({ date, type });
-      console.log('req-incomes-data-res', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -19,9 +17,7 @@ export const getOutcomesData = createAsyncThunk(
   '/report/report-category-by-month-outcomes',
   async (date, { rejectWithValue }) => {
     try {
-      console.log('req-outcomes-data', date);
       const { data } = await reportAPI.getReportByCategories(date);
-      console.log('req-outcomes-data-res', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -33,12 +29,10 @@ export const getCategoryData = createAsyncThunk(
   '/report/report-subcategory-by-month',
   async ({ date, alias }, { rejectWithValue }) => {
     try {
-      console.log('req-sub-category-data', date, alias);
       const { data } = await reportAPI.getReportBySubCategories({
         date,
         alias,
       });
-      console.log('req-sub-category-data-res', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -50,7 +44,6 @@ export const getSummaryData = createAsyncThunk(
   '/report/report-by-six-month',
   async (date, { rejectWithValue }) => {
     try {
-      console.log('start - operation/getSummaryData', date);
       const { data } = await reportAPI.getSummaryByMonth(date);
       return data;
     } catch (error) {
@@ -64,7 +57,6 @@ export const getIncomesSum = createAsyncThunk(
   async (date, { rejectWithValue }) => {
     try {
       const { data } = await reportAPI.getMonthIncomeSum(date);
-      console.log('data from back end', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -77,7 +69,6 @@ export const getOutcomesSum = createAsyncThunk(
   async (date, { rejectWithValue }) => {
     try {
       const { data } = await reportAPI.getMonthOutcomeSum(date);
-      console.log('data from back end', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
